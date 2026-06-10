@@ -153,6 +153,10 @@
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>
+         <loc>https://xinfin.org/smartcontract/deploy/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
          <loc>https://xinfin.org/smartcontract/deployment-verification/</loc>
          <lastmod>2026-06-10</lastmod>
     </url>
@@ -161,7 +165,43 @@
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>
+         <loc>https://xinfin.org/smartcontract/foundry/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/hardhat/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/monitoring/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/remix/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/setup/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/testing/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
          <loc>https://xinfin.org/smartcontract/tokens/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/upgradeability/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/verify/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://xinfin.org/smartcontract/writing/</loc>
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Get started with XDC Chain Docs. Explore the documentation for XDC Chain">
+        <meta name="description" content="Complete developer lifecycle for XDC smart contracts — from environment setup to mainnet deployment. EVM-compatible, 2-second finality, enterprise-ready.">
       
       
         <meta name="author" content="XDC Network">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../announce/">
       
       
-        <link rel="next" href="deployment-verification/">
+        <link rel="next" href="setup/">
       
       
         
@@ -29,7 +29,7 @@
     
     
     
-        <title>Smart Contract</title>
+        <title>Smart Contract Development on XDC</title>
     
 
     
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#smart-contract-development-on-xdc" class="md-skip">
           Skip to content
         </a>
       
@@ -460,15 +460,6 @@
   
     
     
-      
-  
-  
-  
-    
-  
-  
-    
-    
       <li class="md-tabs__item md-tabs__item--active">
         <a href="./" class="md-tabs__link">
           
@@ -480,9 +471,6 @@
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -1021,6 +1009,24 @@
     
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1047,8 +1053,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
   <span class="md-ellipsis">
@@ -1062,8 +1069,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
@@ -1077,82 +1090,6 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Smart Contract Overview
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_8_1" id="__nav_8_1_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Smart Contract Overview
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
             
               
                 
@@ -1160,45 +1097,15 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="setup/" class="md-nav__link">
         
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="deployment-verification/" class="md-nav__link">
-      
   
   
   <span class="md-ellipsis">
     
   
-    Deployment & Verification
+    Environment Setup
   
 
     
@@ -1206,13 +1113,7 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
+      </a>
     </li>
   
 
@@ -1224,45 +1125,15 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="writing/" class="md-nav__link">
         
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="flattening-smart-contracts/" class="md-nav__link">
-      
   
   
   <span class="md-ellipsis">
     
   
-    Flattening Smart Contracts
+    Writing Contracts
   
 
     
@@ -1270,21 +1141,35 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
+      </a>
     </li>
   
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1325,10 +1210,281 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="remix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hardhat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardhat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="verify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="upgradeability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgradeability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="">
             
   
   
@@ -1346,8 +1502,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1490,6 +1646,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1508,10 +1668,193 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8_10" id="__nav_8_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flattening Smart Contracts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flattening Smart Contracts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flattening-smart-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flattening-smart-contracts/#flattening-smart-contracts-with-remix" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    With Remix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flattening-smart-contracts/#flattening-smart-contracts-with-truffle" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    With Truffle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flattening-smart-contracts/#flattening-smart-contracts-with-hardhat" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    With Hardhat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_11" id="__nav_8_11_label" tabindex="">
             
   
   
@@ -1529,8 +1872,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1761,6 +2104,185 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-xdc-for-smart-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why XDC for Smart Contracts?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You&rsquo;ll Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-deploy-in-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start — Deploy in 5 Minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdc-network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDC Network Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Environment Setup →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-writing-your-first-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Writing Your First Contract →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-testing-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Testing Locally →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Deploy →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Verify →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Monitor →
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Upgrade →
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security First
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1801,37 +2323,11 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
         <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     Smart Contract Developments
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Smart Contract Overview
   </span>
 
         </a>
@@ -1858,74 +2354,175 @@
   
 
 
-<div><h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Link to this section">¶</a></h1>
-<p>Blockchain technology is a digital ledger that continuously expands by adding records, known as blocks, which are securely connected through cryptography. Each block includes a cryptographic hash of the preceding block, a timestamp, and transaction data. The structure of blockchain ensures that once data is recorded, it is nearly impossible to alter, providing a high level of security. One of the key advantages of blockchain is its decentralized nature, eliminating the need for middlemen, which reduces both time and potential conflicts. Despite its challenges, blockchain technology is recognized for being faster, more economical, and more secure compared to traditional systems, which is why it’s being increasingly adopted by banks and governments.</p>
-<p>Now, imagine a contract that automatically executes when certain conditions are met, with the entire process managed by the blockchain network. This is the concept behind smart contracts.</p>
-<h1 id="what-are-smart-contracts">What Are Smart Contracts?<a class="headerlink" href="#what-are-smart-contracts" title="Link to this section">¶</a></h1>
-<p>A smart contract is a self-executing program stored on a blockchain that automatically enforces the terms of an agreement without the need for intermediaries. These contracts run when predefined conditions are met, ensuring transparency, security, and efficiency in various applications, including finance, supply chain management, and decentralized applications (dApps). Smart contracts eliminate the risks of manual processing and reduce operational costs by enabling trustless execution of agreements.</p>
-<p>Bitcoin was the first blockchain to introduce basic smart contracts, where transactions are only validated if specific conditions are met. Below is an example of a basic smart contract that includes functions to set and retrieve data, with simple operations to modify the data.</p>
-<h2 id="smart-contracts-on-xdc-network">Smart Contracts on XDC Network<a class="headerlink" href="#smart-contracts-on-xdc-network" title="Link to this section">¶</a></h2>
-<p>The XDC Network is a highly efficient, enterprise-ready blockchain that supports smart contract deployment using Ethereum Virtual Machine (EVM) compatibility. Developers can create and deploy smart contracts on XDC using Solidity, the same programming language used on Ethereum, making it easy to migrate existing dApps and build new decentralized solutions. The network’s low transaction fees, fast finality (2-second block time), and energy-efficient consensus mechanism (XDPoS 2.0) make it an ideal choice for enterprises and developers seeking to build scalable blockchain-based applications. XDC’s smart contracts are used in various sectors, including trade finance, tokenization, and decentralized finance (DeFi), ensuring seamless automation of business processes with enhanced security and efficiency.</p>
-<p>As of March 2024, the <a href="https://www.xdc.dev/anilchinchawale/upgrading-the-xdc-networks-evm-to-support-solidity-v0823-3pmb?utm_source=chatgpt.com">XDC Network’s EVM has been upgraded to support Solidity compiler versions up to v0.8.23</a>, incorporating enhanced security features and improved code efficiency. This upgrade ensures that developers can leverage the latest advancements in Solidity while benefiting from the XDC Network’s low transaction fees, rapid finality (2-second block time), and energy-efficient consensus mechanism (XDPoS 2.0). These features make the XDC Network an ideal platform for building scalable and secure blockchain applications across various sectors, including trade finance, tokenization, and decentralized finance (DeFi).</p>
-<h2 id="xdc-network-to-introduce-eip-1559-support-on-apothem-testnet">XDC Network to Introduce EIP-1559 Support on Apothem Testnet<a class="headerlink" href="#xdc-network-to-introduce-eip-1559-support-on-apothem-testnet" title="Link to this section">¶</a></h2>
-<p>The XDC Network is set to implement EIP-1559 on its Apothem Testnet, marking a significant upgrade to its transaction fee mechanism. EIP-1559, originally introduced on Ethereum, replaces the traditional gas auction model with a base fee and priority fee structure, improving transaction predictability and reducing fee volatility. This implementation enhances network efficiency by dynamically adjusting base fees based on network congestion. Additionally, a portion of the base fee is burned, introducing a deflationary mechanism to the XDC Network’s tokenomics. Developers and users on Apothem Testnet can now test this upgrade before its potential mainnet deployment, ensuring a more seamless and optimized transaction experience. <a href="https://www.xdc.dev/xinfin_xdc_network/xdc-network-to-introduce-eip-1559-support-on-apothem-testnet-cl4">Read More</a></p>
-<h2 id="key-features-of-smart-contracts">Key Features of Smart Contracts<a class="headerlink" href="#key-features-of-smart-contracts" title="Link to this section">¶</a></h2>
+<div><h1 id="smart-contract-development-on-xdc">Smart Contract Development on XDC<a class="headerlink" href="#smart-contract-development-on-xdc" title="Link to this section">¶</a></h1>
+<p>The XDC Network is an EVM-compatible Layer 1 blockchain built for enterprise-grade decentralized applications. With 2-second block times, near-zero gas fees, and deterministic finality, XDC provides an ideal environment for deploying production smart contracts.</p>
+<p>This guide covers the complete developer lifecycle:</p>
+<div class="highlight"><pre><span></span><code>graph LR
+    A[1. Environment Setup] --&gt; B[2. Write Contract]
+    B --&gt; C[3. Test Locally]
+    C --&gt; D[4. Deploy]
+    D --&gt; E[5. Verify]
+    E --&gt; F[6. Monitor]
+    F --&gt; G[7. Upgrade]
+</code></pre></div>
+<h2 id="why-xdc-for-smart-contracts">Why XDC for Smart Contracts?<a class="headerlink" href="#why-xdc-for-smart-contracts" title="Link to this section">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>XDC</th>
+<th>Ethereum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Block time</td>
+<td>~2 seconds</td>
+<td>~12 seconds</td>
+</tr>
+<tr>
+<td>Gas cost</td>
+<td>~$0.0001 per tx</td>
+<td>~<span class="arithmatex">\(0.50–\)</span>5 per tx</td>
+</tr>
+<tr>
+<td>Finality</td>
+<td>Deterministic (XDPoS 2.0)</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>EVM compatibility</td>
+<td>Full Solidity support</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Consensus</td>
+<td>XDPoS (delegated PoS)</td>
+<td>PoS (post-Merge)</td>
+</tr>
+<tr>
+<td>Enterprise focus</td>
+<td>Trade finance, RWA</td>
+<td>General purpose</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-youll-build">What You’ll Build<a class="headerlink" href="#what-youll-build" title="Link to this section">¶</a></h2>
+<p>By following this lifecycle guide, you will:</p>
 <ol>
-<li>
-<p><strong>Trustworthiness:</strong> Smart contracts ensure that your agreements are securely stored on a blockchain, making it impossible for any party to lose or alter the contract. The terms are binding, and both parties must adhere to them.</p>
-</li>
-<li>
-<p><strong>Transparency:</strong> Every detail of the smart contract is visible to all participants before they agree, eliminating the possibility of disputes. The information is open to everyone involved, ensuring clarity and preventing misunderstandings.</p>
-</li>
-<li>
-<p><strong>Self-Governance:</strong> Smart contracts eliminate the need for intermediaries, such as brokers or lawyers, to validate the agreement. This also removes the risk of third-party manipulation, as the contract is automatically executed by the blockchain network.</p>
-</li>
-<li>
-<p><strong>Precision:</strong> Automated contracts not only speed up the process but also reduce costs and eliminate human error. The conditions are clearly defined in the smart contract, ensuring that no detail is overlooked.</p>
-</li>
-<li>
-<p><strong>Efficiency:</strong> Smart contracts automate tasks, saving considerable time that would otherwise be spent manually reviewing and processing agreements.</p>
-</li>
-<li>
-<p><strong>Cost-Effectiveness:</strong> By removing the need for intermediaries, smart contracts can significantly reduce costs. For instance, you don’t need to hire a lawyer to enforce the contract; the code itself ensures compliance.</p>
-</li>
-<li>
-<p><strong>Security:</strong> The data in smart contracts is encrypted and protected by blockchain technology, making it highly secure and reliable for critical processes.</p>
-</li>
+<li>Set up a local development environment with Hardhat or Foundry</li>
+<li>Write and compile a Solidity smart contract</li>
+<li>Write comprehensive unit tests with 100% coverage</li>
+<li>Deploy to the XDC Apothem Testnet</li>
+<li>Verify the source code on XDCScan</li>
+<li>Monitor contract events and transactions</li>
+<li>Implement upgradeability with proxy patterns</li>
 </ol>
-<h2 id="addressing-challenges">Addressing Challenges<a class="headerlink" href="#addressing-challenges" title="Link to this section">¶</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">¶</a></h2>
 <ul>
-<li>
-<p><strong>Upgradability:</strong> Modular smart contracts can address upgrade issues, allowing changes without losing valuable information.</p>
-</li>
-<li>
-<p><strong>Proxy Contracts:</strong> Using delegatecall-based proxies enables smart contracts to be upgraded while keeping the logic and data separate. However, this method requires careful handling to avoid introducing errors.</p>
-</li>
-<li>
-<p><strong>Legal Considerations:</strong> As smart contracts evolve, legal issues will gradually be resolved, but it will take time since they are still in the early stages of development.</p>
-</li>
-<li>
-<p><strong>Complexity Management:</strong> Simplifying smart contracts by avoiding Turing-complete designs can help reduce the complexity involved in writing them.</p>
-</li>
-<li>
-<p><strong>Oracle Problem:</strong> The oracle issue could be tackled by implementing a consensus protocol within the community, ensuring that the blockchain accurately reflects real-world conditions.</p>
-</li>
+<li>Basic understanding of Solidity</li>
+<li>Node.js 18+ (for Hardhat) or Rust (for Foundry)</li>
+<li>MetaMask browser extension</li>
+<li>A code editor (VS Code recommended)</li>
 </ul>
-<h2 id="applications-of-smart-contracts">Applications of Smart Contracts<a class="headerlink" href="#applications-of-smart-contracts" title="Link to this section">¶</a></h2>
+<h2 id="quick-start-deploy-in-5-minutes">Quick Start — Deploy in 5 Minutes<a class="headerlink" href="#quick-start-deploy-in-5-minutes" title="Link to this section">¶</a></h2>
+<p>If you want to deploy immediately without reading the full lifecycle:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Hardhat</label><label for="__tabbed_1_2">Foundry</label><label for="__tabbed_1_3">Remix (Browser)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>hardhat<span class="w"> </span>init
+<span class="c1"># Select "Create a TypeScript project"</span>
+<span class="c1"># Edit hardhat.config.ts with XDC network settings</span>
+npx<span class="w"> </span>hardhat<span class="w"> </span>run<span class="w"> </span>scripts/deploy.ts<span class="w"> </span>--network<span class="w"> </span>apothem
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>forge<span class="w"> </span>init
+<span class="c1"># Edit foundry.toml with XDC RPC endpoints</span>
+forge<span class="w"> </span>script<span class="w"> </span>script/Counter.s.sol<span class="w"> </span>--rpc-url<span class="w"> </span>apothem<span class="w"> </span>--broadcast
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <ol>
-<li>
-<p><strong>Digital Identity Management:</strong> Smart contracts allow individuals to maintain control over their digital identities, managing their data, reputation, and assets securely. Businesses can use this technology to streamline the know-your-customer (KYC) process.</p>
-</li>
-<li>
-<p><strong>Financial Data Integrity:</strong> Financial institutions can leverage smart contracts for accurate and transparent data recording, improving financial reporting and reducing auditing expenses. This also enhances market stability by ensuring uniform financial data across organizations.</p>
-</li>
-<li>
-<p><strong>Healthcare Management:</strong> Smart contracts can store personal health records securely on a blockchain, accessible only by authorized personnel. They can also be used to manage various healthcare operations, including drug tracking, compliance with regulations, and managing medical supplies.</p>
-</li>
-<li>
-<p><strong>Real Estate Transactions:</strong> Smart contracts simplify real estate transactions by cutting out intermediaries. For example, rental agreements can be directly managed on the blockchain, reducing costs and making the process more efficient.</p>
-</li>
-</ol></div>
+<li>Open <a href="https://remix.xinfin.network/">remix.xinfin.network</a></li>
+<li>Write your contract</li>
+<li>Select “Injected Provider — MetaMask”</li>
+<li>Click Deploy</li>
+</ol>
+</div>
+</div>
+</div>
+<p>For the complete guided experience, continue to <a href="setup/">Environment Setup</a>.</p>
+<h2 id="xdc-network-configuration">XDC Network Configuration<a class="headerlink" href="#xdc-network-configuration" title="Link to this section">¶</a></h2>
+<p>Use these constants in all your projects:</p>
+<table>
+<thead>
+<tr>
+<th>Network</th>
+<th>Chain ID</th>
+<th>RPC URL</th>
+<th>Explorer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mainnet</td>
+<td>50</td>
+<td><code>https://rpc.xinfin.network</code></td>
+<td><a href="https://xdcscan.com">xdcscan.com</a></td>
+</tr>
+<tr>
+<td>Apothem Testnet</td>
+<td>51</td>
+<td><code>https://rpc.apothem.network</code></td>
+<td><a href="https://testnet.xdcscan.com">testnet.xdcscan.com</a></td>
+</tr>
+<tr>
+<td>Devnet</td>
+<td>551</td>
+<td><code>https://devnetrpc.xinfin.network</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Native token:</strong> XDC<br>
+<strong>Address prefix:</strong> <code>xdc</code> (XDCScan display) / <code>0x</code> (EVM tools)<br>
+<strong>Faucet:</strong> <a href="https://faucet.apothem.network">faucet.apothem.network</a><br>
+<strong>Solidity support:</strong> Up to 0.8.24</p>
+<blockquote>
+<p>💡 <strong>Address Format Note</strong><br>
+XDCScan shows addresses with an <code>xdc</code> prefix (e.g., <code>xdc1234…</code>). EVM tools like Hardhat, Foundry, and MetaMask use the <code>0x</code> prefix (e.g., <code>0x1234…</code>). Both refer to the same account — only the prefix differs. All code examples in this guide use <code>0x</code> format.</p>
+</blockquote>
+<h2 id="developer-lifecycle">Developer Lifecycle<a class="headerlink" href="#developer-lifecycle" title="Link to this section">¶</a></h2>
+<h3 id="1-environment-setup"><a href="setup/">1. Environment Setup →</a><a class="headerlink" href="#1-environment-setup" title="Link to this section">¶</a></h3>
+<p>Install Node.js, Hardhat/Foundry, VS Code extensions, and configure MetaMask for XDC.</p>
+<h3 id="2-writing-your-first-contract"><a href="writing/">2. Writing Your First Contract →</a><a class="headerlink" href="#2-writing-your-first-contract" title="Link to this section">¶</a></h3>
+<p>Learn Solidity basics, XDC-specific considerations, and write a <code>Counter</code> contract.</p>
+<h3 id="3-testing-locally"><a href="testing/">3. Testing Locally →</a><a class="headerlink" href="#3-testing-locally" title="Link to this section">¶</a></h3>
+<p>Write unit tests, run coverage reports, and test on a local fork.</p>
+<h3 id="4-deploy"><a href="deploy/">4. Deploy →</a><a class="headerlink" href="#4-deploy" title="Link to this section">¶</a></h3>
+<p>Deploy to Apothem Testnet using Remix, Hardhat, or Foundry.</p>
+<h3 id="5-verify"><a href="verify/">5. Verify →</a><a class="headerlink" href="#5-verify" title="Link to this section">¶</a></h3>
+<p>Verify source code on XDCScan automatically or manually.</p>
+<h3 id="6-monitor"><a href="monitoring/">6. Monitor →</a><a class="headerlink" href="#6-monitor" title="Link to this section">¶</a></h3>
+<p>Set up event listeners, transaction tracking, and alerts.</p>
+<h3 id="7-upgrade"><a href="upgradeability/">7. Upgrade →</a><a class="headerlink" href="#7-upgrade" title="Link to this section">¶</a></h3>
+<p>Implement proxy patterns for upgradeable contracts.</p>
+<h2 id="security-first">Security First<a class="headerlink" href="#security-first" title="Link to this section">¶</a></h2>
+<p>Before deploying to mainnet, review:</p>
+<ul>
+<li><a href="../security/security-practices/">Security Practices</a> — Comprehensive smart contract security guide</li>
+<li><a href="../security/vulnerabilities/">Vulnerability Catalog</a> — Known exploit types and mitigations</li>
+<li><a href="../security/audit-prep/">Audit Preparation</a> — Pre-audit checklist</li>
+</ul>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
+<ul>
+<li><a href="https://discord.gg/xdc">XDC Developer Discord</a></li>
+<li><a href="https://www.xdc.dev">XDC Developer Forum</a></li>
+<li><a href="https://github.com/XinFinOrg/XDPoSChain/issues">GitHub Issues</a></li>
+</ul>
+<hr>
+<p><strong>Next Step:</strong> <a href="setup/">Environment Setup →</a></p></div>
 
 
 
@@ -1981,13 +2578,13 @@
         
         
           
-          <a href="deployment-verification/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Environment Setup">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Environment Setup
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,65 +1,141 @@
 ---
-title: Smart Contract
+title: Smart Contract Development on XDC
+description: Complete developer lifecycle for XDC smart contracts — from environment setup to mainnet deployment. EVM-compatible, 2-second finality, enterprise-ready.
 ---
 
-# Introduction
+Difficulty: Beginner | Time: ~2 hours (full lifecycle) | Tools: Solidity, Hardhat/Foundry, MetaMask
 
-Blockchain technology is a digital ledger that continuously expands by adding records, known as blocks, which are securely connected through cryptography. Each block includes a cryptographic hash of the preceding block, a timestamp, and transaction data. The structure of blockchain ensures that once data is recorded, it is nearly impossible to alter, providing a high level of security. One of the key advantages of blockchain is its decentralized nature, eliminating the need for middlemen, which reduces both time and potential conflicts. Despite its challenges, blockchain technology is recognized for being faster, more economical, and more secure compared to traditional systems, which is why it’s being increasingly adopted by banks and governments.
+# Smart Contract Development on XDC
 
-Now, imagine a contract that automatically executes when certain conditions are met, with the entire process managed by the blockchain network. This is the concept behind smart contracts.
+The XDC Network is an EVM-compatible Layer 1 blockchain built for enterprise-grade decentralized applications. With 2-second block times, near-zero gas fees, and deterministic finality, XDC provides an ideal environment for deploying production smart contracts.
 
-# What Are Smart Contracts?
-A smart contract is a self-executing program stored on a blockchain that automatically enforces the terms of an agreement without the need for intermediaries. These contracts run when predefined conditions are met, ensuring transparency, security, and efficiency in various applications, including finance, supply chain management, and decentralized applications (dApps). Smart contracts eliminate the risks of manual processing and reduce operational costs by enabling trustless execution of agreements.
+This guide covers the complete developer lifecycle:
 
-Bitcoin was the first blockchain to introduce basic smart contracts, where transactions are only validated if specific conditions are met. Below is an example of a basic smart contract that includes functions to set and retrieve data, with simple operations to modify the data.
+```mermaid
+graph LR
+    A[1. Environment Setup] --> B[2. Write Contract]
+    B --> C[3. Test Locally]
+    C --> D[4. Deploy]
+    D --> E[5. Verify]
+    E --> F[6. Monitor]
+    F --> G[7. Upgrade]
+```
 
-## Smart Contracts on XDC Network
+## Why XDC for Smart Contracts?
 
-The XDC Network is a highly efficient, enterprise-ready blockchain that supports smart contract deployment using Ethereum Virtual Machine (EVM) compatibility. Developers can create and deploy smart contracts on XDC using Solidity, the same programming language used on Ethereum, making it easy to migrate existing dApps and build new decentralized solutions. The network’s low transaction fees, fast finality (2-second block time), and energy-efficient consensus mechanism (XDPoS 2.0) make it an ideal choice for enterprises and developers seeking to build scalable blockchain-based applications. XDC’s smart contracts are used in various sectors, including trade finance, tokenization, and decentralized finance (DeFi), ensuring seamless automation of business processes with enhanced security and efficiency.
+| Feature | XDC | Ethereum |
+|---------|-----|----------|
+| Block time | ~2 seconds | ~12 seconds |
+| Gas cost | ~$0.0001 per tx | ~$0.50–$5 per tx |
+| Finality | Deterministic (XDPoS 2.0) | Probabilistic |
+| EVM compatibility | Full Solidity support | Native |
+| Consensus | XDPoS (delegated PoS) | PoS (post-Merge) |
+| Enterprise focus | Trade finance, RWA | General purpose |
 
-As of March 2024, the [XDC Network's EVM has been upgraded to support Solidity compiler versions up to v0.8.23](https://www.xdc.dev/anilchinchawale/upgrading-the-xdc-networks-evm-to-support-solidity-v0823-3pmb?utm_source=chatgpt.com), incorporating enhanced security features and improved code efficiency. This upgrade ensures that developers can leverage the latest advancements in Solidity while benefiting from the XDC Network's low transaction fees, rapid finality (2-second block time), and energy-efficient consensus mechanism (XDPoS 2.0). These features make the XDC Network an ideal platform for building scalable and secure blockchain applications across various sectors, including trade finance, tokenization, and decentralized finance (DeFi).
+## What You'll Build
 
-## XDC Network to Introduce EIP-1559 Support on Apothem Testnet
-The XDC Network is set to implement EIP-1559 on its Apothem Testnet, marking a significant upgrade to its transaction fee mechanism. EIP-1559, originally introduced on Ethereum, replaces the traditional gas auction model with a base fee and priority fee structure, improving transaction predictability and reducing fee volatility. This implementation enhances network efficiency by dynamically adjusting base fees based on network congestion. Additionally, a portion of the base fee is burned, introducing a deflationary mechanism to the XDC Network’s tokenomics. Developers and users on Apothem Testnet can now test this upgrade before its potential mainnet deployment, ensuring a more seamless and optimized transaction experience. [Read More](https://www.xdc.dev/xinfin_xdc_network/xdc-network-to-introduce-eip-1559-support-on-apothem-testnet-cl4)
+By following this lifecycle guide, you will:
 
-## Key Features of Smart Contracts
-1. **Trustworthiness:** Smart contracts ensure that your agreements are securely stored on a blockchain, making it impossible for any party to lose or alter the contract. The terms are binding, and both parties must adhere to them.
+1. Set up a local development environment with Hardhat or Foundry
+2. Write and compile a Solidity smart contract
+3. Write comprehensive unit tests with 100% coverage
+4. Deploy to the XDC Apothem Testnet
+5. Verify the source code on XDCScan
+6. Monitor contract events and transactions
+7. Implement upgradeability with proxy patterns
 
-2. **Transparency:** Every detail of the smart contract is visible to all participants before they agree, eliminating the possibility of disputes. The information is open to everyone involved, ensuring clarity and preventing misunderstandings.
+## Prerequisites
 
-3. **Self-Governance:** Smart contracts eliminate the need for intermediaries, such as brokers or lawyers, to validate the agreement. This also removes the risk of third-party manipulation, as the contract is automatically executed by the blockchain network.
+- Basic understanding of Solidity
+- Node.js 18+ (for Hardhat) or Rust (for Foundry)
+- MetaMask browser extension
+- A code editor (VS Code recommended)
 
-4. **Precision:** Automated contracts not only speed up the process but also reduce costs and eliminate human error. The conditions are clearly defined in the smart contract, ensuring that no detail is overlooked.
+## Quick Start — Deploy in 5 Minutes
 
-5. **Efficiency:** Smart contracts automate tasks, saving considerable time that would otherwise be spent manually reviewing and processing agreements.
+If you want to deploy immediately without reading the full lifecycle:
 
-6. **Cost-Effectiveness:** By removing the need for intermediaries, smart contracts can significantly reduce costs. For instance, you don’t need to hire a lawyer to enforce the contract; the code itself ensures compliance.
+=== "Hardhat"
 
-7. **Security:** The data in smart contracts is encrypted and protected by blockchain technology, making it highly secure and reliable for critical processes.
+    ```bash
+    npx hardhat init
+    # Select "Create a TypeScript project"
+    # Edit hardhat.config.ts with XDC network settings
+    npx hardhat run scripts/deploy.ts --network apothem
+    ```
 
-## Addressing Challenges
-- **Upgradability:** Modular smart contracts can address upgrade issues, allowing changes without losing valuable information.
+=== "Foundry"
 
-- **Proxy Contracts:** Using delegatecall-based proxies enables smart contracts to be upgraded while keeping the logic and data separate. However, this method requires careful handling to avoid introducing errors.
+    ```bash
+    forge init
+    # Edit foundry.toml with XDC RPC endpoints
+    forge script script/Counter.s.sol --rpc-url apothem --broadcast
+    ```
 
-- **Legal Considerations:** As smart contracts evolve, legal issues will gradually be resolved, but it will take time since they are still in the early stages of development.
+=== "Remix (Browser)"
 
-- **Complexity Management:** Simplifying smart contracts by avoiding Turing-complete designs can help reduce the complexity involved in writing them.
+    1. Open [remix.xinfin.network](https://remix.xinfin.network/)
+    2. Write your contract
+    3. Select "Injected Provider — MetaMask"
+    4. Click Deploy
 
-- **Oracle Problem:** The oracle issue could be tackled by implementing a consensus protocol within the community, ensuring that the blockchain accurately reflects real-world conditions.
+For the complete guided experience, continue to [Environment Setup](./setup.md).
 
-## Applications of Smart Contracts
-1. **Digital Identity Management:** Smart contracts allow individuals to maintain control over their digital identities, managing their data, reputation, and assets securely. Businesses can use this technology to streamline the know-your-customer (KYC) process.
+## XDC Network Configuration
 
-2. **Financial Data Integrity:** Financial institutions can leverage smart contracts for accurate and transparent data recording, improving financial reporting and reducing auditing expenses. This also enhances market stability by ensuring uniform financial data across organizations.
+Use these constants in all your projects:
 
-3. **Healthcare Management:** Smart contracts can store personal health records securely on a blockchain, accessible only by authorized personnel. They can also be used to manage various healthcare operations, including drug tracking, compliance with regulations, and managing medical supplies.
+| Network | Chain ID | RPC URL | Explorer |
+|---------|----------|---------|----------|
+| Mainnet | 50 | `https://rpc.xinfin.network` | [xdcscan.com](https://xdcscan.com) |
+| Apothem Testnet | 51 | `https://rpc.apothem.network` | [testnet.xdcscan.com](https://testnet.xdcscan.com) |
+| Devnet | 551 | `https://devnetrpc.xinfin.network` | — |
 
-4. **Real Estate Transactions:** Smart contracts simplify real estate transactions by cutting out intermediaries. For example, rental agreements can be directly managed on the blockchain, reducing costs and making the process more efficient.
+**Native token:** XDC  
+**Address prefix:** `xdc` (XDCScan display) / `0x` (EVM tools)  
+**Faucet:** [faucet.apothem.network](https://faucet.apothem.network)  
+**Solidity support:** Up to 0.8.24
 
+> 💡 **Address Format Note**  
+> XDCScan shows addresses with an `xdc` prefix (e.g., `xdc1234…`). EVM tools like Hardhat, Foundry, and MetaMask use the `0x` prefix (e.g., `0x1234…`). Both refer to the same account — only the prefix differs. All code examples in this guide use `0x` format.
 
+## Developer Lifecycle
 
+### [1. Environment Setup →](./setup.md)
+Install Node.js, Hardhat/Foundry, VS Code extensions, and configure MetaMask for XDC.
 
+### [2. Writing Your First Contract →](./writing.md)
+Learn Solidity basics, XDC-specific considerations, and write a `Counter` contract.
 
+### [3. Testing Locally →](./testing.md)
+Write unit tests, run coverage reports, and test on a local fork.
 
+### [4. Deploy →](./deploy.md)
+Deploy to Apothem Testnet using Remix, Hardhat, or Foundry.
 
+### [5. Verify →](./verify.md)
+Verify source code on XDCScan automatically or manually.
+
+### [6. Monitor →](./monitoring.md)
+Set up event listeners, transaction tracking, and alerts.
+
+### [7. Upgrade →](./upgradeability.md)
+Implement proxy patterns for upgradeable contracts.
+
+## Security First
+
+Before deploying to mainnet, review:
+
+- [Security Practices](../security/security-practices.md) — Comprehensive smart contract security guide
+- [Vulnerability Catalog](../security/vulnerabilities.md) — Known exploit types and mitigations
+- [Audit Preparation](../security/audit-prep.md) — Pre-audit checklist
+
+## Getting Help
+
+- [XDC Developer Discord](https://discord.gg/xdc)
+- [XDC Developer Forum](https://www.xdc.dev)
+- [GitHub Issues](https://github.com/XinFinOrg/XDPoSChain/issues)
+
+---
+
+**Next Step:** [Environment Setup →](./setup.md)
