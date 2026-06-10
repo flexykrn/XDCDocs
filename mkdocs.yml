@@ -65,7 +65,7 @@ nav:
     - Overview: ./learn/index.md
     - Blockchain Basics: ./learn/blockchain-basics.md
     - XDC Architecture: ./learn/xdc-architecture.md
-    - XDPoS Explained: https://xinfin.org/xdpos
+    - XDPoS Explained: ./xdcchain/xdpos-technical.md
     - Gas & Fees: ./learn/gas-fees.md
     - Glossary: ./learn/glossary.md
     # - FAQ: ./learn/faq.md
