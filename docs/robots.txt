@@ -1,0 +1,17 @@
+# XDC Network Documentation - robots.txt
+# https://docs.xdc.network
+
+User-agent: *
+Allow: /
+
+# Disallow non-content directories
+Disallow: /assets/
+Disallow: /search/
+Disallow: /javascripts/
+Disallow: /overrides/
+
+# Crawl-delay to be respectful
+Crawl-delay: 1
+
+# Sitemap reference
+Sitemap: https://docs.xdc.network/sitemap.xml

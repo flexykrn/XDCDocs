@@ -256,6 +256,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.extra
 
+extra_files:
+  - robots.txt
+
 plugins:
   - search
   - mkdocs-video
