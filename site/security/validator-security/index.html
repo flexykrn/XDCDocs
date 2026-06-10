@@ -1,0 +1,3354 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Get started with XDC Chain Docs. Explore the documentation for XDC Chain">
+      
+      
+        <meta name="author" content="XDC Network">
+      
+      
+        <link rel="canonical" href="https://xinfin.org/security/validator-security/">
+      
+      
+        <link rel="prev" href="../key-management/">
+      
+      
+        <link rel="next" href="../security-practices/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/xdc.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+    
+        <title>Validator Security</title>
+    
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validator-security" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="../../#"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14m0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11m-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0M3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06M12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0M4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12m8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20m12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12m-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061m2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96zl-.002-.005a9 9 0 0 0-.218-.779c-.13-.394.21-.8.602-.67q.435.144.855.328l.01.005A10.002 10.002 0 0 1 12 22a10 10 0 0 1-9.162-5.985l-.004-.01a10 10 0 0 1-.329-.855c-.13-.392.277-.732.67-.602q.386.126.78.218l.004.002A9 9 0 0 0 14.999 6a9 9 0 0 0-.231-2.04M16.5 6c0 5.799-4.701 10.5-10.5 10.5q-.64 0-1.26-.075A8.5 8.5 0 1 0 16.425 4.74q.075.62.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/XinFinOrg/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    XDC Network GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../xdcchain/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XDC Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../subnet/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XDC Subnet
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../enterprise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Enterprise
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../announce/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../smartcontract/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Smart Contract Developments
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../whitepaper/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  White Paper
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../#" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/XinFinOrg/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    XDC Network GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learn/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learn
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../xdcchain/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDC Chain
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../subnet/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XDC Subnet
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../enterprise/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../announce/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Announcements
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../smartcontract/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart Contract Developments
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vulnerabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vulnerability Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../key-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validator Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validator Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#node-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validator-node-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Node Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System Hardening
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Hardening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xdc-node-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDC Node Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Alerting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Alerting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup and Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup and Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intrusion-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intrusion Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anomaly-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anomaly Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incident Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergency-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emergency Contacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdc-specific-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDC-Specific Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XDC-Specific Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consensus-participation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus Participation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-and-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance and Auditing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compliance and Auditing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Audits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-response_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whitepaper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    White Paper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#node-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validator-node-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Node Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System Hardening
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Hardening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xdc-node-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDC Node Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Alerting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Alerting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup and Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup and Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intrusion-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intrusion Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anomaly-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anomaly Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incident Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergency-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emergency Contacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdc-specific-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XDC-Specific Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XDC-Specific Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consensus-participation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus Participation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-and-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance and Auditing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compliance and Auditing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Audits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-response_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Security
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/XinFinOrg/Docs/edit/main/docs/security/validator-security.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<div><h1 id="validator-security">Validator Security<a class="headerlink" href="#validator-security" title="Link to this section">¶</a></h1>
+<p>Validator nodes are the backbone of the XDC Network. This guide covers comprehensive security hardening for XDC masternodes and standby nodes, ensuring network integrity and protecting staked assets.</p>
+<hr>
+<h2 id="node-architecture">Node Architecture<a class="headerlink" href="#node-architecture" title="Link to this section">¶</a></h2>
+<h3 id="validator-node-components">Validator Node Components<a class="headerlink" href="#validator-node-components" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────┐
+│              Validator Node                  │
+├─────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌──────────────────────┐  │
+│  │   XDC Node  │  │    Monitoring        │  │
+│  │   (Geth)    │  │    (Prometheus/      │  │
+│  │             │  │     Grafana)         │  │
+│  └─────────────┘  └──────────────────────┘  │
+│  ┌─────────────┐  ┌──────────────────────┐  │
+│  │   Firewall  │  │    Log Management    │  │
+│  │   (UFW/     │  │    (ELK Stack/       │  │
+│  │    iptables)│  │     Loki)            │  │
+│  └─────────────┘  └──────────────────────┘  │
+│  ┌─────────────┐  ┌──────────────────────┐  │
+│  │   HSM/      │  │    Backup System     │  │
+│  │   Key Store │  │    (Automated)       │  │
+│  └─────────────┘  └──────────────────────┘  │
+└─────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Minimum</th>
+<th>Recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>4 cores</td>
+<td>8+ cores</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>16 GB</td>
+<td>32 GB</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>500 GB SSD</td>
+<td>1 TB NVMe SSD</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>100 Mbps</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>Uptime</td>
+<td>99.9%</td>
+<td>99.99%</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="operating-system-hardening">Operating System Hardening<a class="headerlink" href="#operating-system-hardening" title="Link to this section">¶</a></h2>
+<h3 id="initial-setup">Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Minimal Installation</strong></li>
+<li>Use Ubuntu Server LTS (20.04 or 22.04)</li>
+<li>Install only necessary packages</li>
+<li>
+<p>Disable unnecessary services</p>
+</li>
+<li>
+<p><strong>System Updates</strong>
+   </p><div class="highlight"><pre><span></span><code><span class="c1"># Automatic security updates</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>unattended-upgrades
+sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>unattended-upgrades
+
+<span class="c1"># Manual update check</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+</li>
+<li>
+<p><strong>Secure Boot</strong></p>
+</li>
+<li>Enable UEFI Secure Boot</li>
+<li>Verify boot integrity</li>
+<li>Disable legacy boot modes</li>
+</ol>
+<h3 id="user-management">User Management<a class="headerlink" href="#user-management" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create dedicated service user</span>
+sudo<span class="w"> </span>useradd<span class="w"> </span>-r<span class="w"> </span>-s<span class="w"> </span>/bin/false<span class="w"> </span>xdc-node
+
+<span class="c1"># Set strong password for admin</span>
+sudo<span class="w"> </span>passwd<span class="w"> </span>admin
+
+<span class="c1"># Configure sudo access</span>
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>admin
+
+<span class="c1"># Disable root login</span>
+sudo<span class="w"> </span>passwd<span class="w"> </span>-l<span class="w"> </span>root
+</code></pre></div>
+<h3 id="ssh-hardening">SSH Hardening<a class="headerlink" href="#ssh-hardening" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Edit SSH configuration</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
+
+<span class="c1"># Recommended settings</span>
+PermitRootLogin<span class="w"> </span>no
+PasswordAuthentication<span class="w"> </span>no
+PubkeyAuthentication<span class="w"> </span>yes
+MaxAuthTries<span class="w"> </span><span class="m">3</span>
+ClientAliveInterval<span class="w"> </span><span class="m">300</span>
+ClientAliveCountMax<span class="w"> </span><span class="m">2</span>
+AllowUsers<span class="w"> </span>admin<span class="w"> </span>xdc-node
+
+<span class="c1"># Restart SSH</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>sshd
+</code></pre></div>
+<h3 id="firewall-configuration">Firewall Configuration<a class="headerlink" href="#firewall-configuration" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install UFW</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ufw
+
+<span class="c1"># Default policies</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>default<span class="w"> </span>deny<span class="w"> </span>incoming
+sudo<span class="w"> </span>ufw<span class="w"> </span>default<span class="w"> </span>allow<span class="w"> </span>outgoing
+
+<span class="c1"># Allow SSH (custom port recommended)</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
+
+<span class="c1"># Allow XDC node ports</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">30303</span>/tcp<span class="w">  </span><span class="c1"># XDC protocol</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">30303</span>/udp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">8545</span>/tcp<span class="w">   </span><span class="c1"># RPC (restrict to localhost)</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">8551</span>/tcp<span class="w">   </span><span class="c1"># WebSocket (restrict to localhost)</span>
+
+<span class="c1"># Enable firewall</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+
+<span class="c1"># Check status</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>status<span class="w"> </span>verbose
+</code></pre></div>
+<hr>
+<h2 id="node-configuration">Node Configuration<a class="headerlink" href="#node-configuration" title="Link to this section">¶</a></h2>
+<h3 id="xdc-node-setup">XDC Node Setup<a class="headerlink" href="#xdc-node-setup" title="Link to this section">¶</a></h3>
+<ol>
+<li>
+<p><strong>Installation</strong>
+   </p><div class="highlight"><pre><span></span><code><span class="c1"># Download latest release</span>
+wget<span class="w"> </span>https://github.com/XinFinOrg/XDPoSChain/releases/latest/download/xdc-linux-amd64
+
+<span class="c1"># Verify checksum</span>
+sha256sum<span class="w"> </span>xdc-linux-amd64
+
+<span class="c1"># Install</span>
+sudo<span class="w"> </span>mv<span class="w"> </span>xdc-linux-amd64<span class="w"> </span>/usr/local/bin/xdc
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/xdc
+</code></pre></div>
+</li>
+<li>
+<p><strong>Configuration</strong>
+   </p><div class="highlight"><pre><span></span><code><span class="c1"># Create data directory</span>
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/lib/xdc
+sudo<span class="w"> </span>chown<span class="w"> </span>xdc-node:xdc-node<span class="w"> </span>/var/lib/xdc
+
+<span class="c1"># Create configuration</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/xdc/config.toml
+</code></pre></div>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[Node]</span>
+<span class="n">DataDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/var/lib/xdc"</span>
+
+<span class="k">[Node.P2P]</span>
+<span class="n">MaxPeers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+<span class="n">NoDiscovery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="k">[Node.HTTP]</span>
+<span class="n">Host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"localhost"</span>
+<span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8545</span>
+<span class="n">Cors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"localhost"</span><span class="p">]</span>
+
+<span class="k">[Node.WS]</span>
+<span class="n">Host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"localhost"</span>
+<span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8551</span>
+</code></pre></div>
+<ol>
+<li><strong>Systemd Service</strong>
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/xdc.service
+</code></pre></div></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">XDC Validator Node</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">User</span><span class="o">=</span><span class="s">xdc-node</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/xdc --config /etc/xdc/config.toml</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">10</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>xdc
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>xdc
+</code></pre></div>
+<h3 id="key-management">Key Management<a class="headerlink" href="#key-management" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate validator key</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>xdc-node<span class="w"> </span>xdc<span class="w"> </span>account<span class="w"> </span>new<span class="w"> </span>--datadir<span class="w"> </span>/var/lib/xdc
+
+<span class="c1"># Set proper permissions</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>/var/lib/xdc/keystore
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/lib/xdc/keystore/*
+
+<span class="c1"># Backup keystore</span>
+sudo<span class="w"> </span>tar<span class="w"> </span>-czf<span class="w"> </span>/secure/backup/keystore-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>/var/lib/xdc/keystore
+</code></pre></div>
+<hr>
+<h2 id="monitoring-and-alerting">Monitoring and Alerting<a class="headerlink" href="#monitoring-and-alerting" title="Link to this section">¶</a></h2>
+<h3 id="system-monitoring">System Monitoring<a class="headerlink" href="#system-monitoring" title="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Prometheus Setup</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Install Prometheus</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>prometheus
+
+<span class="c1"># Configure scraping</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/prometheus/prometheus.yml
+</code></pre></div></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">'xdc-node'</span>
+<span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'localhost:6060'</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">metrics_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/debug/metrics</span>
+<span class="w">    </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15s</span>
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Node Exporter</strong>
+   </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>prometheus-node-exporter
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>prometheus-node-exporter
+</code></pre></div>
+</li>
+<li>
+<p><strong>Grafana Dashboard</strong>
+   </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>grafana
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>grafana-server
+</code></pre></div>
+</li>
+</ol>
+<h3 id="alert-rules">Alert Rules<a class="headerlink" href="#alert-rules" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/prometheus/alerts.yml</span>
+<span class="nt">groups</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdc-validator</span>
+<span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeDown</span>
+<span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up{job="xdc-node"} == 0</span>
+<span class="w">        </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"XDC</span><span class="nv"> </span><span class="s">node</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">down"</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HighCPU</span>
+<span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) &gt; 80</span>
+<span class="w">        </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"High</span><span class="nv"> </span><span class="s">CPU</span><span class="nv"> </span><span class="s">usage</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">validator"</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DiskSpaceLow</span>
+<span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(node_filesystem_avail_bytes / node_filesystem_size_bytes) &lt; 0.1</span>
+<span class="w">        </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Low</span><span class="nv"> </span><span class="s">disk</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">validator"</span>
+</code></pre></div>
+<h3 id="log-management">Log Management<a class="headerlink" href="#log-management" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Loki</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>loki<span class="w"> </span>promtail
+
+<span class="c1"># Configure log collection</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/promtail/config.yml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">http_listen_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9080</span>
+
+<span class="nt">clients</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:3100/loki/api/v1/push</span>
+
+<span class="nt">scrape_configs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdc-logs</span>
+<span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">job</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdc-node</span>
+<span class="w">          </span><span class="nt">__path__</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/log/xdc/*.log</span>
+</code></pre></div>
+<hr>
+<h2 id="backup-and-recovery">Backup and Recovery<a class="headerlink" href="#backup-and-recovery" title="Link to this section">¶</a></h2>
+<h3 id="backup-strategy">Backup Strategy<a class="headerlink" href="#backup-strategy" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Frequency</th>
+<th>Retention</th>
+<th>Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keystore</td>
+<td>Daily</td>
+<td>30 days</td>
+<td>Encrypted offsite</td>
+</tr>
+<tr>
+<td>Chain Data</td>
+<td>Weekly</td>
+<td>4 weeks</td>
+<td>Local + Cloud</td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>On change</td>
+<td>All versions</td>
+<td>Git repository</td>
+</tr>
+<tr>
+<td>Logs</td>
+<td>Continuous</td>
+<td>90 days</td>
+<td>Centralized</td>
+</tr>
+</tbody>
+</table>
+<h3 id="automated-backup-script">Automated Backup Script<a class="headerlink" href="#automated-backup-script" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># /usr/local/bin/xdc-backup.sh</span>
+
+<span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">"/secure/backup"</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%H%M%S<span class="k">)</span>
+
+<span class="c1"># Backup keystore</span>
+tar<span class="w"> </span>-czf<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/keystore-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span><span class="w"> </span>/var/lib/xdc/keystore
+
+<span class="c1"># Backup chain data (stop node first)</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span>xdc
+tar<span class="w"> </span>-czf<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/chaindata-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span><span class="w"> </span>/var/lib/xdc/XDC
+systemctl<span class="w"> </span>start<span class="w"> </span>xdc
+
+<span class="c1"># Backup configuration</span>
+cp<span class="w"> </span>/etc/xdc/config.toml<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/config-</span><span class="nv">$DATE</span><span class="s2">.toml"</span>
+
+<span class="c1"># Encrypt backups</span>
+gpg<span class="w"> </span>--symmetric<span class="w"> </span>--cipher-algo<span class="w"> </span>AES256<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/keystore-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span>
+gpg<span class="w"> </span>--symmetric<span class="w"> </span>--cipher-algo<span class="w"> </span>AES256<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/chaindata-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span>
+
+<span class="c1"># Remove unencrypted files</span>
+rm<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/keystore-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span>
+rm<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">/chaindata-</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span>
+
+<span class="c1"># Upload to secure storage</span>
+rclone<span class="w"> </span>copy<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">"</span><span class="w"> </span>secure-backup:xdc-validator
+
+<span class="c1"># Clean old backups</span>
+find<span class="w"> </span><span class="s2">"</span><span class="nv">$BACKUP_DIR</span><span class="s2">"</span><span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.gpg"</span><span class="w"> </span>-mtime<span class="w"> </span>+30<span class="w"> </span>-delete
+</code></pre></div>
+<h3 id="recovery-procedures">Recovery Procedures<a class="headerlink" href="#recovery-procedures" title="Link to this section">¶</a></h3>
+<ol>
+<li>
+<p><strong>Key Recovery</strong>
+   </p><div class="highlight"><pre><span></span><code><span class="c1"># Restore from backup</span>
+gpg<span class="w"> </span>--decrypt<span class="w"> </span>keystore-20240101_000000.tar.gz.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz<span class="w"> </span>-C<span class="w"> </span>/tmp/
+
+<span class="c1"># Verify key integrity</span>
+xdc<span class="w"> </span>account<span class="w"> </span>list<span class="w"> </span>--datadir<span class="w"> </span>/tmp/xdc
+
+<span class="c1"># Move to production</span>
+sudo<span class="w"> </span>mv<span class="w"> </span>/tmp/xdc/keystore/*<span class="w"> </span>/var/lib/xdc/keystore/
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>xdc-node:xdc-node<span class="w"> </span>/var/lib/xdc/keystore
+</code></pre></div>
+</li>
+<li>
+<p><strong>Chain Data Recovery</strong>
+   </p><div class="highlight"><pre><span></span><code><span class="c1"># Stop node</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>xdc
+
+<span class="c1"># Restore chain data</span>
+gpg<span class="w"> </span>--decrypt<span class="w"> </span>chaindata-20240101_000000.tar.gz.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz<span class="w"> </span>-C<span class="w"> </span>/tmp/
+
+<span class="c1"># Replace data</span>
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/xdc/XDC
+sudo<span class="w"> </span>mv<span class="w"> </span>/tmp/xdc/XDC<span class="w"> </span>/var/lib/xdc/
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>xdc-node:xdc-node<span class="w"> </span>/var/lib/xdc/XDC
+
+<span class="c1"># Restart node</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>xdc
+</code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="security-monitoring">Security Monitoring<a class="headerlink" href="#security-monitoring" title="Link to this section">¶</a></h2>
+<h3 id="intrusion-detection">Intrusion Detection<a class="headerlink" href="#intrusion-detection" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install OSSEC</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ossec-hids
+
+<span class="c1"># Configure</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/var/ossec/etc/ossec.conf
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ossec_config&gt;</span>
+<span class="w">  </span><span class="nt">&lt;global&gt;</span>
+<span class="w">    </span><span class="nt">&lt;email_notification&gt;</span>yes<span class="nt">&lt;/email_notification&gt;</span>
+<span class="w">    </span><span class="nt">&lt;email_to&gt;</span>security@example.com<span class="nt">&lt;/email_to&gt;</span>
+<span class="w">    </span><span class="nt">&lt;smtp_server&gt;</span>localhost<span class="nt">&lt;/smtp_server&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/global&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;syscheck&gt;</span>
+<span class="w">    </span><span class="nt">&lt;directories</span><span class="w"> </span><span class="na">check_all=</span><span class="s">"yes"</span><span class="nt">&gt;</span>/var/lib/xdc/keystore<span class="nt">&lt;/directories&gt;</span>
+<span class="w">    </span><span class="nt">&lt;directories</span><span class="w"> </span><span class="na">check_all=</span><span class="s">"yes"</span><span class="nt">&gt;</span>/etc/xdc<span class="nt">&lt;/directories&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/syscheck&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;localfile&gt;</span>
+<span class="w">    </span><span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+<span class="w">    </span><span class="nt">&lt;location&gt;</span>/var/log/auth.log<span class="nt">&lt;/location&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/ossec_config&gt;</span>
+</code></pre></div>
+<h3 id="anomaly-detection">Anomaly Detection<a class="headerlink" href="#anomaly-detection" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># /usr/local/bin/xdc-anomaly-detector.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">ALERT_WEBHOOK</span> <span class="o">=</span> <span class="s2">"https://hooks.slack.com/services/..."</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_anomalies</span><span class="p">():</span>
+    <span class="c1"># Check for unusual network connections</span>
+    <span class="n">connections</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">net_connections</span><span class="p">()</span>
+    <span class="n">external</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">connections</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">raddr</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">raddr</span><span class="o">.</span><span class="n">ip</span> <span class="o">!=</span> <span class="s1">'127.0.0.1'</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">external</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unusual number of external connections: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">external</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Check CPU usage patterns</span>
+    <span class="n">cpu_percent</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cpu_percent</span> <span class="o">&gt;</span> <span class="mi">95</span><span class="p">:</span>
+        <span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">"High CPU usage: </span><span class="si">{</span><span class="n">cpu_percent</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+
+    <span class="c1"># Check for failed login attempts</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'/var/log/auth.log'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">failed_logins</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span> <span class="k">if</span> <span class="s1">'Failed password'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">failed_logins</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Multiple failed login attempts: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">failed_logins</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">alert</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">ALERT_WEBHOOK</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"text"</span><span class="p">:</span> <span class="n">message</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">check_anomalies</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+<h2 id="incident-response">Incident Response<a class="headerlink" href="#incident-response" title="Link to this section">¶</a></h2>
+<h3 id="response-procedures">Response Procedures<a class="headerlink" href="#response-procedures" title="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Detection Phase</strong></li>
+<li>Identify anomaly type</li>
+<li>Assess severity</li>
+<li>Alert response team</li>
+<li>
+<p>Document initial findings</p>
+</li>
+<li>
+<p><strong>Containment Phase</strong></p>
+</li>
+<li>Isolate affected systems</li>
+<li>Preserve evidence</li>
+<li>Block malicious actors</li>
+<li>
+<p>Maintain service availability</p>
+</li>
+<li>
+<p><strong>Investigation Phase</strong></p>
+</li>
+<li>Analyze logs</li>
+<li>Trace attack vector</li>
+<li>Identify compromised data</li>
+<li>
+<p>Determine impact scope</p>
+</li>
+<li>
+<p><strong>Recovery Phase</strong></p>
+</li>
+<li>Restore from clean backups</li>
+<li>Patch vulnerabilities</li>
+<li>Verify system integrity</li>
+<li>
+<p>Resume operations</p>
+</li>
+<li>
+<p><strong>Post-Incident</strong></p>
+</li>
+<li>Document lessons learned</li>
+<li>Update procedures</li>
+<li>Implement improvements</li>
+<li>Conduct team review</li>
+</ol>
+<h3 id="emergency-contacts">Emergency Contacts<a class="headerlink" href="#emergency-contacts" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Contact</th>
+<th>Response Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security Lead</td>
+<td><a href="mailto:security@example.com">security@example.com</a></td>
+<td>15 minutes</td>
+</tr>
+<tr>
+<td>DevOps</td>
+<td><a href="mailto:devops@example.com">devops@example.com</a></td>
+<td>30 minutes</td>
+</tr>
+<tr>
+<td>XDC Foundation</td>
+<td><a href="mailto:security@xinfin.org">security@xinfin.org</a></td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td>Hosting Provider</td>
+<td>[Provider-specific]</td>
+<td>1 hour</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="xdc-specific-security">XDC-Specific Security<a class="headerlink" href="#xdc-specific-security" title="Link to this section">¶</a></h2>
+<h3 id="consensus-participation">Consensus Participation<a class="headerlink" href="#consensus-participation" title="Link to this section">¶</a></h3>
+<p><strong>Block Signing:</strong>
+- Validator key must be available 24/7
+- Use HSM for key protection
+- Monitor signing performance
+- Alert on missed blocks</p>
+<p><strong>Slashing Protection:</strong>
+- Implement double-sign protection
+- Use redundant signing infrastructure
+- Monitor for conflicting signatures
+- Maintain signing history</p>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Link to this section">¶</a></h3>
+<p><strong>Peer Management:</strong>
+- Maintain trusted peer list
+- Monitor peer behavior
+- Block malicious peers
+- Implement peer scoring</p>
+<p><strong>Message Validation:</strong>
+- Verify all incoming messages
+- Validate block proposals
+- Check transaction signatures
+- Filter invalid transactions</p>
+<hr>
+<h2 id="compliance-and-auditing">Compliance and Auditing<a class="headerlink" href="#compliance-and-auditing" title="Link to this section">¶</a></h2>
+<h3 id="regular-audits">Regular Audits<a class="headerlink" href="#regular-audits" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Audit Type</th>
+<th>Frequency</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security</td>
+<td>Quarterly</td>
+<td>Infrastructure, access controls</td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>Monthly</td>
+<td>Node settings, firewall rules</td>
+</tr>
+<tr>
+<td>Access Review</td>
+<td>Monthly</td>
+<td>User accounts, SSH keys</td>
+</tr>
+<tr>
+<td>Log Review</td>
+<td>Weekly</td>
+<td>Authentication, anomalies</td>
+</tr>
+<tr>
+<td>Penetration Test</td>
+<td>Annually</td>
+<td>External and internal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compliance-standards">Compliance Standards<a class="headerlink" href="#compliance-standards" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>ISO 27001</strong>: Information security management</li>
+<li><strong>SOC 2 Type II</strong>: Operational security controls</li>
+<li><strong>GDPR</strong>: Data protection (if applicable)</li>
+<li><strong>PCI DSS</strong>: Payment card industry (if applicable)</li>
+</ul>
+<hr>
+<h2 id="security-checklist">Security Checklist<a class="headerlink" href="#security-checklist" title="Link to this section">¶</a></h2>
+<h3 id="initial-setup_1">Initial Setup<a class="headerlink" href="#initial-setup_1" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Minimal OS installation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Automatic updates enabled</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Dedicated service user created</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> SSH hardened (key-only, no root)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Firewall configured</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Intrusion detection installed</li>
+</ul>
+<h3 id="node-configuration_1">Node Configuration<a class="headerlink" href="#node-configuration_1" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Latest XDC node version</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Secure configuration applied</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> RPC restricted to localhost</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> WebSocket restricted to localhost</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Proper file permissions set</li>
+</ul>
+<h3 id="key-management_1">Key Management<a class="headerlink" href="#key-management_1" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Validator key generated securely</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Keystore backed up</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Backup encrypted</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Recovery tested</li>
+</ul>
+<h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Prometheus configured</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Grafana dashboards created</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Alert rules defined</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Log aggregation enabled</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Anomaly detection active</li>
+</ul>
+<h3 id="backup">Backup<a class="headerlink" href="#backup" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Automated backup script</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Encrypted backups</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Offsite storage</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Recovery procedures tested</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Regular recovery drills</li>
+</ul>
+<h3 id="incident-response_1">Incident Response<a class="headerlink" href="#incident-response_1" title="Link to this section">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Response team defined</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Contact list updated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Procedures documented</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Tools prepared</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Training completed</li>
+</ul>
+<hr>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Link to this section">¶</a></h2>
+<ul>
+<li><a href="https://docs.xdc.network">XDC Node Setup Guide</a></li>
+<li><a href="https://prometheus.io/docs/">Prometheus Documentation</a></li>
+<li><a href="https://grafana.com/docs/">Grafana Documentation</a></li>
+<li><a href="https://www.ossec.net/docs/">OSSEC Documentation</a></li>
+<li><a href="https://www.cisecurity.org/cis-benchmarks/">Linux Hardening Guide</a></li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../key-management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key Management">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Key Management
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../security-practices/" class="md-footer__link md-footer__link--next" aria-label="Next: Security Practices">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Security Practices
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+<div class="doc-footer">
+    <div class="doc-footer__inner md-grid">
+        <div>
+            <div>Explore</div>
+            <ul>
+                <li><a href="https://xinfin.org/" target="_blank">Official Website</a></li>
+                <li><a href="https://xinfin.org/get-xdc" target="_blank">Get XDC</a></li>
+                <li><a href="https://xinfin.org/wallets" target="_blank">XDC Wallets</a></li>
+                <li><a href="https://xinfin.org/xdc-subnet" target="_blank">XDC Subnet</a></li>
+            </ul>
+        </div>
+        <div>
+        <div>Community</div>
+            <ul>
+                <li><a href="https://xinfin.org/developers-ecosystem-partners" target="_blank">Dev Ecosystem Partners</a></li>
+                <li><a href="https://xinfin.org/join-community" target="_blank">Join Community</a></li>
+                <li><a href="https://xinfin.org/events" target="_blank">Events</a></li>
+                <li><a href="https://xinfin.org/community-bounty" target="_blank">Community Bounty</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Other Links</div>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="https://xinfin.org/join-community" target="_blank">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="doc-copyright">
+    <div class="doc-copyright__inner md-grid">
+        © 2026 XDC Network. All rights reserved.
+    </div>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/js/mathjax.js"></script>
+      
+        <script src="../../assets/js/custom.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

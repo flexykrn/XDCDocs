@@ -205,8 +205,6 @@ nav:
     - Key Management: ./security/key-management.md
     - Validator Security: ./security/validator-security.md
     - Security Practices: ./security/security-practices.md
-    - Incident Response: ./security/incident-response.md
-    - Bug Bounty: ./security/bug-bounty.md
 
   - White Paper: whitepaper.md
     #  - White paper: whitepaper.md       
