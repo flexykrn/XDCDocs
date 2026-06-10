@@ -163,18 +163,6 @@ nav:
     - WebSocket: ./api/#websocket-endpoints
     - Error Codes: ./api/#error-handling
 
-  - Smart Contracts:
-    - Overview: ./smartcontract/index.md
-    - Deployment & Verification: ./smartcontract/deployment-verification.md
-    - Flattening Contracts: ./smartcontract/flattening-smart-contracts.md
-    - Token Standards:
-        - Overview: ./smartcontract/tokens.md
-        - XRC20: ./smartcontract/tokens.md#xrc20
-        - XRC721: ./smartcontract/tokens.md#xrc721
-        - XRC404: ./smartcontract/tokens.md#xrc404
-    - XDC Stats: ./smartcontract/xdcstats.md
-    - Data & Analytics: ./smartcontract/data-analytics.md
-
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
@@ -185,32 +173,31 @@ nav:
       - Solidity 0.8.23 Integration on XDC Mainnet: https://www.xdc.dev/anilchinchawale/stay-ahead-xdc-network-prepares-for-evm-0823-integration-on-xdc-mainnet-upgrade-details-inside-5nj 
       
   - Smart Contract Developments:
-    - Smart Contract Overview: 
+    - Smart Contract Overview:
       - Smart Contract overview: ./smartcontract/index.md
-      - Deployment & Verification: 
+      - Deployment & Verification:
         - Overview: ./smartcontract/deployment-verification.md
         - Remix: ./smartcontract/deployment-verification/#using-remix
-        - Hardhat: ./smartcontract/deployment-verification/#using-hardhat 
-        # - Foundry: ./smartcontract/deployment-verification/#using-foudry
+        - Hardhat: ./smartcontract/deployment-verification/#using-hardhat
         - Brownie: ./smartcontract/deployment-verification/#using-brownie
       - Flattening Smart Contracts:
-                  - Overview: ./smartcontract/flattening-smart-contracts.md
-                  - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
-                  - With Truffle: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-truffle
-                  - With Hardhat: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-hardhat
-
-    - Token Standards: 
-        - Overview: ./smartcontract/tokens.md
-        - XRC20: ./smartcontract/tokens/#xrc20
-        - XRC721: ./smartcontract/tokens/#xrc721
-        - XRC404: ./smartcontract/tokens/#xrc404
-        - XDC Stats: 
-            - XDC Stats Overview: ./smartcontract/xdcstats.md 
-            - Data and analytics:  
-                    - Overview: ./smartcontract/data-analytics.md
-                    - XDCScan Mainnet: ./smartcontract/data-analytics/#xdcscan-mainnet
-                    - XDCScan Testnet (Apothem): ./smartcontract/data-analytics/#xdcscan-testnet-apothem
-                    - XDCScan Devnet: ./smartcontract/data-analytics/#xdcscan-devnet
+        - Overview: ./smartcontract/flattening-smart-contracts.md
+        - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
+        - With Truffle: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-truffle
+        - With Hardhat: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-hardhat
+    - Token Standards:
+      - Overview: ./smartcontract/tokens.md
+      - XRC20: ./smartcontract/tokens/#xrc20
+      - XRC721: ./smartcontract/tokens/#xrc721
+      - XRC404: ./smartcontract/tokens/#xrc404
+    - XDC Stats:
+      - XDC Stats Overview: ./smartcontract/xdcstats.md
+      - Data and analytics:
+        - Overview: ./smartcontract/data-analytics.md
+        - XDCScan Mainnet: ./smartcontract/data-analytics/#xdcscan-mainnet
+        - XDCScan Testnet (Apothem): ./smartcontract/data-analytics/#xdcscan-testnet-apothem
+        - XDCScan Devnet: ./smartcontract/data-analytics/#xdcscan-devnet
+  - Security Practices: ./security/index.md
 
   - White Paper: whitepaper.md
     #  - White paper: whitepaper.md       
