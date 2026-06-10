@@ -163,18 +163,6 @@ nav:
     - WebSocket: ./api/#websocket-endpoints
     - Error Codes: ./api/#error-handling
 
-  - Smart Contracts:
-    - Overview: ./smartcontract/index.md
-    - Deployment & Verification: ./smartcontract/deployment-verification.md
-    - Flattening Contracts: ./smartcontract/flattening-smart-contracts.md
-    - Token Standards:
-        - Overview: ./smartcontract/tokens.md
-        - XRC20: ./smartcontract/tokens.md#xrc20
-        - XRC721: ./smartcontract/tokens.md#xrc721
-        - XRC404: ./smartcontract/tokens.md#xrc404
-    - XDC Stats: ./smartcontract/xdcstats.md
-    - Data & Analytics: ./smartcontract/data-analytics.md
-
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
