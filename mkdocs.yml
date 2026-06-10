@@ -76,6 +76,7 @@ nav:
     - XDPoS 2.0: ./xdcchain/xdpos2.md
     - XDC Ecosystem: https://xinfin.org/ecosystem-dapps
     - Developers:
+        - Developer Onboarding: ./xdcchain/developers/onboarding.md
         - Quick Guide: ./xdcchain/developers/quick-guide.md
         - USDC Quickstart: ./xdcchain/developers/usdc-quickstart.md
         - Dev-Tools: https://xinfin.org/quick-tools-guide
