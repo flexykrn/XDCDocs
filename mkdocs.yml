@@ -198,7 +198,15 @@ nav:
         - XDCScan Mainnet: ./smartcontract/data-analytics/#xdcscan-mainnet
         - XDCScan Testnet (Apothem): ./smartcontract/data-analytics/#xdcscan-testnet-apothem
         - XDCScan Devnet: ./smartcontract/data-analytics/#xdcscan-devnet
-  - Security Practices: ./security/index.md
+  - Security:
+    - Overview: ./security/overview.md
+    - Vulnerability Catalog: ./security/vulnerabilities.md
+    - Audit Preparation: ./security/audit-prep.md
+    - Key Management: ./security/key-management.md
+    - Validator Security: ./security/validator-security.md
+    - Security Practices: ./security/security-practices.md
+    - Incident Response: ./security/incident-response.md
+    - Bug Bounty: ./security/bug-bounty.md
 
   - White Paper: whitepaper.md
     #  - White paper: whitepaper.md       
