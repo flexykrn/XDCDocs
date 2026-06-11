@@ -229,6 +229,12 @@ nav:
     - Validator Security: ./security/validator-security.md
     - Security Practices: ./security/security-practices.md
 
+  - Block Explorers:
+    - Overview: ./explorers/index.md
+
+  - Subgraphs:
+    - Overview: ./subgraphs/index.md
+
   - White Paper: whitepaper.md
     #  - White paper: whitepaper.md       
 
