@@ -147,27 +147,6 @@ Back in Remix, under **Deployed Contracts**, you can interact directly:
 
 ---
 
-## Next Steps
-
-Now that you've deployed your first contract, here's where to go next:
-
-- [**Build a Token with Hardhat** →](../smart-contract-developments/hardhat.md)  
-  Create an ERC-20 token using Hardhat and deploy it to mainnet.
-
-- [**Create an NFT Collection** →](../smart-contract-developments/remix.md)  
-  Mint your own NFTs using XRC-721.
-
-- [**Set up a Local Development Environment** →](../smart-contract-developments/hardhat.md)  
-  Install Hardhat or Foundry for professional development workflows.
-
-- [**Learn JavaScript SDK Integration** →](../sdks/javascript.md)  
-  Build a frontend that interacts with your contract from a React app.
-
-- [**Smart Contract Security Best Practices** →](../security/smart-contracts.md)  
-  Learn how to protect your contracts before deploying to mainnet.
-
----
-
 ## Troubleshooting
 
 | Problem | Solution |
@@ -193,6 +172,21 @@ Now that you've deployed your first contract, here's where to go next:
 - **Faucet:** [faucet.apothem.network](https://faucet.apothem.network)
 - **Block time:** ~2 seconds
 - **Gas model:** Legacy (not EIP-1559 on mainnet; EIP-1559 testnet rollout in progress)
+
+---
+
+## 🚀 Next Steps
+
+Now that you've deployed your first contract, continue your journey:
+
+1. **[Environment Setup →](../../smartcontract/setup.md)** — Set up Hardhat/Foundry locally (⏱️ 15 min)
+2. **[Write Your First Contract →](../../smartcontract/writing.md)** — Learn Solidity basics (⏱️ 20 min)
+3. **[Get Test XDC](https://faucet.apothem.network)** — Fund your wallet for more experiments
+
+Or explore:
+- **[Verify on XDCScan →](../../smartcontract/verify.md)** — Publish your source code for transparency
+- **[Token Standards →](../../smartcontract/tokens.md)** — Build your own XRC20 token
+- **[XDC Faucet](https://faucet.apothem.network)** — Get more test XDC for experiments
 
 ---
 

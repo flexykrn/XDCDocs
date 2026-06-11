@@ -73,3 +73,18 @@ For optimal performance based on your location, you can:
 - Replace `0x` with `xdc` when sharing addresses externally
 
 **Transaction Stuck?** XDC has very low gas fees (0.25 Gwei). If a transaction is pending, ensure you're using at least this gas price.
+
+---
+
+## 🚀 Next Steps
+
+Now that your wallet is configured, start using XDC:
+
+1. **[Quick Start Guide →](./quick-guide.md)** — Deploy your first contract (⏱️ 5 min)
+2. **[Get Test XDC](https://faucet.apothem.network)** — Fund your wallet on Apothem testnet
+3. **[Smart Contract Setup →](../../smartcontract/setup.md)** — Set up your dev environment (⏱️ 15 min)
+
+Or explore:
+- [RPC Endpoints →](./rpc.md) — Connect to the network
+- [Developer Tools](https://xinfin.org/quick-tools-guide) — Official XDC developer resources
+- [XDC Chain Overview →](../index.md) — Learn about the network

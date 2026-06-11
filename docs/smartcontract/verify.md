@@ -120,8 +120,15 @@ Then verify the flattened file as a single file.
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Monitor Contract →](./monitoring.md)
-- [Upgrade Contract →](./upgradeability.md)
-- [Security Best Practices →](../security/security-practices.md)
+Your contract is verified. Continue the journey:
+
+1. **[Monitor Contract →](./monitoring.md)** — Track events and transactions in real time (⏱️ 20 min)
+2. **[Upgrade Contract →](./upgradeability.md)** — Implement proxy patterns for updates (⏱️ 30 min)
+3. **[Contract Security →](../security/security-practices.md)** — Audit checklist before mainnet (⏱️ 20 min)
+
+Or explore:
+- [Flattening Contracts →](./flattening-smart-contracts.md) — Prepare multi-file contracts for verification
+- [Token Standards →](./tokens.md) — Deploy verified XRC20/XRC721 tokens
+- [JavaScript SDK →](../sdks/javascript.md) — Interact with verified contracts

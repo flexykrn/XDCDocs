@@ -296,8 +296,15 @@ contract SecureContract is ReentrancyGuard {
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Test Your Contract →](./testing.md)
-- [Deploy with Hardhat →](./hardhat.md)
-- [Security Best Practices →](../security/security-practices.md)
+Your contract is written and compiled. Keep building:
+
+1. **[Test Your Contract →](./testing.md)** — Write unit tests with Hardhat/Foundry (⏱️ 25 min)
+2. **[Deploy with Hardhat →](./hardhat.md)** — Deploy to XDC Apothem testnet (⏱️ 15 min)
+3. **[Deploy with Foundry →](./foundry.md)** — Alternative Rust-based deployment (⏱️ 15 min)
+
+Or explore:
+- [Token Standards →](./tokens.md) — Build XRC20/XRC721 tokens
+- [Security Best Practices →](../security/security-practices.md) — Essential before mainnet
+- [Contract Verification →](./verify.md) — Publish source code on XDCScan

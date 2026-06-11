@@ -312,8 +312,15 @@ Both should compile without errors.
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Write Your First Contract →](./writing.md)
-- [Deploy with Hardhat →](./hardhat.md)
-- [Deploy with Foundry →](./foundry.md)
+Your environment is ready. Continue your developer journey:
+
+1. **[Write Your First Contract →](./writing.md)** — Learn Solidity with a Counter example (⏱️ 20 min)
+2. **[Test Your Contract →](./testing.md)** — Write unit tests with Hardhat/Foundry (⏱️ 25 min)
+3. **[Deploy with Hardhat →](./hardhat.md)** — Deploy to XDC testnet (⏱️ 15 min)
+
+Or explore:
+- [Smart Contract Overview →](./index.md) — Full developer hub
+- [Security Best Practices →](../security/security-practices.md) — Before mainnet deployment
+- [JavaScript SDK →](../sdks/javascript.md) — Interact with contracts programmatically

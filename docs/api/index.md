@@ -173,8 +173,15 @@ For high-volume applications:
 | Go | go-ethereum | Native support |
 | Rust | ethers-rs | `cargo add ethers` |
 
-## Next Steps
+## 🚀 Next Steps
 
-- [JSON-RPC Reference](json-rpc.md) - Complete method documentation
-- [WebSocket API](./#websocket-endpoints) - Real-time subscriptions
-- [Error Codes](./#error-handling) - Error handling guide
+You're ready to interact with XDC via API. Continue:
+
+1. **[JSON-RPC Reference →](json-rpc.md)** — Complete method documentation with examples (⏱️ 20 min)
+2. **[JavaScript SDK →](../sdks/javascript.md)** — Higher-level library for dApp development (⏱️ 15 min)
+3. **[Smart Contract Monitoring →](../smartcontract/monitoring.md)** — Track events programmatically (⏱️ 20 min)
+
+Or explore:
+- [WebSocket Endpoints →](./#websocket-endpoints) — Real-time event subscriptions
+- [Error Handling →](./#error-handling) — Common errors and fixes
+- [Wallet Configuration →](../xdcchain/developers/wallet-configuration.md) — Connect wallets to your dApp

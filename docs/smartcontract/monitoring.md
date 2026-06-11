@@ -200,8 +200,15 @@ alertOnLargeIncrement();
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Upgrade Contract →](./upgradeability.md)
-- [Security Best Practices →](../security/security-practices.md)
-- [JavaScript SDK →](../sdks/javascript.md)
+You're monitoring your contract. Level up:
+
+1. **[Upgrade Contract →](./upgradeability.md)** — Implement proxy patterns for updates (⏱️ 30 min)
+2. **[Security Best Practices →](../security/security-practices.md)** — Audit checklist before mainnet (⏱️ 20 min)
+3. **[JavaScript SDK →](../sdks/javascript.md)** — Build a frontend for your contract (⏱️ 25 min)
+
+Or explore:
+- [Token Standards →](./tokens.md) — Deploy and monitor XRC20/XRC721 tokens
+- [Data Analytics →](./data-analytics.md) — Analyze on-chain metrics
+- [API Reference →](../api/index.md) — Full RPC method documentation

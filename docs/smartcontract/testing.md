@@ -327,8 +327,15 @@ counter.reset();  // Should fail
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Deploy with Hardhat →](./hardhat.md)
-- [Deploy with Foundry →](./foundry.md)
-- [Security Best Practices →](../security/security-practices.md)
+Your contracts are tested and ready. Move to deployment:
+
+1. **[Deploy with Hardhat →](./hardhat.md)** — Deploy to XDC testnet (⏱️ 15 min)
+2. **[Deploy with Foundry →](./foundry.md)** — Alternative deployment workflow (⏱️ 15 min)
+3. **[Verify on XDCScan →](./verify.md)** — Publish source code for transparency (⏱️ 5 min)
+
+Or explore:
+- [Deployment Overview →](./deploy.md) — Compare deployment methods
+- [Contract Monitoring →](./monitoring.md)** — Track events and transactions
+- [Security Best Practices →](../security/security-practices.md) — Pre-mainnet checklist

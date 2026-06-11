@@ -320,8 +320,15 @@ forge verify-contract 0xYOUR_MAINNET_CONTRACT_ADDRESS src/Counter.sol:Counter --
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Verify with Hardhat](./hardhat.md) — learn the JavaScript-based alternative to Foundry
-- [XRC20 Token Guide](./tokens.md) — deploy a fungible token with OpenZeppelin
-- [Security Best Practices](../security/security-practices.md) — audit checklist before mainnet
+You've deployed with Foundry. Keep building:
+
+1. **[Verify on XDCScan →](./verify.md)** — Publish source code automatically (⏱️ 5 min)
+2. **[Contract Monitoring →](./monitoring.md)** — Track events and transactions (⏱️ 20 min)
+3. **[Token Standards →](./tokens.md)** — Deploy an XRC20 token with OpenZeppelin (⏱️ 20 min)
+
+Or explore:
+- [Hardhat Alternative →](./hardhat.md) — JavaScript-based toolkit comparison
+- [Upgradeability →](./upgradeability.md) — Proxy patterns for upgradable contracts
+- [Security Best Practices →](../security/security-practices.md) — Pre-mainnet checklist

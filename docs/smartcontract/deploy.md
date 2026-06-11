@@ -182,8 +182,15 @@ Before deploying to mainnet:
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Verify on XDCScan →](./verify.md)
-- [Monitor Contract →](./monitoring.md)
-- [Security Best Practices →](../security/security-practices.md)
+Your contract is deployed. Complete the lifecycle:
+
+1. **[Verify on XDCScan →](./verify.md)** — Publish source code for transparency (⏱️ 5 min)
+2. **[Monitor Contract →](./monitoring.md)** — Track events and transactions (⏱️ 20 min)
+3. **[Contract Upgradeability →](./upgradeability.md)** — Plan for future updates (⏱️ 30 min)
+
+Or explore:
+- [Token Standards →](./tokens.md) — Deploy XRC20/XRC721 tokens
+- [Security Best Practices →](../security/security-practices.md) — Essential audit checklist
+- [Flattening Contracts →](./flattening-smart-contracts.md) — Prepare for verification

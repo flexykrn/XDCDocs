@@ -334,8 +334,19 @@ npx hardhat verify --network xdc 0xYOUR_MAINNET_CONTRACT_ADDRESS
 
 ---
 
-## Next Steps
+## 🚀 Next Steps
 
-- [Verify with Foundry](./foundry.md) — learn the Rust-based alternative to Hardhat
-- [XRC20 Token Guide](./tokens.md) — deploy a fungible token with OpenZeppelin
-- [Security Best Practices](../security/security-practices.md) — audit checklist before mainnet
+You've deployed with Hardhat. Expand your skills:
+
+1. **[Verify on XDCScan →](./verify.md)** — Publish source code automatically (⏱️ 5 min)
+2. **[Contract Monitoring →](./monitoring.md)** — Track events and transactions (⏱️ 20 min)
+3. **[Token Standards →](./tokens.md)** — Deploy an XRC20 token with OpenZeppelin (⏱️ 20 min)
+
+Or explore:
+- [Foundry Alternative →](./foundry.md) — Rust-based toolkit comparison
+- [Upgradeability →](./upgradeability.md) — Proxy patterns for upgradable contracts
+- [Security Best Practices →](../security/security-practices.md) — Pre-mainnet checklist
+
+---
+
+
