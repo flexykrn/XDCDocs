@@ -112,6 +112,14 @@ nav:
         - Docker Image: ./xdcchain/developers/node_operators/dockerimg.md
         - Slashing: ./xdcchain/developers/node_operators/slashing.md  
 
+    - DevOps:
+        - Kubernetes Deployment: ./devops/kubernetes/index.md
+        - Helm Charts: ./devops/helm/index.md
+        - Backup and Recovery: ./devops/backup/index.md
+        - Incident Response: ./devops/runbooks/index.md
+        - Infrastructure as Code: ./devops/iac/index.md
+        - Monitoring and Observability: ./devops/monitoring/index.md
+
     - Governance:
         - Overview of XDCDAO: ./xdcchain/governance/overview.md
         - User Guide: https://www.xdc.dev/0xbeny/xdcdao-understanding-the-proposal-window-39f8
