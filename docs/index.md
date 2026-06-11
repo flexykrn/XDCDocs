@@ -85,7 +85,28 @@ The XDC protocol serves as a messaging and confirmation layer for global payment
 
     As the demand for Artificial Intelligence (AI) grows, XDC Network is paving the way for integrating AI with blockchain technology, providing a robust platform for innovative AI-driven applications.
 
-## **Quick Start**
+## **Quick Start: Choose Your Path**
+
+<div class="section-body">
+    <a href="./smartcontract/" class="grid-item">
+        <div>🛠️ Developers</div>
+        <p>Build smart contracts, deploy dApps, and integrate with XDC. Tools, SDKs, and guides for builders.</p>
+    </a>
+    <a href="./xdcchain/developers/node_operators/masternode/" class="grid-item">
+        <div>⚡ Validators</div>
+        <p>Run a masternode, stake XDC, and secure the network. Setup guides and monitoring tools.</p>
+    </a>
+    <a href="./enterprise/" class="grid-item">
+        <div>🏢 Enterprise</div>
+        <p>Trade finance, RWA tokenization, ISO 20022, and private subnets for institutions.</p>
+    </a>
+    <a href="./learn/" class="grid-item">
+        <div>👤 Users</div>
+        <p>Learn the basics, set up a wallet, explore DeFi, and start using XDC.</p>
+    </a>
+</div>
+
+## **Popular Links**
 
 <div class="section-body">
     <a href="./xdcchain" class="grid-item">
