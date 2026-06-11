@@ -189,9 +189,10 @@ nav:
     - Monitoring: ./smartcontract/monitoring.md
     - Upgradeability: ./smartcontract/upgradeability.md
     - Token Standards:
-      - Overview: ./smartcontract/tokens.md
-      - XRC20: ./smartcontract/tokens/#xrc20
-      - XRC721: ./smartcontract/tokens/#xrc721
+      - Overview: ./smartcontract/tokens/index.md
+      - XRC20: ./smartcontract/tokens/xrc20.md
+      - XRC721: ./smartcontract/tokens/xrc721.md
+      - XRC1155: ./smartcontract/tokens/xrc1155.md
       - XRC404: ./smartcontract/tokens/#xrc404
     - Flattening Smart Contracts:
       - Overview: ./smartcontract/flattening-smart-contracts.md
