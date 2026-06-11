@@ -77,6 +77,20 @@ For enterprise inquiries and dedicated support:
 | GDPR | ✅ Compliant | Data protection ready |
 | SOC 2 | 🔄 In Progress | Security compliance |
 
+## Enterprise Support Tiers
+
+| Feature | Starter | Professional | Enterprise |
+|---------|---------|--------------|------------|
+| **Response Time** | 48 hours | 24 hours | 4 hours |
+| **Support Channels** | Email | Email + Chat | Dedicated Slack |
+| **Technical Account Manager** | ❌ | ❌ | ✅ |
+| **Custom Development** | ❌ | Limited | ✅ |
+| **SLA Uptime** | 99.5% | 99.9% | 99.99% |
+| **Training Sessions** | ❌ | 2/year | Unlimited |
+| **Price** | Free | $2,000/mo | Custom |
+
+Contact **enterprise@xdc.org** to discuss your requirements.
+
 ---
 
 ## Related Topics

@@ -158,6 +158,8 @@ nav:
     - RWA Tokenization: ./enterprise/rwa-tokenization.md
     - ISO 20022 Integration: ./enterprise/iso-20022.md
     - Private Subnets: ./enterprise/private-subnets.md
+    - Compliance: ./enterprise/compliance.md
+    - Integration Patterns: ./enterprise/integration-patterns.md
 
   # NEW: API Reference Section
   - API Reference:
