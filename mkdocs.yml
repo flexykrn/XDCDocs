@@ -201,6 +201,7 @@ nav:
     - Verification: ./smartcontract/verify.md
     - Monitoring: ./smartcontract/monitoring.md
     - Upgradeability: ./smartcontract/upgradeability.md
+    - Gas Optimization: ./smartcontract/gas-optimization.md
     - Account Abstraction: ./smartcontract/account-abstraction.md
     - Token Standards:
       - Overview: ./smartcontract/tokens/index.md
@@ -222,6 +223,7 @@ nav:
         - XDCScan Devnet: ./smartcontract/data-analytics/#xdcscan-devnet
   - Security:
     - Overview: ./security/overview.md
+    - MEV Protection: ./security/mev-protection.md
     - Vulnerability Catalog: ./security/vulnerabilities.md
     - Audit Preparation: ./security/audit-prep.md
     - Key Management: ./security/key-management.md
