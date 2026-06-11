@@ -8,9 +8,11 @@ XDC Network provides multiple APIs for developers to interact with the blockchai
 
 | API Type | Use Case | Documentation |
 |----------|----------|---------------|
-| **JSON-RPC** | Standard blockchain queries | [JSON-RPC Reference](json-rpc.md) |
-| **WebSocket** | Real-time subscriptions | [WebSocket API](./#websocket-endpoints) |
+| **JSON-RPC** | Standard blockchain queries | [JSON-RPC Reference](json-rpc.md) — 45+ methods with examples |
+| **WebSocket** | Real-time subscriptions | [WebSocket API](json-rpc.md#websocket-subscriptions-eth_subscribe) |
 | **GraphQL** | Complex queries (via indexers) | Coming Soon |
+
+The JSON-RPC API is fully compatible with Ethereum's JSON-RPC specification. XDC-specific differences are noted where applicable.
 
 ## Quick Start
 
@@ -147,6 +149,8 @@ Common error codes and their meanings:
 | -32602 | Invalid params | Invalid parameters |
 | -32603 | Internal error | Server error |
 | -32000 | Server error | Generic server error |
+
+For the complete error reference including all Ethereum-specific errors, example responses, and troubleshooting, see [Error Codes →](json-rpc.md#error-codes).
 
 ## Rate Limiting
 
