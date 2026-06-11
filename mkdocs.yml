@@ -81,6 +81,7 @@ nav:
         - USDC Quickstart: ./xdcchain/developers/usdc-quickstart.md
         - Dev-Tools: https://xinfin.org/quick-tools-guide
         - JavaScript SDK: ./sdks/javascript.md
+        - xdc3.js SDK: ./sdks/xdc3js.md
         - RPC Endpoints:
             - RPC: ./xdcchain/developers/rpc.md/
             - Mainnet RPC: ./xdcchain/developers/mainnetrpc.md
@@ -176,7 +177,6 @@ nav:
     - Overview: ./api/index.md
     - JSON-RPC: ./api/json-rpc.md
     - WebSocket: ./api/websocket.md
-    - xdc3.js: ./api/xdc3js.md
     - Error Codes: ./api/#error-handling
 
   - Announcements:
