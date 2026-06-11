@@ -311,16 +311,16 @@ forge build
 
 Choose your path:
 
-**[Deploy Your First Contract →](./quick-guide.md)**
+**[Deploy Your First Contract →](./quick-guide.md)]**
 Browser-only, 5 minutes, no setup required.
 
-**[Smart Contract Lifecycle →](../../smartcontract/index.md)**
+**[Smart Contract Lifecycle →](../../smartcontract/index.md)]**
 Complete guide: setup → write → test → deploy → verify → monitor → upgrade.
 
-**[JavaScript SDK →](../../sdks/javascript.md)**
+**[JavaScript SDK →](../../sdks/javascript.md)]**
 Build a frontend that interacts with your contract.
 
-**[Security Best Practices →](../../security/security-practices.md)**
+**[Security Best Practices →](../../security/security-practices.md)]**
 Learn to protect your contracts before mainnet deployment.
 
 ---
@@ -337,4 +337,15 @@ Learn to protect your contracts before mainnet deployment.
 
 ---
 
-*Ready to build? Start with the [5-Minute Quickstart →](./quick-guide.md)*
+## Related Topics
+
+- **[Quick Start Guide →](./quick-guide.md)** — Deploy your first contract in 5 minutes
+- **[Environment Setup →](../../smartcontract/setup.md)** — Configure Hardhat/Foundry
+- **[Wallet Configuration →](./wallet-configuration.md)** — Set up MetaMask or Trust Wallet
+- **[RPC Endpoints →](./rpc.md)** — Connect to XDC networks
+- **[XDC Chain Overview →](../index.md)** — Understand the network
+- **[Smart Contract Hub →](../../smartcontract/index.md)** — Full developer documentation
+
+---
+
+*Ready to build? Start with the [5-Minute Quickstart →](./quick-guide.md)]*

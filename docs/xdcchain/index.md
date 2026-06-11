@@ -60,3 +60,14 @@ title: XDC Chain
         <p>Interacting with XDC requires sending requests through a specific RPC.</p>
     </a>
 </div>
+
+---
+
+## Related Topics
+
+- **[XDPoS Consensus →](./xdpos.md)** — How XDC achieves consensus
+- **[Developer Onboarding →](./developers/onboarding.md)** — Start building on XDC
+- **[Quick Start Guide →](./developers/quick-guide.md)** — Deploy your first contract in 5 minutes
+- **[Wallet Configuration →](./developers/wallet-configuration.md)** — Set up MetaMask or Trust Wallet
+- **[Smart Contract Hub →](../smartcontract/index.md)** — Full developer documentation
+- **[Enterprise Solutions →](../enterprise/index.md)** — Trade finance and RWA tokenization

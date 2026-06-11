@@ -100,5 +100,15 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
 
 ---
 
+## Related Topics
+
+- **[XDC Architecture →](./xdc-architecture.md)** — Technical overview of the network
+- **[Gas & Fees →](./gas-fees.md)** — Understand transaction costs
+- **[Glossary →](./glossary.md)** — Key blockchain terminology
+- **[Quick Start Guide →](../xdcchain/developers/quick-guide.md)** — Deploy your first contract
+- **[Wallet Configuration →](../xdcchain/developers/wallet-configuration.md)** — Set up your wallet
+
+---
+
 !!! tip "Stuck?"
     Can't find what you're looking for? Ask in our [Discord](https://discord.gg/xdc) or  [XDC Forum](https://XDC.dev).

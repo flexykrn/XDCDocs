@@ -138,4 +138,14 @@ Before deploying to mainnet, review:
 
 ---
 
+## Related Topics
+
+- **[Security Best Practices →](../security/security-practices.md)** — Comprehensive smart contract security guide
+- **[API Reference →](../api/index.md)** — Interact with contracts programmatically
+- **[Token Standards →](./tokens.md)** — XRC20, XRC721, and XRC404 guides
+- **[JavaScript SDK →](../sdks/javascript.md)** — Build frontends for your dApps
+- **[XDC Chain Overview →](../xdcchain/index.md)** — Understand the XDC Network
+
+---
+
 **Next Step:** [Environment Setup →](./setup.md)

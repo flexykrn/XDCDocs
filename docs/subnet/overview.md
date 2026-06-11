@@ -2,7 +2,9 @@
 title: XDC Subnet 
 ---
 
-# XDC Subnet 
+# XDC Subnet
+
+XDC Subnet is a powerful scaling solution that enables organizations to create dedicated blockchain networks with custom parameters while maintaining connectivity to the XDC mainnet.
 
 ![xdc-subnet-ui](./img/xdc-subnet-ui.png)
 
@@ -49,3 +51,14 @@ The architecture consists of the following key components owned by the customer:
         <p>Start your own Subnet with our intuitive and easy to use Deployment Wizard</p>
     </a>
 </div>
+
+---
+
+## Related Topics
+
+- **[Launch a Subnet →](../install_guide/launch_subnet.md)** — Deploy your first subnet
+- **[Subnet Components →](../components/subnet_chain.md)** — Architecture and design
+- **[XDCZero →](../components/xdc_zero.md)** — Cross-chain communication
+- **[Subswap →](../components/subswap.md)** — Asset bridging between chains
+- **[Common Issues →](../install_guide/common_issues.md)** — Troubleshooting guide
+- **[XDC Chain Overview →](../../xdcchain/index.md)** — Understand the main network
