@@ -165,7 +165,8 @@ nav:
   - API Reference:
     - Overview: ./api/index.md
     - JSON-RPC: ./api/json-rpc.md
-    - WebSocket: ./api/#websocket-endpoints
+    - WebSocket: ./api/websocket.md
+    - xdc3.js: ./api/xdc3js.md
     - Error Codes: ./api/#error-handling
 
   - Announcements:
