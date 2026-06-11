@@ -191,6 +191,7 @@ nav:
     - Verification: ./smartcontract/verify.md
     - Monitoring: ./smartcontract/monitoring.md
     - Upgradeability: ./smartcontract/upgradeability.md
+    - Account Abstraction: ./smartcontract/account-abstraction.md
     - Token Standards:
       - Overview: ./smartcontract/tokens/index.md
       - XRC20: ./smartcontract/tokens/xrc20.md
