@@ -124,6 +124,8 @@ nav:
         - Overview of XDCDAO: ./xdcchain/governance/overview.md
         - User Guide: https://www.xdc.dev/0xbeny/xdcdao-understanding-the-proposal-window-39f8
 
+    - DAO: ./dao/index.md
+
     - FAQ: 
         - FAQs: ./xdcchain/faq.md  
 
