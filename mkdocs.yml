@@ -214,6 +214,7 @@ nav:
     - Vulnerability Catalog: ./security/vulnerabilities.md
     - Audit Preparation: ./security/audit-prep.md
     - Key Management: ./security/key-management.md
+    - Multisig Wallets: ./security/multisig.md
     - Validator Security: ./security/validator-security.md
     - Security Practices: ./security/security-practices.md
 
