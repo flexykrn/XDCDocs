@@ -91,6 +91,22 @@ nav:
         - Migrating from EVM to XDC: ./xdcchain/evmtoxdc.md
         - Wallet Configuration: ./xdcchain/developers/wallet-configuration.md
         - IPFS Integration: ./storage/ipfs.md
+        - Block Explorers:
+          - Overview: ./explorers/index.md
+          - Basic Usage: ./explorers/basic-usage.md
+          - Contract Verification: ./explorers/contract-verification.md
+          - API Documentation: ./explorers/api.md
+          - Advanced Features: ./explorers/advanced-features.md
+          - Best Practices: ./explorers/best-practices.md
+        - Subgraphs:
+          - Overview: ./subgraphs/index.md
+          - Concepts: ./subgraphs/concepts.md
+          - Development: ./subgraphs/development.md
+          - Deployment: ./subgraphs/deployment.md
+          - Querying: ./subgraphs/querying.md
+          - Examples: ./subgraphs/examples.md
+          - Performance: ./subgraphs/performance.md
+          - Best Practices: ./subgraphs/best-practices.md
         - Get XDC Listed: ./xdcchain/developers/getxdclisted.md
         - XDC2.0 Private Network: ./xdcchain/developers/xdposchain_privatenet.md
     
@@ -258,12 +274,6 @@ nav:
     - Multisig Wallets: ./security/multisig.md
     - Validator Security: ./security/validator-security.md
     - Security Practices: ./security/security-practices.md
-
-  - Block Explorers:
-    - Overview: ./explorers/index.md
-
-  - Subgraphs:
-    - Overview: ./subgraphs/index.md
 
   - White Paper: whitepaper.md
     #  - White paper: whitepaper.md       
