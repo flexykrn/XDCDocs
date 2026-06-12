@@ -216,8 +216,13 @@ nav:
       - Token Gating: ./smartcontract/token-gating.md
       - Soulbound Tokens: ./smartcontract/sbt.md
     - DeFi:
-      - Overview: ./defi/defi.md
-    - Flattening Smart Contracts:
+      - Overview: ./defi/index.md
+      - DEX Integration: ./defi/dex.md
+      - Lending Protocols: ./defi/lending.md
+      - Yield Farming: ./defi/yield-farming.md
+      - Flash Loans: ./defi/flash-loans.md
+      - Security: ./defi/security.md
+    - Oracles:
       - Overview: ./smartcontract/flattening-smart-contracts.md
       - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
       - With Truffle: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-truffle
