@@ -1,3 +1,13 @@
+---
+title: XDC Block Explorer Guide
+related_pages:
+  - ./explorers/basic-usage.md
+  - ./explorers/contract-verification.md
+  - ./explorers/api.md
+  - ./explorers/advanced-features.md
+  - ./explorers/best-practices.md
+---
+
 # XDC Block Explorer Guide
 
 XDC block explorers provide transparent access to blockchain data, enabling users to verify transactions, inspect smart contracts, track tokens, and analyze network activity. This guide covers both **XDCScan** (mainnet explorer) and **Apothem Explorer** (testnet explorer), providing comprehensive documentation for developers, validators, and everyday users.

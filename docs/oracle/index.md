@@ -1,6 +1,13 @@
 ---
 title: Oracle Integration Guide — Overview
-description: Overview of oracle integration on XDC — why oracles are needed, types, and best practices.
+description: Overview of oracle integration on XDC — Chainlink, Band, API3, Pyth, and custom oracles.
+related_pages:
+  - ./oracle/price-feeds.md
+  - ./oracle/vrf.md
+  - ./oracle/automation.md
+  - ./oracle/cross-chain.md
+  - ./oracle/custom-oracles.md
+  - ./oracle/best-practices.md
 ---
 
 # Oracle Integration Guide — Overview

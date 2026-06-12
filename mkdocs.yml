@@ -338,6 +338,7 @@ plugins:
       
 
 extra_css:
+  - stylesheets/extra.css
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
   - assets/style/index.css
   - assets/style/components/banner.css
@@ -349,6 +350,7 @@ extra_css:
   - https://unpkg.com/katex@0.16.10/dist/katex.min.css
 
 extra_javascript:
+  - javascripts/extra.js
   - assets/js/mathjax.js
   - assets/js/custom.js
   - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js

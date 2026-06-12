@@ -1,6 +1,12 @@
 ---
 title: DeFi Integration Guide — Overview
 description: Overview of DeFi on XDC — DEX, lending, yield farming, and development patterns.
+related_pages:
+  - ./defi/dex.md
+  - ./defi/lending.md
+  - ./defi/yield-farming.md
+  - ./defi/flash-loans.md
+  - ./defi/security.md
 ---
 
 # DeFi Integration Guide — Overview

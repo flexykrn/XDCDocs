@@ -1,6 +1,12 @@
 ---
 title: Flash Loans — Overview
 description: Flash loan overview for XDC — concepts, use cases, risks, and XDC-specific considerations.
+related_pages:
+  - ./flash-loans/aave-integration.md
+  - ./flash-loans/arbitrage-bots.md
+  - ./flash-loans/liquidation.md
+  - ./flash-loans/collateral-swaps.md
+  - ./flash-loans/security.md
 ---
 
 # Flash Loans — Overview

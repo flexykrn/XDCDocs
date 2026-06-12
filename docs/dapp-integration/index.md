@@ -1,6 +1,12 @@
 ---
 title: dApp Integration Guide — Mobile, Frontend, and Wallet Adapters on XDC
 description: Complete dApp integration guide for XDC — mobile wallets (iOS/Android), frontend frameworks (React/Vue/Angular), and wallet adapters.
+related_pages:
+  - ./dapp-integration/mobile/index.md
+  - ./dapp-integration/frontend/index.md
+  - ./dapp-integration/wallet-adapters/index.md
+  - ./defi/index.md
+  - ./oracle/index.md
 ---
 
 # dApp Integration Guide
