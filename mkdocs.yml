@@ -253,6 +253,11 @@ nav:
       - Cross-Chain: ./oracle/cross-chain.md
       - Custom Oracles: ./oracle/custom-oracles.md
       - Best Practices: ./oracle/best-practices.md
+    - dApp Integration:
+      - Overview: ./dapp-integration/index.md
+      - Mobile Wallets: ./dapp-integration/mobile/index.md
+      - Frontend Frameworks: ./dapp-integration/frontend/index.md
+      - Wallet Adapters: ./dapp-integration/wallet-adapters/index.md
     - Flattening Smart Contracts:
       - Overview: ./smartcontract/flattening-smart-contracts.md
       - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
