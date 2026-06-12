@@ -215,6 +215,8 @@ nav:
       - NFT Tutorial: ./smartcontract/nft.md
       - Token Gating: ./smartcontract/token-gating.md
       - Soulbound Tokens: ./smartcontract/sbt.md
+    - DeFi:
+      - Overview: ./defi/defi.md
     - Flattening Smart Contracts:
       - Overview: ./smartcontract/flattening-smart-contracts.md
       - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
