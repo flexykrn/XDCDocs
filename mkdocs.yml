@@ -222,6 +222,13 @@ nav:
       - Yield Farming: ./defi/yield-farming.md
       - Flash Loans: ./defi/flash-loans.md
       - Security: ./defi/security.md
+    - Flash Loans:
+      - Overview: ./flash-loans/index.md
+      - Aave Integration: ./flash-loans/aave-integration.md
+      - Arbitrage Bots: ./flash-loans/arbitrage-bots.md
+      - Liquidation Strategies: ./flash-loans/liquidation.md
+      - Collateral Swaps: ./flash-loans/collateral-swaps.md
+      - Security: ./flash-loans/security.md
     - Oracles:
       - Overview: ./oracle/index.md
       - Price Feeds: ./oracle/price-feeds.md
