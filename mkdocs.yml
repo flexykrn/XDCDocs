@@ -193,6 +193,7 @@ nav:
     - Environment Setup: ./smartcontract/setup.md
     - Writing Contracts: ./smartcontract/writing.md
     - Testing: ./smartcontract/testing.md
+    - Debugging: ./smartcontract/debugging.md
     - Deployment:
       - Overview: ./smartcontract/deploy.md
       - Remix: ./smartcontract/remix.md
