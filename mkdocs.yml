@@ -198,6 +198,7 @@ nav:
       - Remix: ./smartcontract/remix.md
       - Hardhat: ./smartcontract/hardhat.md
       - Foundry: ./smartcontract/foundry.md
+      - CI/CD Pipelines: ./devops/ci-cd.md
     - Verification: ./smartcontract/verify.md
     - Monitoring: ./smartcontract/monitoring.md
     - Upgradeability: ./smartcontract/upgradeability.md
