@@ -217,6 +217,14 @@ nav:
       - Soulbound Tokens: ./smartcontract/sbt.md
     - DeFi:
       - Overview: ./defi/defi.md
+    - Oracles:
+      - Overview: ./oracle/index.md
+      - Price Feeds: ./oracle/price-feeds.md
+      - VRF: ./oracle/vrf.md
+      - Automation: ./oracle/automation.md
+      - Cross-Chain: ./oracle/cross-chain.md
+      - Custom Oracles: ./oracle/custom-oracles.md
+      - Best Practices: ./oracle/best-practices.md
     - Flattening Smart Contracts:
       - Overview: ./smartcontract/flattening-smart-contracts.md
       - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
