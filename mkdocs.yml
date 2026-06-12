@@ -90,6 +90,7 @@ nav:
         - Faucet: https://faucet.apothem.network/
         - Migrating from EVM to XDC: ./xdcchain/evmtoxdc.md
         - Wallet Configuration: ./xdcchain/developers/wallet-configuration.md
+        - IPFS Integration: ./storage/ipfs.md
         - Get XDC Listed: ./xdcchain/developers/getxdclisted.md
         - XDC2.0 Private Network: ./xdcchain/developers/xdposchain_privatenet.md
     
@@ -211,6 +212,9 @@ nav:
       - XRC721: ./smartcontract/tokens/xrc721.md
       - XRC1155: ./smartcontract/tokens/xrc1155.md
       - XRC404: ./smartcontract/tokens/#xrc404
+      - NFT Tutorial: ./smartcontract/nft.md
+      - Token Gating: ./smartcontract/token-gating.md
+      - Soulbound Tokens: ./smartcontract/sbt.md
     - Flattening Smart Contracts:
       - Overview: ./smartcontract/flattening-smart-contracts.md
       - With Remix: ./smartcontract/flattening-smart-contracts/#flattening-smart-contracts-with-remix
