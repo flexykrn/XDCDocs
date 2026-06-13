@@ -1,4 +1,6 @@
+
 mkdocs
 mkdocs-material
 mkdocs-git-revision-date-localized-plugin
 pymdown-extensions
+mkdocs-redirects
