@@ -324,11 +324,10 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.extra
 
-- robots.txt
+
 
 plugins:
   - search
- #- mkdocs-video
   - redirects:
       redirect_maps:
         'docs.md': 'xdcchain/index.md'
