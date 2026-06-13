@@ -1,0 +1,53 @@
+.networkSelector {
+  perspective: 1000px;
+  margin: 1rem 0;
+}
+
+.cardInner {
+  display: flex;
+  gap: 0.5rem;
+  transform-style: preserve-3d;
+}
+
+.networkButton {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.networkButton:hover {
+  transform: translateY(-2px) translateZ(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.networkButton.active {
+  border-color: var(--net-color);
+  box-shadow: 0 0 20px var(--net-color), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  transform: translateZ(20px);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.chainId {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-family: var(--ifm-font-family-monospace);
+}

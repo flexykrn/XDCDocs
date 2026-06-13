@@ -130,3 +130,35 @@ dist
 .pnp.*
 site/
 /site
+
+# Hermes agent plans and local files
+.hermes/
+*.plan.md
+
+# Docusaurus build output
+website/build/
+website/.docusaurus/
+website/.cache-loader
+
+# Node modules (if at root)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+tmp/
+
+# Local environment
+.env.local
+.env.*.local

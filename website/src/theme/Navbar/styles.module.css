@@ -1,0 +1,299 @@
+.topNavbar {
+  background: var(--ifm-navbar-background-color);
+  padding: 0 1.5rem;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.topNavbarInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ifm-navbar-link-color);
+}
+
+.logoImg {
+  height: 42px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aiButton {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--ifm-navbar-link-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.aiButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  opacity: 1;
+  color: var(--ifm-color-primary);
+}
+
+.aiButton:active {
+  transform: scale(0.95);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-navbar-link-color);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.searchBox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.searchBox:hover::before {
+  opacity: 1;
+}
+
+.searchBox:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 
+    0 4px 16px rgba(37, 99, 235, 0.1),
+    0 0 0 1px rgba(37, 99, 235, 0.05);
+  transform: translateY(-2px);
+}
+
+.searchBox:active {
+  transform: translateY(0);
+}
+
+.searchBox span {
+  opacity: 0.5;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.searchBox:hover span {
+  opacity: 0.8;
+}
+
+.themeToggle {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--ifm-navbar-link-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  opacity: 0.7;
+}
+
+.themeToggle:hover {
+  opacity: 1;
+  transform: scale(1.15) rotate(15deg);
+  color: var(--ifm-color-primary);
+}
+
+.themeToggle:active {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* Secondary Navbar - seamlessly connected */
+.secondaryNavbar {
+  background: var(--ifm-navbar-background-color);
+  padding: 0 1.5rem;
+  height: 44px;
+  position: sticky;
+  top: 56px;
+  z-index: 199;
+}
+
+.secondaryNavbarInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.navLink {
+  color: var(--ifm-navbar-link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.navLink:hover {
+  color: var(--ifm-color-primary);
+  opacity: 1;
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.navLinkActive {
+  color: var(--ifm-color-primary);
+  opacity: 1;
+  background: rgba(37, 99, 235, 0.12);
+  font-weight: 600;
+}
+
+/* Search shortcut badge */
+.searchShortcut {
+  margin-left: auto;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.7rem;
+  font-family: var(--ifm-font-family-monospace);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Search Modal */
+.searchModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.searchModalContent {
+  background: var(--ifm-background-color);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.searchResults {
+  padding: 1.5rem;
+  min-height: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.searchInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.searchInputWrapper svg {
+  color: var(--ifm-color-emphasis-500);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  outline: none;
+  padding: 0.25rem 0;
+}
+
+.searchInput::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.searchEsc {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.75rem;
+  font-family: var(--ifm-font-family-monospace);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.searchResults {
+  padding: 1.5rem;
+  min-height: 200px;
+}
+
+.searchPlaceholder {
+  text-align: center;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.9rem;
+}
+
+/* Hide default Docusaurus navbar */
+.navbar {
+  display: none !important;
+}
+
+/* Adjust main content for dual navbar */
+.main-wrapper {
+  padding-top: 0 !important;
+}
