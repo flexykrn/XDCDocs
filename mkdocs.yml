@@ -328,11 +328,10 @@ markdown_extensions:
 
 plugins:
   - search
+  - git-revision-date-localized
   - redirects:
       redirect_maps:
         'docs.md': 'xdcchain/index.md'
-        'docs/validator/fullnode.md': 'xdcchain/developers/node_operators/full_node.md'
-        'docs/rpc.md': 'xdcchain/developers/rpc.md'
       
 
 extra_css:
