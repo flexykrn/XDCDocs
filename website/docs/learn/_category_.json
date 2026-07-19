@@ -1,0 +1,9 @@
+{
+  "label": "Learn",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Learn",
+    "description": "New to XDC? Start here: blockchain basics, XDC architecture, gas and fees, and the glossary."
+  }
+}

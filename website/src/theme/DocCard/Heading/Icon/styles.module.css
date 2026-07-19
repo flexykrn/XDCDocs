@@ -1,0 +1,10 @@
+.cardTitleIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--xdc-accent) 15%, transparent);
+  color: var(--xdc-accent-dark);
+}

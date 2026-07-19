@@ -1,0 +1,8 @@
+{
+  "label": "Node Operators",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Run XDC infrastructure: masternodes, standby nodes, Docker, snapshots, and slashing."
+  }
+}

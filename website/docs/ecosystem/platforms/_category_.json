@@ -1,0 +1,8 @@
+{
+  "label": "Platforms",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Ecosystem platforms building on XDC Network."
+  }
+}

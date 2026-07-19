@@ -1,0 +1,9 @@
+{
+  "label": "XDC Subnet",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "XDC Subnet",
+    "description": "XDC Subnet: deploy and operate your own private chain secured by the XDC mainnet."
+  }
+}

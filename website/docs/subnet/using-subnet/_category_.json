@@ -1,0 +1,8 @@
+{
+  "label": "Using the Subnet",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Day-to-day Subnet usage: the UI, faucet, and block explorer."
+  }
+}

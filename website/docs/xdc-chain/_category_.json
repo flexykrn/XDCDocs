@@ -1,0 +1,9 @@
+{
+  "label": "XDC Chain",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "XDC Chain",
+    "description": "Everything about the XDC Chain: XDPoS consensus, developer guides, RPC endpoints, node operation, and governance."
+  }
+}

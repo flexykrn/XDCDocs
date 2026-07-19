@@ -1,0 +1,14 @@
+.cardContainer {
+  background: var(--xdc-surface);
+  border: 1px solid var(--xdc-line);
+  box-shadow: var(--xdc-shadow);
+  border-radius: var(--xdc-radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardContainer:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    var(--xdc-shadow),
+    0 16px 36px color-mix(in srgb, var(--xdc-accent) 18%, transparent);
+}

@@ -1,0 +1,9 @@
+{
+  "label": "Enterprise",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Enterprise",
+    "description": "XDC for enterprise: trade finance, RWA tokenization, ISO 20022, and private subnets."
+  }
+}
