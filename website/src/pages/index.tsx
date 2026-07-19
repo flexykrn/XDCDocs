@@ -1,6 +1,7 @@
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import CodeTabs from '@site/src/components/CodeTabs';
+import HomeSections from '@site/src/components/Home';
 import {
   ArrowRight,
   Wallet,
@@ -130,6 +131,8 @@ export default function Home() {
           </p>
           <CodeTabs />
         </section>
+
+        <HomeSections />
       </main>
     </Layout>
   );

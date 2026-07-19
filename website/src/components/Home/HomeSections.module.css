@@ -1,0 +1,62 @@
+.checklistGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.checklistRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--xdc-line);
+  border-radius: var(--xdc-radius);
+  background: var(--xdc-surface);
+  color: var(--xdc-ink);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checklistCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--xdc-accent);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .checklistGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ctaBand {
+  border-radius: var(--xdc-radius);
+  background: var(--xdc-ink);
+  color: var(--xdc-bg);
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.ctaEyebrow {
+  color: var(--xdc-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.ctaHeading {
+  color: var(--xdc-bg);
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.ctaSub {
+  color: color-mix(in srgb, var(--xdc-bg) 72%, transparent);
+  max-width: 520px;
+  margin: 0 auto 24px;
+}

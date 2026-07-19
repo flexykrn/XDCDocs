@@ -1,6 +1,6 @@
-import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {prismXdcLight, prismXdcDark} from './src/theme/prismXdc';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const redirects: {from: string | string[]; to: string}[] = require('./redirects.js');
@@ -33,6 +33,15 @@ const config: Config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects,
+      },
+    ],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en'],
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
       },
     ],
   ],
@@ -121,9 +130,25 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} XDC Network. All rights reserved.`,
     },
+    mermaid: {
+      theme: {light: 'base', dark: 'base'},
+      options: {
+        theme: 'base',
+        themeVariables: {
+          primaryColor: '#dbe4ff',
+          primaryBorderColor: '#2b5ce6',
+          primaryTextColor: '#0f1b33',
+          lineColor: '#5b8def',
+          secondaryColor: '#eef2ff',
+          tertiaryColor: '#101a30',
+          tertiaryTextColor: '#dbe4ff',
+          fontFamily: 'Inter',
+        },
+      },
+    },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismXdcLight,
+      darkTheme: prismXdcDark,
     },
   } satisfies Preset.ThemeConfig,
 };
