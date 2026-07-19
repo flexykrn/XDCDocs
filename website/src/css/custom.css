@@ -959,6 +959,70 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
   border-radius: 0 0 22px 22px;
 }
 
+/* ---------- Secondary navbar row (section tabs) ---------- */
+
+.section-tabs {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  z-index: calc(var(--ifm-z-index-fixed) - 1);
+  border-bottom: 1px solid var(--xdc-line);
+  background: color-mix(in srgb, var(--xdc-bg) 86%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.section-tabs__inner {
+  display: flex;
+  gap: 0.25rem;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 0.4rem 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.section-tabs__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.section-tabs__tab {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--xdc-muted);
+  text-decoration: none;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.section-tabs__tab:hover {
+  color: var(--xdc-ink);
+  background: color-mix(in srgb, var(--xdc-accent) 10%, transparent);
+  text-decoration: none;
+}
+
+.section-tabs__tab--active,
+.section-tabs__tab--active:hover {
+  color: var(--xdc-ink);
+  background: color-mix(in srgb, var(--xdc-accent) 14%, transparent);
+  border-color: color-mix(in srgb, var(--xdc-accent) 45%, transparent);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .section-tabs__inner {
+    padding: 0.35rem 0.75rem;
+  }
+
+  .section-tabs__tab {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
 /* ---------- Migrated grid cards (soft-card pattern) ---------- */
 
 .xdc-card-grid,

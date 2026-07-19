@@ -66,7 +66,7 @@ export default function Home() {
                 and operating validator infrastructure on XDC Network.
               </p>
               <div className="hero-ctas">
-                <Link className="gold-btn" to="/docs">
+                <Link className="gold-btn" to="/docs/learn/">
                   Start building <ArrowRight size={15} strokeWidth={2.5} />
                 </Link>
                 <Link className="outline-btn" to="/docs/xdc-chain/faq">

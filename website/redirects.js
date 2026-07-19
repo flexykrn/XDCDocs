@@ -334,5 +334,9 @@ module.exports = [
   {
     "from": "/xdcchain/xdpos2/",
     "to": "/docs/xdc-chain/xdpos2"
+  },
+  {
+    "from": "/docs",
+    "to": "/docs/learn/"
   }
 ];
