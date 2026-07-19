@@ -7,13 +7,14 @@ description: "XDC Network is an enterprise-grade, EVM-compatible Layer 1 blockch
 
 <div className="section-head">
     <div className="left">
-        <h1>XDC Chain</h1>
-        <p>The XDC Network is a cutting-edge blockchain platform designed to revolutionize the way businesses manage and exchange data, assets, and financial records. Boasting impressive speed and scalability, the XDC Network is capable of handling a high volume of transactions with minimal delays, making it ideal for enterprise-level applications. Its low transaction fees further enhance its appeal, allowing businesses to conduct operations cost-effectively.</p>
+        The XDC Network is a cutting-edge blockchain platform designed to revolutionize the way businesses manage and exchange data, assets, and financial records. Boasting impressive speed and scalability, the XDC Network is capable of handling a high volume of transactions with minimal delays, making it ideal for enterprise-level applications. Its low transaction fees further enhance its appeal, allowing businesses to conduct operations cost-effectively.
 
 <p>What truly sets the XDC Network apart is its military-grade security, ensuring that all data exchanges and asset transfers are protected against potential threats. This level of security is crucial for industries where trust and confidentiality are paramount. By leveraging the XDC Network, businesses can streamline their operations, improve record-keeping accuracy, and facilitate more efficient and secure data exchanges. Whether it's in finance, supply chain management, or trade, the XDC Network provides a robust and reliable infrastructure that empowers businesses to thrive in the digital age.</p>
     </div>
     <div className="image">
-        <img src="img/xdc-net.png" alt="XDC Chain" loading="lazy" />
+
+![XDC Chain](./img/xdc-net.png)
+
     </div>
 </div>
 

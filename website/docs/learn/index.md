@@ -9,40 +9,27 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
 
 ## Learning Paths
 
-<div className="grid cards">
-
--    **Blockchain Beginner**
-
-    ---
-
-    New to blockchain? Start here to understand the fundamentals.
-
-    [ Blockchain Basics](blockchain-basics.md)
-
--    **Developer**
-
-    ---
-
-    Ready to build? Learn XDC architecture and start coding.
-
-    [ XDC Architecture](xdc-architecture.md)
-
--    **Node Operator**
-
-    ---
-
-    Want to run infrastructure? Understand consensus and nodes.
-
-    [ XDPoS Consensus](https://xinfin.org/xdpos)
-
--    **Enterprise**
-
-    ---
-
-    Evaluating XDC for business? Learn about enterprise features.
-
-    [ Enterprise Overview](../enterprise/index.md)
-
+<div className="xdc-card-grid">
+  <a className="xdc-card" href="/docs/learn/blockchain-basics">
+    <div className="xdc-card__title">Blockchain Beginner</div>
+    <p className="xdc-card__desc">New to blockchain? Start here to understand the fundamentals.</p>
+    <span className="xdc-card__link">Blockchain Basics &rarr;</span>
+  </a>
+  <a className="xdc-card" href="/docs/learn/xdc-architecture">
+    <div className="xdc-card__title">Developer</div>
+    <p className="xdc-card__desc">Ready to build? Learn XDC architecture and start coding.</p>
+    <span className="xdc-card__link">XDC Architecture &rarr;</span>
+  </a>
+  <a className="xdc-card" href="https://xinfin.org/xdpos">
+    <div className="xdc-card__title">Node Operator</div>
+    <p className="xdc-card__desc">Want to run infrastructure? Understand consensus and nodes.</p>
+    <span className="xdc-card__link">XDPoS Consensus &rarr;</span>
+  </a>
+  <a className="xdc-card" href="/docs/enterprise/">
+    <div className="xdc-card__title">Enterprise</div>
+    <p className="xdc-card__desc">Evaluating XDC for business? Learn about enterprise features.</p>
+    <span className="xdc-card__link">Enterprise Overview &rarr;</span>
+  </a>
 </div>
 
 ## Quick Facts

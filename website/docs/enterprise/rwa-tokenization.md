@@ -18,32 +18,23 @@ RWA tokenization is the process of converting ownership rights of physical or fi
 
 ## Supported Asset Classes
 
-<div className="grid cards">
-
--    **Real Estate**
-
-    ---
-
-    Commercial properties, residential buildings, REITs, and land parcels.
-
--    **Commodities**
-
-    ---
-
-    Precious metals (gold, silver), agricultural products, and energy resources.
-
--    **Financial Instruments**
-
-    ---
-
-    Bonds, treasury bills, private equity, and debt instruments.
-
--    **Alternative Assets**
-
-    ---
-
-    Art, collectibles, intellectual property, and carbon credits.
-
+<div className="xdc-card-grid">
+  <div className="xdc-card">
+    <div className="xdc-card__title">Real Estate</div>
+    <p className="xdc-card__desc">Commercial properties, residential buildings, REITs, and land parcels.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Commodities</div>
+    <p className="xdc-card__desc">Precious metals (gold, silver), agricultural products, and energy resources.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Financial Instruments</div>
+    <p className="xdc-card__desc">Bonds, treasury bills, private equity, and debt instruments.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Alternative Assets</div>
+    <p className="xdc-card__desc">Art, collectibles, intellectual property, and carbon credits.</p>
+  </div>
 </div>
 
 ## XDC Network Advantages for RWA

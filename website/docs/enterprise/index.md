@@ -9,32 +9,23 @@ XDC Network provides enterprise-grade blockchain infrastructure designed specifi
 
 ## Why Enterprises Choose XDC
 
-<div className="grid cards">
-
--    **High Performance**
-
-    ---
-
-    2,000+ TPS with 2-second block finality ensures enterprise-scale throughput for mission-critical applications.
-
--    **Military-Grade Security**
-
-    ---
-
-    XDPoS 2.0 consensus with forensic monitoring provides the security guarantees enterprises require.
-
--    **Cost Efficient**
-
-    ---
-
-    Transaction costs under $0.0001 make high-volume enterprise operations economically viable.
-
--    **Compliance Ready**
-
-    ---
-
-    ISO 20022 compatible messaging standard enables seamless integration with existing banking infrastructure.
-
+<div className="xdc-card-grid">
+  <div className="xdc-card">
+    <div className="xdc-card__title">High Performance</div>
+    <p className="xdc-card__desc">2,000+ TPS with 2-second block finality ensures enterprise-scale throughput for mission-critical applications.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Military-Grade Security</div>
+    <p className="xdc-card__desc">XDPoS 2.0 consensus with forensic monitoring provides the security guarantees enterprises require.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Cost Efficient</div>
+    <p className="xdc-card__desc">Transaction costs under $0.0001 make high-volume enterprise operations economically viable.</p>
+  </div>
+  <div className="xdc-card">
+    <div className="xdc-card__title">Compliance Ready</div>
+    <p className="xdc-card__desc">ISO 20022 compatible messaging standard enables seamless integration with existing banking infrastructure.</p>
+  </div>
 </div>
 
 ## Enterprise Use Cases

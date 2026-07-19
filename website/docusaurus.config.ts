@@ -2,6 +2,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const redirects: {from: string | string[]; to: string}[] = require('./redirects.js');
+
 const config: Config = {
   title: 'XDC Network Documentation',
   tagline: 'Get started with XDC Chain Docs. Explore the documentation for XDC Chain',
@@ -24,6 +27,15 @@ const config: Config = {
   },
 
   themes: ['@docusaurus/theme-mermaid'],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
+  ],
 
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap',
