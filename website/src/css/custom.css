@@ -1095,6 +1095,61 @@ html {
   font-size: 0.85rem;
 }
 
+/* ---------- Announcement bar ---------- */
+
+[class*='announcementBar'] {
+  background: var(--xdc-ink);
+  color: var(--xdc-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+[class*='announcementBar'] a {
+  color: var(--xdc-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+[class*='announcementBarClose'] {
+  color: var(--xdc-bg);
+  opacity: 0.7;
+}
+
+/* ---------- Mobile drawer polish ---------- */
+
+.navbar-sidebar__backdrop {
+  backdrop-filter: blur(4px);
+}
+
+.navbar-sidebar {
+  background: var(--xdc-bg);
+  box-shadow: var(--xdc-shadow);
+}
+
+.navbar-sidebar__brand {
+  border-bottom: 1px solid var(--xdc-line);
+  padding: 0.75rem 1rem;
+}
+
+.navbar-sidebar__items .menu__list {
+  padding: 0.75rem;
+}
+
+.navbar-sidebar__items .menu__link {
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+}
+
+.navbar-sidebar__back {
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: var(--xdc-muted);
+}
+
+/* ---------- Announcement bar end ---------- */
+
 /* ---------- Secondary navbar row (section tabs) ---------- */
 
 .section-tabs {

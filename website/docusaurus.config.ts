@@ -84,6 +84,12 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/xdc.svg',
+    announcementBar: {
+      id: 'eip1559-apothem',
+      content:
+        'EIP-1559 support is rolling out on XDC Apothem Testnet — <a href="/docs/announcements/">read the announcements</a>',
+      isCloseable: true,
+    },
     colorMode: {
       respectPrefersColorScheme: true,
     },
