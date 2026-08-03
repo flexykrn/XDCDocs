@@ -41,6 +41,7 @@ const config: Config = {
         hashed: true,
         language: ['en'],
         docsRouteBasePath: '/docs',
+        indexBlog: false,
         highlightSearchTermsOnTargetPage: true,
       },
     ],
@@ -94,6 +95,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
+      hideOnScroll: true,
       logo: {
         alt: 'XDC Network Logo',
         src: 'img/logo.svg',

@@ -969,11 +969,33 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 .xdc-search-btn--live {
   padding: 0;
   min-width: 280px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
 }
 
-.xdc-search-btn--live .navbar__search,
-.xdc-search-btn--live [class*='searchBar'] {
+.xdc-search-btn--live:hover {
+  box-shadow: none;
+}
+
+.xdc-search-btn--live .navbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   width: 100%;
+  height: 2.5rem;
+  background: var(--xdc-surface);
+  border: 1px solid var(--xdc-line);
+  border-radius: 1rem;
+  color: var(--xdc-muted);
+  padding: 0 0.9rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.xdc-search-btn--live .navbar__search:hover {
+  box-shadow: var(--ifm-global-shadow-md);
 }
 
 .xdc-search-btn--live input,
@@ -981,17 +1003,45 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
   font-family: var(--ifm-font-family-base);
 }
 
-.xdc-search-btn--live [class*='searchBar'] {
-  background: var(--xdc-surface);
-  border: 1px solid var(--xdc-line);
-  border-radius: 1rem;
-  color: var(--xdc-muted);
-  padding: 0.55rem 0.9rem;
-  transition: box-shadow 0.2s ease;
+.xdc-search-btn--live .navbar__search [class*='searchHintContainer'] {
+  position: static;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
-.xdc-search-btn--live [class*='searchBar']:hover {
-  box-shadow: var(--ifm-global-shadow-md);
+.xdc-search-btn--live .navbar__search-input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* dropdown panel anchored below the pill (plugin right-aligns it by default,
+   which flings it off-screen when searchBar lacks its searchBarLeft class) */
+.xdc-search-btn--live .navbar__search [class*='dropdownMenu'] {
+  position: absolute !important;
+  top: calc(100% + 0.25rem) !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* docs sidebar logo duplicates the navbar logo and shows through the
+   translucent section-tabs row. NB: theme styles live in cascade layers
+   (v4 future flag) so a layered !important display beats ours — hide via
+   visibility instead, which nothing else declares. */
+[class*='sidebarLogo'] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* mobile: hide custom search in top bar (it can't shrink below min-width),
+   re-show the plugin's default container instead */
+@media (width <= 996px) {
+  .xdc-search-btn--live {
+    display: none;
+  }
+  .navbar__items--right > [class*='navbarSearchContainer'] {
+    display: block;
+  }
 }
 
 [data-theme='dark'] .navbar__search-input,
@@ -1160,6 +1210,13 @@ html {
   background: color-mix(in srgb, var(--xdc-bg) 86%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  transition: top var(--ifm-transition-fast) ease;
+}
+
+/* when navbar slides away (hideOnScroll), tabs take the top slot */
+nav[class*='navbarHidden'] ~ .section-tabs,
+nav[class*='navbarHidden'] + .section-tabs {
+  top: 0;
 }
 
 .section-tabs__inner {

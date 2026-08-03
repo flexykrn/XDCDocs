@@ -1,8 +1,6 @@
 import Footer from '@theme-original/DocItem/Footer';
 import FeedbackWidget from '@site/src/components/Feedback';
-import type {ComponentType} from 'react';
-
-export default function FooterWrapper(props: Parameters<ComponentType<any>>[0]) {
+export default function FooterWrapper(props: Record<string, unknown>) {
   return (
     <>
       <FeedbackWidget />

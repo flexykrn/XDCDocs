@@ -8,7 +8,7 @@ const {chromium} = require('playwright');
     ['learn', '/docs/learn/'],
     ['learn-gas', '/docs/learn/gas-fees'],
     ['xdcchain', '/docs/category/xdc-chain'],
-    ['subnet-ui', '/docs/subnet/using-subnet/using-subnet'],
+    ['subnet-ui', '/docs/subnet/using-subnet/ui-usage-guide'],
     ['api', '/docs/api-reference/'],
     ['method-ref', '/docs/api-reference/method-reference/'],
     ['trade-finance', '/docs/enterprise/trade-finance'],
@@ -34,7 +34,7 @@ const {chromium} = require('playwright');
   const mp = await browser.newPage({viewport: {width: 1440, height: 1600}});
   await mp.goto('http://localhost:3100/docs/enterprise/trade-finance', {waitUntil: 'networkidle'});
   await mp.waitForTimeout(2500);
-  const mermaidSvg = await mp.locator('.mermaid svg, [id^="mermaid"] svg').count();
+  const mermaidSvg = await mp.locator('.docusaurus-mermaid-container svg').count();
   results.push(['mermaid svg count', mermaidSvg]);
   await mp.screenshot({path: out + 'mig-mermaid.png'});
   await mp.close();

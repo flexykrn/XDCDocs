@@ -47,7 +47,6 @@ const QUICKSTART_CARDS = [
 export default function Home() {
   return (
     <Layout
-      title="Home"
       description="Get started with XDC Chain Docs. Explore the documentation for XDC Chain">
       <main>
         <section className="hero-section">
