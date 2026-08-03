@@ -84,7 +84,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/xdc.svg',
+    image: 'img/xdc-social-card.png',
     announcementBar: {
       id: 'eip1559-apothem',
       content:

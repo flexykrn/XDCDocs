@@ -1,1 +1,0 @@
-# DeFi Built On XDC Network!

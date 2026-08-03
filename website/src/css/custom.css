@@ -967,6 +967,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 }
 
 .xdc-search-btn--live {
+  --search-local-modal-width: min(560px, calc(100vw - 2rem));
   padding: 0;
   min-width: 280px;
   border: none;

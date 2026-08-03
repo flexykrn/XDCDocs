@@ -379,7 +379,24 @@ curl -s -X POST -H "Content-Type: application/json" ${RPC} -d '{
 
 Response:
 
-See `XDPoS_getSnapshotAtHash_response.json` (example payload missing in source docs — link removed during migration)
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "number": 92335950,
+    "hash": "0x5a701a8ba642a9b53475bb19cb9a313829f7afb4287caa76bebaea02f0219f89",
+    "signers": {
+      "0x00021c85d8cf9ef6c73e8f95740f8e874e4c9d1f": {},
+      "0x00633d6bc3c30349a7fe55999c5b18940bcc9f43": {},
+      "0x01df5f4986976e8cf1592cca7b792664510b6086": {}
+    },
+    "recents": null,
+    "votes": null,
+    "tally": null
+  }
+}
+```
 
 ## Method XDPoS_getV2BlockByHash
 
