@@ -160,6 +160,10 @@ const config: Config = {
       darkTheme: prismXdcDark,
     },
   } satisfies Preset.ThemeConfig,
+
+  customFields: {
+    ragApiUrl: process.env.RAG_API_URL || 'http://localhost:3101',
+  },
 };
 
 export default config;

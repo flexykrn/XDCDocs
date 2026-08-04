@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 tree.txt
+server/data/
