@@ -264,7 +264,7 @@ Example:
 
 ## Next Steps
 
-- [XDPoS Consensus Deep Dive](https://xinfin.org/xdpos)
+- [XDPoS Consensus Deep Dive](/docs/xdc-chain/xdpos)
 - [Gas & Fees](gas-fees.md)
 - [Run a Node](../xdc-chain/developers/node-operators/masternode.md)
 - [Deploy Smart Contracts](../smart-contracts/deployment-verification.md)

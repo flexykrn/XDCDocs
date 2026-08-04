@@ -57,6 +57,8 @@ Any EVM-compatible wallet works:
 - **Frame** (desktop-native, hardware wallet focus)
 - **Ledger/Trezor** (hardware wallets via MetaMask)
 
+For setup and usage details, see the [XDC Wallet guide](/docs/smart-contracts/xdc-wallet).
+
 ### Why does my address start with `0x` instead of `xdc`?
 
 Both are valid. XDCScan displays addresses with `xdc` prefix for branding. EVM tools like MetaMask use `0x` prefix. They refer to the same account — only the prefix differs.
@@ -118,6 +120,8 @@ Never share your private key or seed phrase. Anyone with access can steal your f
 - **Development:** Apothem Testnet (free, safe to experiment)
 - **Production:** Mainnet (real value, real users)
 - **Testing new features:** Devnet (unstable, for core developers)
+
+See [Mainnet RPC Endpoints](/docs/xdc-chain/developers/mainnetrpc) for the full list of public endpoints.
 
 ### How do I check if RPC is working?
 

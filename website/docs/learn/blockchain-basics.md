@@ -80,7 +80,7 @@ How do all nodes agree on the "true" state of the blockchain? Through **consensu
 | Proof of Stake (PoS) | Stake tokens as collateral | Ethereum |
 | Delegated PoS (DPoS) | Elected validators | XDC Network |
 
-XDC uses **XDPoS** (XinFin Delegated Proof of Stake) - more on this in [XDPoS Explained](https://xinfin.org/xdpos).
+XDC uses **XDPoS** (XinFin Delegated Proof of Stake) - more on this in [XDPoS Explained](/docs/xdc-chain/xdpos).
 
 ### 5. Smart Contracts
 
@@ -161,7 +161,7 @@ Ready to explore XDC Network?
 ## Next Steps
 
 - [XDC Architecture](xdc-architecture.md) - Deep dive into XDC's design
-- [XDPoS Consensus](https://xinfin.org/xdpos) - How XDC achieves consensus
+- [XDPoS Consensus](/docs/xdc-chain/xdpos) - How XDC achieves consensus
 - [Gas & Fees](gas-fees.md) - Understanding transaction costs
 
 ---

@@ -1,0 +1,56 @@
+.section {
+  margin: 2rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--xdc-line);
+}
+
+.heading {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--xdc-muted);
+  margin: 0 0 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  display: block;
+  background: var(--xdc-surface);
+  border: 1px solid var(--xdc-line);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem 1.25rem;
+  color: var(--xdc-ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--xdc-accent);
+  box-shadow: var(--ifm-global-shadow-md);
+  color: var(--xdc-ink);
+  text-decoration: none;
+}
+
+.cardLabel {
+  display: block;
+  font-weight: 700;
+  color: var(--xdc-ink);
+}
+
+.card:hover .cardLabel {
+  color: var(--xdc-accent);
+}
+
+.cardDesc {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--xdc-muted);
+}

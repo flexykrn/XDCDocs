@@ -59,6 +59,12 @@ The XDC Network is set to implement EIP-1559 on its Apothem Testnet, marking a s
 
 4. **Real Estate Transactions:** Smart contracts simplify real estate transactions by cutting out intermediaries. For example, rental agreements can be directly managed on the blockchain, reducing costs and making the process more efficient.
 
+## See Also
+
+- [Deployment & Verification](/docs/smart-contracts/deployment-verification) — deploy and verify contracts on XDCScan
+- [Token Standards](/docs/smart-contracts/tokens) — XRC20, XRC721, and other token types
+- [Gas & Fees](/docs/learn/gas-fees) — what deployments and contract calls cost on XDC
+
 
 
 

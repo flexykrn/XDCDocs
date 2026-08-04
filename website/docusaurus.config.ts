@@ -14,7 +14,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://xinfin.org',
+  url: 'https://docs.xdc.network',
   baseUrl: '/',
 
   organizationName: 'XinFinOrg',
@@ -74,6 +74,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/XinFinOrg/Docs/edit/main/website/',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {

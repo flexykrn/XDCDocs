@@ -229,6 +229,8 @@ try {
 - Always estimate gas before sending
 - Optimize contracts to minimize gas usage
 
+See also: [FAQ: Gas & Fees](/docs/xdc-chain/faq#gas--fees) and the [JSON-RPC Reference](/docs/api-reference/json-rpc) for `eth_estimateGas` and `eth_gasPrice`.
+
 ---
 
 :::tip[Calculate Your Costs]

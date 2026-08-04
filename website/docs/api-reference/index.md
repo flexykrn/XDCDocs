@@ -196,3 +196,5 @@ For high-volume applications:
 - [JSON-RPC Reference](json-rpc.md) - Complete method documentation
 - [WebSocket API](./#websocket-endpoints) - Real-time subscriptions
 - [Error Codes](./#error-handling) - Error handling guide
+- [RPC & Nodes Overview](/docs/xdc-chain/developers/rpc) - Connect to or run XDC nodes
+- [Learn XDC](/docs/learn/) - Blockchain basics and XDC architecture

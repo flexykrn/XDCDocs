@@ -20,7 +20,7 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
     <p className="xdc-card__desc">Ready to build? Learn XDC architecture and start coding.</p>
     <span className="xdc-card__link">XDC Architecture &rarr;</span>
   </a>
-  <a className="xdc-card" href="https://xinfin.org/xdpos">
+  <a className="xdc-card" href="/docs/xdc-chain/xdpos">
     <div className="xdc-card__title">Node Operator</div>
     <p className="xdc-card__desc">Want to run infrastructure? Understand consensus and nodes.</p>
     <span className="xdc-card__link">XDPoS Consensus &rarr;</span>
@@ -40,7 +40,7 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
 | **Block Time** | ~2 seconds |
 | **Finality** | Instant (1-2 blocks) |
 | **TPS** | 2,000+ transactions per second |
-| **Transaction Cost** | < $0.0001 |
+| **Transaction Cost** | [< $0.0001](/docs/learn/gas-fees) |
 | **EVM Compatible** | Yes (Solidity, Web3, Ethers.js) |
 | **Token Standard** | XRC20, XRC721, XRC1155 |
 | **Mainnet Launch** | 2019 |
@@ -50,7 +50,7 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
 ### Fundamentals
 - [Blockchain Basics](blockchain-basics.md) - What is blockchain and how does it work?
 - [XDC Architecture](xdc-architecture.md) - How XDC Network is designed
-- [XDPoS Consensus](https://xinfin.org/xdpos) - Understanding XDC's consensus mechanism
+- [XDPoS Consensus](/docs/xdc-chain/xdpos) - Understanding XDC's consensus mechanism
 
 ### Economics
 - [Gas & Fees](gas-fees.md) - How transaction costs work on XDC
@@ -74,6 +74,8 @@ Welcome to the XDC Network learning center! Whether you're new to blockchain or 
 | EVM Compatible | ✅ | ✅ | ❌ | ✅ |
 | Enterprise Focus | ✅ | ❌ | ❌ | ⚠️ |
 | ISO 20022 | ✅ | ❌ | ❌ | ❌ |
+
+For a deeper technical dive into how XDC achieves this, see [XDC Architecture](/docs/learn/xdc-architecture). New to the terminology? Check the [Glossary](/docs/learn/glossary).
 
 ## Video Tutorials
 

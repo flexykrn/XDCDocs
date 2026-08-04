@@ -51,3 +51,5 @@ The architecture consists of the following key components owned by the customer:
         <p>Start your own Subnet with our intuitive and easy to use Deployment Wizard</p>
     </a>
 </div>
+
+See also: [Setting Up Your Subnet](/docs/subnet/deployment-guide/setting-up-your-subnet) for a step-by-step deployment walkthrough, and the [UI Usage Guide](/docs/subnet/using-subnet/ui-usage-guide) for managing your subnet through the web interface.

@@ -1,0 +1,54 @@
+.wrapper {
+  margin: 2rem 0 1rem;
+}
+
+.heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--xdc-ink);
+  margin: 0 0 0.75rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 12rem;
+  padding: 0.875rem 1.25rem;
+  background: var(--xdc-surface);
+  border: 1px solid var(--xdc-line);
+  border-radius: var(--xdc-radius);
+  color: var(--xdc-ink);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  background: color-mix(in srgb, var(--xdc-accent) 10%, transparent);
+  color: var(--xdc-accent);
+  border-color: var(--xdc-accent);
+  text-decoration: none;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.arrow {
+  color: var(--xdc-muted);
+  flex-shrink: 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover .arrow {
+  color: var(--xdc-accent);
+  transform: translateX(2px);
+}
