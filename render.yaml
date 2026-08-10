@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: xdc-docs-rag
+    env: docker
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: ./server
+    healthCheckPath: /api/health
+    envVars:
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_INDEX
+        sync: false
+      - key: PINECONE_NAMESPACE
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        sync: false
+      - key: EMBEDDING_MODEL
+        sync: false
+      - key: RAG_CORS_ORIGIN
+        sync: false
+      - key: RATE_LIMIT_PER_HOUR
+        sync: false
+      - key: ENABLE_STREAMING
+        sync: false

@@ -1,0 +1,53 @@
+name: Reindex docs embeddings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - website/docs/**
+  workflow_dispatch:
+
+concurrency:
+  group: reindex-docs
+  cancel-in-progress: false
+
+jobs:
+  reindex:
+    name: Chunk docs and upsert vectors to Pinecone
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+
+      # First run downloads the embedding model (~100MB) from Hugging Face.
+      # Cache it so subsequent reindexes start fast.
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            server/node_modules/.cache
+          key: ${{ runner.os }}-emb-model-${{ hashFiles('server/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-emb-model-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ingest
+        env:
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+          PINECONE_INDEX: ${{ secrets.PINECONE_INDEX }}
+          PINECONE_NAMESPACE: ${{ secrets.PINECONE_NAMESPACE }}
+          EMBEDDING_MODEL: Xenova/all-MiniLM-L6-v2
+          DOCS_DIR: website/docs
+        run: node ingest.js

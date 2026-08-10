@@ -1,6 +1,6 @@
 # XDC Docs RAG Server
 
-Backend chatbot server for the XDC Network documentation site. Retrieves relevant docs chunks from Pinecone and answers with Groq, using Gemini for embeddings.
+Backend chatbot server for the XDC Network documentation site. Retrieves relevant docs chunks from Pinecone and answers with Groq, using local Xenova/transformers.js embeddings (no embedding API cost).
 
 ## Setup
 
@@ -20,9 +20,7 @@ Requires a `.env` file at the repo root (one level above this directory).
 | `PINECONE_NAMESPACE` | Pinecone namespace for docs vectors |
 | `GROQ_API_KEY` | Groq API key |
 | `GROQ_MODEL` | Groq chat completion model |
-| `GEMINI_API_KEY` | Google Gemini API key |
-| `GEMINI_MODEL` | Gemini model (reserved) |
-| `EMBEDDING_MODEL` | Gemini embedding model (e.g. text-embedding-004) |
+| `EMBEDDING_MODEL` | Local transformers.js embedding model (e.g. Xenova/all-MiniLM-L6-v2) |
 | `DOCS_DIR` | Docs directory (used by ingest) |
 | `PORT` | Server port (default 3101) |
 | `RAG_CORS_ORIGIN` | Comma-separated allowed CORS origins |
@@ -55,3 +53,46 @@ To tune: edit entries/keywords in `faq.json` (no restartless reload — restart 
 ## Ingest
 
 `npm run ingest` (ingest.js provided separately).
+
+## Deploy
+
+### Docker
+
+```bash
+docker build -t xdc-docs-rag ./server
+docker run -p 3101:3101 --env-file .env xdc-docs-rag
+```
+
+The image is `node:20-slim` (glibc required by onnxruntime-node used by `@xenova/transformers`). The embedding model is pre-downloaded at build time, so the first request is fast; if that build step is removed, the first non-FAQ chat request pays a ~100MB model-download cold start.
+
+### Render (blueprint)
+
+`render.yaml` at the repo root is a Render Blueprint: New + > Blueprint, point it at this repo. It builds `./server/Dockerfile` (docker context `./server`), health-checks `/api/health`, and injects `PORT` automatically (the server honors it). All env vars are marked `sync: false` — set them in the Render dashboard (Secrets/Environment) on first deploy.
+
+### Railway / Fly
+
+- **Railway**: New project > deploy from repo, set the root directory to `server` (Railway auto-detects the Dockerfile). Set `PORT` if needed (Railway provides it) plus all required env vars below.
+- **Fly.io**: `fly launch` from `server/` (picks up the Dockerfile), `fly secrets set KEY=value ...` for each required env var, then `fly deploy`.
+
+### Required env var checklist
+
+| Variable | Notes |
+|---|---|
+| `PINECONE_API_KEY` | secret |
+| `PINECONE_INDEX` | |
+| `PINECONE_NAMESPACE` | |
+| `GROQ_API_KEY` | secret |
+| `GROQ_MODEL` | e.g. `llama-3.1-8b-instant` |
+| `EMBEDDING_MODEL` | `Xenova/all-MiniLM-L6-v2` |
+| `RAG_CORS_ORIGIN` | set to `https://docs.xdc.network` in production |
+| `RATE_LIMIT_PER_HOUR` | optional, default 100 |
+| `ENABLE_STREAMING` | optional, `true` for SSE |
+| `DOCS_DIR` | ingest only (not needed by the running server) |
+
+### After deploy
+
+Set `RAG_API_URL` on the website (Docusaurus) build environment to the deployed server URL (e.g. `https://xdc-docs-rag.onrender.com`) so the chatbot widget calls the right backend.
+
+### Reindexing
+
+`.github/workflows/reindex.yml` re-runs `ingest.js` on every push to `main` that touches `website/docs/**` (and manually via workflow_dispatch), using the `PINECONE_API_KEY`, `PINECONE_INDEX`, and `PINECONE_NAMESPACE` GitHub secrets.

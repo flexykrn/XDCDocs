@@ -73,7 +73,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/XinFinOrg/Docs/edit/main/website/',
+          editUrl: 'https://github.com/OpenScanAI/XDCDocs/edit/main/website/',
           showLastUpdateTime: true,
         },
         blog: false,
