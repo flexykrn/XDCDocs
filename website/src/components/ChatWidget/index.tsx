@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useRef, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useLocation} from '@docusaurus/router';
-import {MessageCircle, X, Send, ThumbsUp, ThumbsDown, Trash2} from 'lucide-react';
+import {MessageCircle, X, Send, ThumbsUp, ThumbsDown, Trash2, Sparkles} from 'lucide-react';
 import styles from './styles.module.css';
 
 type Role = 'user' | 'assistant';
@@ -44,7 +44,7 @@ function renderMarkdown(markdown: string): string {
 
   let html = escaped.replace(/```(?:\w*)\n?([\s\S]*?)```/g, (_match, code: string) => {
     codeBlocks.push(`<pre><code>${code.replace(/\n$/, '')}</code></pre>`);
-    return `${codeBlocks.length - 1}`;
+    return `CB${codeBlocks.length - 1}`;
   });
 
   html = html
@@ -57,18 +57,21 @@ function renderMarkdown(markdown: string): string {
   html = html
     .split(/\n{2,}/)
     .map((block) =>
-      block.startsWith('') ? block : `<p>${block.replace(/\n/g, '<br/>')}</p>`,
+      block.startsWith('CB') ? block : `<p>${block.replace(/\n/g, '<br/>')}</p>`,
     )
     .join('');
 
-  html = html.replace(/(\d+)/g, (_m, i: string) => codeBlocks[Number(i)]);
+  html = html.replace(/CB(\d+)/g, (match, i: string) => {
+    const block = codeBlocks[Number(i)];
+    return block !== undefined ? block : match;
+  });
 
   return html;
 }
 
 export default function ChatWidget() {
   const {siteConfig} = useDocusaurusContext();
-  const ragApiUrl = (siteConfig.customFields?.ragApiUrl as string) || 'http://localhost:3101';
+  const ragApiUrl = (siteConfig.customFields?.ragApiUrl as string) || 'http://localhost:3001';
   const {pathname} = useLocation();
 
   const [open, setOpen] = useState(false);
@@ -176,7 +179,7 @@ export default function ChatWidget() {
           ...nextMessages,
           {
             role: 'assistant',
-            content: 'The assistant is currently unavailable. Please try again later.',
+            content: 'The assistant is offline right now. Try again in a bit — or browse the sections above.',
             vote: null,
             error: true,
           },
@@ -243,7 +246,15 @@ export default function ChatWidget() {
       {open && (
         <div className={styles.panel} role="dialog" aria-label="XDC Docs Assistant">
           <div className={styles.header}>
-            <span className={styles.title}>XDC Docs Assistant</span>
+            <div className={styles.headerIdentity}>
+              <span className={styles.avatar}>
+                <Sparkles size={16} />
+              </span>
+              <span className={styles.headerText}>
+                <span className={styles.title}>XDC Docs Assistant</span>
+                <span className={styles.subtitle}>AI answers from the docs, with sources</span>
+              </span>
+            </div>
             <div className={styles.headerActions}>
               <button
                 type="button"
@@ -281,6 +292,11 @@ export default function ChatWidget() {
 
             {messages.map((msg, i) => (
               <div key={i} className={`${styles.row} ${msg.role === 'user' ? styles.rowUser : styles.rowAssistant}`}>
+                {msg.role === 'assistant' && (
+                  <span className={styles.rowAvatar} aria-hidden>
+                    <Sparkles size={12} />
+                  </span>
+                )}
                 <div
                   className={`${styles.bubble} ${
                     msg.role === 'user' ? styles.bubbleUser : styles.bubbleAssistant
@@ -336,8 +352,13 @@ export default function ChatWidget() {
 
             {loading && (
               <div className={`${styles.row} ${styles.rowAssistant}`}>
+                <span className={styles.rowAvatar} aria-hidden>
+                  <Sparkles size={12} />
+                </span>
                 <div className={`${styles.bubble} ${styles.bubbleAssistant} ${styles.thinking}`}>
-                  Thinking&hellip;
+                  <span className={styles.dot} />
+                  <span className={styles.dot} />
+                  <span className={styles.dot} />
                 </div>
               </div>
             )}

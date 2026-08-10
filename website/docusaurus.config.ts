@@ -162,7 +162,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   customFields: {
-    ragApiUrl: process.env.RAG_API_URL || 'http://localhost:3101',
+    ragApiUrl: process.env.RAG_API_URL || 'http://localhost:3001',
   },
 };
 
