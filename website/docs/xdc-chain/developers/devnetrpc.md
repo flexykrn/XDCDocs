@@ -10,6 +10,11 @@ The XDC Devnet is a specialized test environment for the XDC Network, designed t
 Similar to the Mainnet, users can access the XDC Devnet via an internet connection and a full node RPC. The Devnet allows developers to perform the same operations they would on the Mainnet, including reading blockchain data, creating and validating transactions, and deploying smart contracts. However, since the Devnet operates with test tokens, developers can experiment freely without the financial risks associated with live transactions.
 
 ## XDC Devnet Specifications
+
+:::warning Devnet status
+The Devnet endpoints below were unreachable at last verification (both this page's endpoints and `devnetrpc.xinfin.network`). Use [Apothem Testnet](/docs/xdc-chain/developers/apothemrpc) for testing until Devnet is restored.
+:::
+
 - **Chain ID:** 551
 - **RPC Endpoint for XDC Devnet:** 
 * https://devnetstats.hashlabs.apothem.network/devnet

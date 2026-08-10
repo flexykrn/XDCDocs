@@ -50,6 +50,10 @@ The faucet dispenses 1000 test XDC per request. Alternative faucets: [BlocksScan
 
 ## Devnet
 
+:::warning Devnet status
+Devnet endpoints were unreachable at last verification. Use Apothem Testnet until Devnet is restored.
+:::
+
 | Parameter | Value |
 |---|---|
 | Chain ID | 551 (`0x227`) |

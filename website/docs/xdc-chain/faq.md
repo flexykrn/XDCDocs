@@ -115,6 +115,8 @@ Never share your private key or seed phrase. Anyone with access can steal your f
 | **Apothem Testnet** | 51 | `https://rpc.apothem.network` | [testnet.xdcscan.com](https://testnet.xdcscan.com) | [faucet.apothem.network](https://faucet.apothem.network) |
 | **Devnet** | 551 | `https://devnetrpc.xinfin.network` | — | — |
 
+> **Note:** The Devnet endpoint is currently unreachable. Use Apothem Testnet for testing until Devnet is restored.
+
 ### Which RPC should I use?
 
 - **Development:** Apothem Testnet (free, safe to experiment)
