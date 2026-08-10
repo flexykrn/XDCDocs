@@ -338,5 +338,73 @@ module.exports = [
   {
     "from": "/docs",
     "to": "/docs/learn/"
+  },
+  {
+    "from": "/docs/category/announcements",
+    "to": "/docs/announcements/"
+  },
+  {
+    "from": "/docs/category/api-reference",
+    "to": "/docs/api-reference/"
+  },
+  {
+    "from": "/docs/category/components",
+    "to": "/docs/subnet/components/"
+  },
+  {
+    "from": "/docs/category/deployment-guide",
+    "to": "/docs/subnet/deployment-guide/installation-guide"
+  },
+  {
+    "from": "/docs/category/developers",
+    "to": "/docs/xdc-chain/developers/quick-guide"
+  },
+  {
+    "from": "/docs/category/ecosystem",
+    "to": "/docs/ecosystem/"
+  },
+  {
+    "from": "/docs/category/enterprise",
+    "to": "/docs/enterprise/"
+  },
+  {
+    "from": "/docs/category/governance",
+    "to": "/docs/xdc-chain/governance/overview"
+  },
+  {
+    "from": "/docs/category/json-rpc-method-reference",
+    "to": "/docs/api-reference/method-reference/"
+  },
+  {
+    "from": "/docs/category/learn",
+    "to": "/docs/learn/"
+  },
+  {
+    "from": "/docs/category/node-operators",
+    "to": "/docs/xdc-chain/developers/node-operators/node-architecture"
+  },
+  {
+    "from": "/docs/category/platforms",
+    "to": "/docs/ecosystem/platforms/dapp"
+  },
+  {
+    "from": "/docs/category/resources",
+    "to": "/docs/subnet/resources/repos"
+  },
+  {
+    "from": "/docs/category/smart-contracts",
+    "to": "/docs/smart-contracts/"
+  },
+  {
+    "from": "/docs/category/using-the-subnet",
+    "to": "/docs/subnet/using-subnet/ui-usage-guide"
+  },
+  {
+    "from": "/docs/category/xdc-chain",
+    "to": "/docs/xdc-chain/"
+  },
+  {
+    "from": "/docs/category/xdc-subnet",
+    "to": "/docs/subnet/overview"
   }
 ];

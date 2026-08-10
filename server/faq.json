@@ -1,0 +1,233 @@
+[
+  {
+    "id": "what-is-xdc",
+    "question": "What is XDC Network?",
+    "keywords": ["what", "xdc", "network", "about", "blockchain", "xdpos"],
+    "answer": "XDC Network is an EVM-compatible Layer 1 blockchain built for enterprise-grade dApps. It features 2-second block times, near-zero gas fees (~$0.0001/tx), and deterministic finality via XDPoS 2.0 consensus, optimized for trade finance, RWA tokenization, and institutional DeFi.\n\nSee the [FAQ](/docs/xdc-chain/faq) and [architecture overview](/docs/learn/xdc-architecture).",
+    "sources": [{ "title": "Frequently Asked Questions", "url": "/docs/xdc-chain/faq" }, { "title": "XDC Architecture", "url": "/docs/learn/xdc-architecture" }]
+  },
+  {
+    "id": "add-xdc-metamask",
+    "question": "How do I add XDC to MetaMask?",
+    "keywords": ["metamask", "add", "network", "wallet", "setup", "configure"],
+    "answer": "In MetaMask, open the network dropdown, click **Add Network**, search \"XDC\", select **XDC Mainnet** or **XDC Apothem Testnet**, and click **Approve**. For manual setup (RPC URL, chain ID, currency symbol), see the [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration) guide and the [XDC Wallet guide](/docs/smart-contracts/xdc-wallet).",
+    "sources": [{ "title": "Wallet Configuration", "url": "/docs/xdc-chain/developers/wallet-configuration" }, { "title": "XDC Wallet Guide", "url": "/docs/smart-contracts/xdc-wallet" }]
+  },
+  {
+    "id": "gas-fees",
+    "question": "How much are gas fees on XDC?",
+    "keywords": ["gas", "fees", "fee", "cost", "expensive", "cheap", "transaction"],
+    "answer": "XDC has effectively zero base fee. A simple transfer costs ~0.0001 XDC (~$0.00001), a token transfer ~0.0002 XDC, and contract deployment roughly 0.01–0.1 XDC.\n\nDetails: [Gas Fees](/docs/learn/gas-fees) and [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Gas Fees", "url": "/docs/learn/gas-fees" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "get-test-xdc",
+    "question": "How do I get test XDC from the faucet?",
+    "keywords": ["faucet", "test", "testnet", "free", "apothem", "tokens", "fund"],
+    "answer": "Visit [faucet.apothem.network](https://faucet.apothem.network) and enter your wallet address to receive 1000 test XDC instantly. If the faucet limit is reached, wait 24 hours or try [BlocksScan Faucet](https://faucet.blocksscan.io/) or [ChainTools Faucet](https://chains.tools/faucet).\n\nMore: [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "rpc-endpoints",
+    "question": "What are the XDC RPC endpoints?",
+    "keywords": ["rpc", "endpoint", "url", "node", "connect", "https"],
+    "answer": "Mainnet RPC: `https://rpc.xinfin.network` (backup: `https://erpc.xinfin.network`). Apothem Testnet RPC: `https://rpc.apothem.network` (backup: `https://erpc.apothem.network`).\n\nFull endpoint list: [Mainnet RPC Endpoints](/docs/xdc-chain/developers/mainnetrpc) and [Apothem RPC](/docs/xdc-chain/developers/apothemrpc).",
+    "sources": [{ "title": "Mainnet RPC Endpoints", "url": "/docs/xdc-chain/developers/mainnetrpc" }, { "title": "Apothem RPC", "url": "/docs/xdc-chain/developers/apothemrpc" }]
+  },
+  {
+    "id": "chain-ids",
+    "question": "What are the XDC chain IDs?",
+    "keywords": ["chain", "id", "chainid", "50", "51", "551"],
+    "answer": "XDC Mainnet chain ID is **50**, Apothem Testnet is **51**, and Devnet is **551**.\n\nSee [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration) and the [FAQ](/docs/xdc-chain/faq) for full network details.",
+    "sources": [{ "title": "Wallet Configuration", "url": "/docs/xdc-chain/developers/wallet-configuration" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "deploy-contract",
+    "question": "How do I deploy a smart contract on XDC?",
+    "keywords": ["deploy", "contract", "remix", "hardhat", "foundry", "deployment"],
+    "answer": "Three options: **Remix** (browser-only, ~5 min — [remix.xinfin.network](https://remix.xinfin.network)), **Hardhat** (JavaScript, best for teams), or **Foundry** (Rust, fastest). Get test XDC from the faucet and deploy to Apothem first.\n\nSee the [Deployment & Verification guide](/docs/smart-contracts/deployment-verification) and [Quick Guide](/docs/xdc-chain/developers/quick-guide).",
+    "sources": [{ "title": "Deployment & Verification", "url": "/docs/smart-contracts/deployment-verification" }, { "title": "Quick Guide", "url": "/docs/xdc-chain/developers/quick-guide" }]
+  },
+  {
+    "id": "verify-contract",
+    "question": "How do I verify my contract on XDCScan?",
+    "keywords": ["verify", "verification", "xdcscan", "source", "code", "publish"],
+    "answer": "With Hardhat: `npx hardhat verify --network apothem 0xYOUR_CONTRACT_ADDRESS`. With Foundry: `forge verify-contract 0xADDRESS src/Contract.sol:Contract --chain 51`. Manually: open your contract on [xdcscan.com](https://xdcscan.com) (or testnet.xdcscan.com), click **Contract** → **Verify & Publish** — match the exact compiler version and optimization settings.\n\nDetails: [Deployment & Verification](/docs/smart-contracts/deployment-verification).",
+    "sources": [{ "title": "Deployment & Verification", "url": "/docs/smart-contracts/deployment-verification" }]
+  },
+  {
+    "id": "xdc-vs-0x-prefix",
+    "question": "Why does my address start with xdc instead of 0x?",
+    "keywords": ["xdc", "0x", "prefix", "address", "convert", "format"],
+    "answer": "Both are valid — XDCScan displays addresses with an `xdc` prefix while EVM tools like MetaMask use `0x`. They refer to the same account; only the prefix differs. Convert by simply replacing `xdc` with `0x` (or vice versa) — the rest of the address is identical.\n\nSee the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "stuck-transaction",
+    "question": "Why is my transaction stuck or pending?",
+    "keywords": ["stuck", "pending", "transaction", "slow", "confirm", "nonce", "tx"],
+    "answer": "XDC has 2-second block times, so stuck transactions are rare. Check: 1) your wallet is on the correct network (chain ID 50 or 51), 2) you have enough XDC for gas, 3) resubmit with a slightly higher gas price, 4) check network status on [XDCScan](https://xdcscan.com). For a \"nonce too high\" error, reset your MetaMask account (Settings → Advanced → Reset Account — funds are unaffected).\n\nMore: [FAQ troubleshooting](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "supported-wallets",
+    "question": "Which wallets support XDC?",
+    "keywords": ["wallet", "wallets", "metamask", "ledger", "trezor", "trust"],
+    "answer": "Any EVM-compatible wallet works with XDC: MetaMask (recommended), Rabby, Trust Wallet, Coinbase Wallet, Frame, and Ledger/Trezor hardware wallets (via MetaMask).\n\nSetup details: [XDC Wallet guide](/docs/smart-contracts/xdc-wallet).",
+    "sources": [{ "title": "XDC Wallet Guide", "url": "/docs/smart-contracts/xdc-wallet" }]
+  },
+  {
+    "id": "bridge-tokens",
+    "question": "How do I bridge tokens to XDC?",
+    "keywords": ["bridge", "bridging", "ethereum", "transfer", "cross", "chain", "wrapped"],
+    "answer": "Use the [XDC Bridge](https://bridge.xdc.network) (Ethereum ↔ XDC) or third-party bridges like Multichain. Connect your wallet on the source chain, select asset and amount, confirm, and wait 10–30 minutes for the wrapped asset to arrive on XDC. Start with small amounts and verify bridge contracts first.\n\nMore: [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "become-validator",
+    "question": "How do I stake XDC and become a validator?",
+    "keywords": ["stake", "staking", "validator", "masternode", "delegate", "rewards", "become"],
+    "answer": "Becoming a validator (masternode) requires 10,000,000 XDC staked, a dedicated server with 24/7 uptime and a static IP. Validators earn block rewards and transaction fees. You can also run a full or archive node without staking (no rewards).\n\nGuides: [Masternode Setup](/docs/xdc-chain/developers/node-operators/masternode) and [Validator Node](/docs/xdc-chain/developers/node-operators/validator-node).",
+    "sources": [{ "title": "Masternode Setup", "url": "/docs/xdc-chain/developers/node-operators/masternode" }, { "title": "Validator Node", "url": "/docs/xdc-chain/developers/node-operators/validator-node" }]
+  },
+  {
+    "id": "eip-1559",
+    "question": "Does XDC support EIP-1559?",
+    "keywords": ["eip", "1559", "eip-1559", "legacy", "basefee", "base"],
+    "answer": "EIP-1559 is being rolled out on Apothem Testnet; mainnet currently uses the legacy gas model. Both work — your tooling (MetaMask, ethers.js, etc.) handles the difference automatically.\n\nSee [Gas Fees](/docs/learn/gas-fees) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Gas Fees", "url": "/docs/learn/gas-fees" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "evm-compatible",
+    "question": "Is XDC compatible with Ethereum and EVM?",
+    "keywords": ["evm", "ethereum", "compatible", "solidity", "port", "ethers"],
+    "answer": "Yes — XDC is fully EVM-compatible. Solidity contracts work without modification, MetaMask connects natively, Hardhat/Foundry/Remix work out of the box, and ethers.js/Web3.js/Viem function normally, so existing Ethereum dApps port with minimal changes.\n\nSee [EVM to XDC migration](/docs/xdc-chain/evmtoxdc) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "EVM to XDC Migration", "url": "/docs/xdc-chain/evmtoxdc" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "network-details",
+    "question": "What are the XDC network details?",
+    "keywords": ["network", "details", "mainnet", "testnet", "explorer", "config"],
+    "answer": "Mainnet: chain ID 50, RPC `https://rpc.xinfin.network`, explorer [xdcscan.com](https://xdcscan.com). Apothem Testnet: chain ID 51, RPC `https://rpc.apothem.network`, explorer [testnet.xdcscan.com](https://testnet.xdcscan.com), faucet [faucet.apothem.network](https://faucet.apothem.network). Devnet: chain ID 551, RPC `https://devnetrpc.xinfin.network`.\n\nSee [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration).",
+    "sources": [{ "title": "Wallet Configuration", "url": "/docs/xdc-chain/developers/wallet-configuration" }]
+  },
+  {
+    "id": "solidity-version",
+    "question": "What Solidity version should I use on XDC?",
+    "keywords": ["solidity", "version", "pragma", "compiler", "0.8"],
+    "answer": "XDC supports Solidity up to 0.8.24. Use `pragma solidity ^0.8.24;` in your contracts and match the exact compiler version when verifying on XDCScan.\n\nMore: [Deployment & Verification](/docs/smart-contracts/deployment-verification) and [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Deployment & Verification", "url": "/docs/smart-contracts/deployment-verification" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "deployment-failing",
+    "question": "Why is my contract deployment failing?",
+    "keywords": ["deployment", "failing", "failed", "error", "insufficient", "revert"],
+    "answer": "Common causes: insufficient funds (get test XDC from the faucet), wrong network (make sure you're on Apothem, not mainnet), compiler version mismatch with your pragma, gas limit too low, or contract bytecode too large (optimize or split into libraries).\n\nSee [Deployment & Verification](/docs/smart-contracts/deployment-verification) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Deployment & Verification", "url": "/docs/smart-contracts/deployment-verification" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "token-standards",
+    "question": "What token standards does XDC support?",
+    "keywords": ["token", "standards", "xrc20", "xrc721", "nft", "create"],
+    "answer": "XDC supports XRC20 (fungible tokens, like ERC20), XRC721 (NFTs, like ERC721), and XRC404 (hybrid fungible + NFT). Create tokens using OpenZeppelin contracts.\n\nSee the [Tokens guide](/docs/smart-contracts/tokens).",
+    "sources": [{ "title": "Tokens", "url": "/docs/smart-contracts/tokens" }]
+  },
+  {
+    "id": "estimate-gas",
+    "question": "How do I estimate gas for a transaction?",
+    "keywords": ["estimate", "gas", "estimategas", "limit", "calculation"],
+    "answer": "In Hardhat: `await contract.myFunction.estimateGas()`. In Foundry: `cast estimate --rpc-url apothem 0xCONTRACT_ADDRESS \"myFunction()\"`. MetaMask estimates gas automatically when you confirm a transaction.\n\nMore: [Gas Fees](/docs/learn/gas-fees) and [Gas Optimization](/docs/smart-contracts/gas-optimization).",
+    "sources": [{ "title": "Gas Fees", "url": "/docs/learn/gas-fees" }, { "title": "Gas Optimization", "url": "/docs/smart-contracts/gas-optimization" }]
+  },
+  {
+    "id": "upgradeable-contract",
+    "question": "How do I make my contract upgradeable?",
+    "keywords": ["upgradeable", "upgrade", "proxy", "uups", "transparent"],
+    "answer": "Use a proxy pattern: **UUPS** (recommended — upgrade logic lives in the implementation) or **Transparent Proxy** (classic, simpler). OpenZeppelin's upgrade plugins integrate with Hardhat and Foundry.\n\nGuide: [Upgradeable Contracts](/docs/smart-contracts/upgradeable-contracts).",
+    "sources": [{ "title": "Upgradeable Contracts", "url": "/docs/smart-contracts/upgradeable-contracts" }]
+  },
+  {
+    "id": "openzeppelin",
+    "question": "Can I use OpenZeppelin contracts on XDC?",
+    "keywords": ["openzeppelin", "oz", "library", "contracts", "import", "npm"],
+    "answer": "Yes. Install via `npm install @openzeppelin/contracts` (Hardhat) or `forge install OpenZeppelin/openzeppelin-contracts` (Foundry). Since XDC is EVM-compatible, OpenZeppelin contracts work unmodified.\n\nMore: [Tokens](/docs/smart-contracts/tokens) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Tokens", "url": "/docs/smart-contracts/tokens" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "frontend-integration",
+    "question": "How do I call my contract from a frontend?",
+    "keywords": ["frontend", "call", "ethers", "web3", "dapp", "contract"],
+    "answer": "Use ethers.js or Web3.js: create a provider with `new ethers.JsonRpcProvider(\"https://rpc.apothem.network\")`, then instantiate the contract with its address and ABI and call functions directly. Use a signer (e.g. via MetaMask) for state-changing calls.\n\nGuide: [Frontend Integration](/docs/smart-contracts/frontend-integration).",
+    "sources": [{ "title": "Frontend Integration", "url": "/docs/smart-contracts/frontend-integration" }]
+  },
+  {
+    "id": "rpc-down",
+    "question": "What if the XDC RPC is down?",
+    "keywords": ["rpc", "down", "backup", "offline", "unreachable", "failover"],
+    "answer": "Use backup endpoints: mainnet `https://erpc.xinfin.network`, Apothem `https://erpc.apothem.network`. More public endpoints are listed on [Chainlist](https://chainlist.org/?search=xdc).\n\nSee [Mainnet RPC Endpoints](/docs/xdc-chain/developers/mainnetrpc).",
+    "sources": [{ "title": "Mainnet RPC Endpoints", "url": "/docs/xdc-chain/developers/mainnetrpc" }]
+  },
+  {
+    "id": "export-private-key",
+    "question": "How do I export my private key?",
+    "keywords": ["private", "key", "export", "seed", "phrase", "backup"],
+    "answer": "In MetaMask: click the three-dots menu → Account Details → Export Private Key → enter your password → copy the key. **Never share your private key or seed phrase** — anyone with it can steal your funds. Store it offline in a secure location.\n\nMore: [Security Best Practices](/docs/smart-contracts/security-best-practices) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Security Best Practices", "url": "/docs/smart-contracts/security-best-practices" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "switch-network",
+    "question": "How do I switch between mainnet and testnet?",
+    "keywords": ["switch", "network", "mainnet", "testnet", "change"],
+    "answer": "In MetaMask, click the network dropdown and select the network. In Hardhat, use `--network xdc` (mainnet) or `--network apothem` (testnet). In Foundry, use `--rpc-url xdc` or `--rpc-url apothem`. Your address is the same across networks, but balances are separate.\n\nSee [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration).",
+    "sources": [{ "title": "Wallet Configuration", "url": "/docs/xdc-chain/developers/wallet-configuration" }]
+  },
+  {
+    "id": "run-node",
+    "question": "How do I run an XDC node?",
+    "keywords": ["run", "node", "full", "setup", "docker", "sync"],
+    "answer": "Options include the bootstrap script (quickest), Docker (containerized), or a snapshot download for fast sync. You can run a full or archive node without staking — it validates transactions and serves RPC but earns no rewards.\n\nGuides: [Node Operators](/docs/xdc-chain/developers/node-operators/bootstrap) and [Docker setup](/docs/xdc-chain/developers/node-operators/docker).",
+    "sources": [{ "title": "Bootstrap Script", "url": "/docs/xdc-chain/developers/node-operators/bootstrap" }, { "title": "Docker Node", "url": "/docs/xdc-chain/developers/node-operators/docker" }]
+  },
+  {
+    "id": "insufficient-funds",
+    "question": "Why am I getting an insufficient funds error?",
+    "keywords": ["insufficient", "funds", "error", "balance", "enough"],
+    "answer": "You don't have enough XDC to cover the transfer plus gas. On testnet, get free XDC from the [faucet](https://faucet.apothem.network); on mainnet, purchase XDC from exchanges. Also double-check you're on the intended network (testnet vs mainnet).\n\nSee the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "metamask-wont-connect",
+    "question": "Why won't MetaMask connect to XDC?",
+    "keywords": ["metamask", "connect", "connection", "wont", "cant", "browser"],
+    "answer": "Check that you're on the correct network (chain ID 50 or 51), MetaMask is unlocked, and try refreshing the page, clearing your browser cache, or a different browser. Verify the RPC endpoint is reachable.\n\nSee [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Wallet Configuration", "url": "/docs/xdc-chain/developers/wallet-configuration" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "contract-verify-fails",
+    "question": "Why can't I verify my contract on XDCScan?",
+    "keywords": ["verify", "xdcscan", "fail", "compiler", "optimization", "flatten"],
+    "answer": "Match the exact compiler version and optimization settings used at deployment. For multi-file contracts, flatten first (see [Flattening Smart Contracts](/docs/smart-contracts/flattening-smart-contracts)), and provide correct constructor arguments if any.\n\nMore: [Deployment & Verification](/docs/smart-contracts/deployment-verification).",
+    "sources": [{ "title": "Flattening Smart Contracts", "url": "/docs/smart-contracts/flattening-smart-contracts" }, { "title": "Deployment & Verification", "url": "/docs/smart-contracts/deployment-verification" }]
+  },
+  {
+    "id": "add-token-metamask",
+    "question": "How do I add a token to MetaMask?",
+    "keywords": ["token", "import", "metamask", "xrc20", "symbol", "decimals"],
+    "answer": "In MetaMask: Assets tab → **Import tokens** → paste the token contract address → MetaMask auto-fills symbol and decimals → **Add custom token**.\n\nSee the [FAQ](/docs/xdc-chain/faq) and [Tokens guide](/docs/smart-contracts/tokens).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }, { "title": "Tokens", "url": "/docs/smart-contracts/tokens" }]
+  },
+  {
+    "id": "audit-contract",
+    "question": "Should I audit my contract before mainnet?",
+    "keywords": ["audit", "security", "review", "slither", "vulnerability"],
+    "answer": "Yes — always audit before mainnet deployment: internal team review, automated tools (Slither, Mythril), and ideally a professional audit (CertiK, Hacken, etc.).\n\nSee [Security Best Practices](/docs/smart-contracts/security-best-practices).",
+    "sources": [{ "title": "Security Best Practices", "url": "/docs/smart-contracts/security-best-practices" }]
+  },
+  {
+    "id": "get-help",
+    "question": "Where can I get help with XDC development?",
+    "keywords": ["help", "support", "discord", "forum", "community", "question"],
+    "answer": "Best resources: Developer Discord ([discord.gg/xdc](https://discord.gg/xdc)) for quick questions, the Developer Forum ([xdc.dev](https://www.xdc.dev)) for detailed discussions, GitHub ([github.com/XinFinOrg](https://github.com/XinFinOrg)) for bug reports, and StackOverflow with the `xdc` tag.\n\nSee the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  }
+]

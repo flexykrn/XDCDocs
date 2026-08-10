@@ -35,8 +35,22 @@ Requires a `.env` file at the repo root (one level above this directory).
 | Method | Path | Description |
 |---|---|---|
 | `GET` | `/api/health` | Health check: `{ok, index, model}` |
-| `POST` | `/api/chat` | Body: `{message, history?}`. Returns `{answer, sources}` or SSE stream when streaming enabled |
+| `POST` | `/api/chat` | Body: `{message, history?}`. Returns `{answer, sources}` or SSE stream when streaming enabled. FAQ hits return `{faq: true, id}` (JSON) or a `{type: 'meta', faq: true, id}` SSE event |
 | `POST` | `/api/feedback` | Body: `{vote: 'up'\|'down', messageId?, page?, comment?, answerExcerpt?}`. Appends to feedback file |
+
+## Deterministic FAQ layer
+
+`faq.json` holds ~30 curated entries for the most common questions (derived from `website/docs/xdc-chain/faq.md`):
+
+```json
+{ "id": "add-xdc-metamask", "question": "How do I add XDC to MetaMask?",
+  "keywords": ["metamask", "add", "network", "wallet", "setup", "configure"],
+  "answer": "...", "sources": [{ "title": "...", "url": "/docs/..." }] }
+```
+
+Before the embed → Pinecone → Groq pipeline runs, the message is normalized (lowercase, punctuation stripped) and scored against every entry: keyword hit count (multi-word keywords count double) plus word-overlap ratio against the entry's canonical question. A match fires when **keyword hits >= 2 OR question-word overlap ratio > 0.5**; the highest-scoring entry wins. On a hit, the stored answer is returned directly (respecting `ENABLE_STREAMING` — SSE emits `meta` → `sources` → `chunk` → `done`), skipping Pinecone and Groq entirely, and a `FAQ hit` line is logged. On a miss, the request falls through to the normal RAG pipeline unchanged.
+
+To tune: edit entries/keywords in `faq.json` (no restartless reload — restart the server after edits). Loosen/tighten the thresholds in `matchFaq()` in `index.js`. If `sources` is omitted, up to 3 sources are derived from `/docs/...` links in the answer.
 
 ## Ingest
 

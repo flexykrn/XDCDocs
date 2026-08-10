@@ -41,6 +41,73 @@ const namespace = PINECONE_NAMESPACE ? index.namespace(PINECONE_NAMESPACE) : ind
 
 const groq = new Groq({ apiKey: GROQ_API_KEY });
 
+let FAQS = [];
+try {
+  FAQS = JSON.parse(fs.readFileSync(path.join(__dirname, 'faq.json'), 'utf8'));
+  console.log(`Loaded ${FAQS.length} FAQ entries`);
+} catch (err) {
+  console.error('Failed to load faq.json:', err && err.message ? err.message : err);
+}
+
+const FAQ_STOPWORDS = new Set([
+  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'in', 'on', 'for', 'with',
+  'is', 'are', 'do', 'does', 'did', 'i', 'my', 'me', 'you', 'your', 'can',
+  'how', 'what', 'why', 'which', 'when', 'where', 'it', 'this', 'that',
+  'from', 'at', 'by', 'as', 'be', 'if', 'not', 'any', 'should',
+]);
+
+function normalizeFaqText(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function deriveFaqSources(answer) {
+  const sources = [];
+  const seen = new Set();
+  const re = /\[([^\]]+)\]\((\/docs\/[^)]+)\)/g;
+  let m;
+  while ((m = re.exec(answer))) {
+    if (!seen.has(m[2])) {
+      seen.add(m[2]);
+      sources.push({ title: m[1], url: m[2] });
+    }
+  }
+  return sources.slice(0, 3);
+}
+
+function matchFaq(message) {
+  const norm = normalizeFaqText(message);
+  const wordSet = new Set(norm.split(' ').filter(Boolean));
+  let best = null;
+  let bestScore = 0;
+  for (const entry of FAQS) {
+    let kwHits = 0;
+    for (const kw of entry.keywords || []) {
+      if (kw.includes(' ')) {
+        if (norm.includes(kw)) kwHits += 2;
+      } else if (wordSet.has(kw)) {
+        kwHits += 1;
+      }
+    }
+    const qWords = normalizeFaqText(entry.question)
+      .split(' ')
+      .filter((w) => w.length > 2 && !FAQ_STOPWORDS.has(w));
+    const qHits = qWords.filter((w) => wordSet.has(w)).length;
+    const ratio = qWords.length ? qHits / qWords.length : 0;
+    if (kwHits >= 2 || ratio > 0.5) {
+      const score = kwHits + ratio * 3;
+      if (score > bestScore) {
+        bestScore = score;
+        best = entry;
+      }
+    }
+  }
+  return best;
+}
+
 const SYSTEM_PROMPT =
   'You are the XDC Network documentation assistant. Answer ONLY from the provided documentation context. If the answer is not in the context, say you don\'t know and suggest relevant docs sections. Keep answers concise with code blocks when useful. Cite sources as markdown links using the source URLs provided.';
 
@@ -146,6 +213,27 @@ app.post('/api/chat', async (req, res) => {
   }
 
   try {
+    const faq = matchFaq(message);
+    if (faq) {
+      console.log(`FAQ hit: id=${faq.id} matched="${faq.question}" user="${message.trim().slice(0, 120)}"`);
+      const sources =
+        Array.isArray(faq.sources) && faq.sources.length
+          ? faq.sources
+          : deriveFaqSources(faq.answer);
+      if (ENABLE_STREAMING === 'true') {
+        res.setHeader('Content-Type', 'text/event-stream');
+        res.setHeader('Cache-Control', 'no-cache');
+        res.setHeader('Connection', 'keep-alive');
+        res.flushHeaders && res.flushHeaders();
+        res.write(`data: ${JSON.stringify({ type: 'meta', faq: true, id: faq.id })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'sources', sources })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'chunk', content: faq.answer })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'done' })}\n\n`);
+        return res.end();
+      }
+      return res.json({ answer: faq.answer, sources, faq: true, id: faq.id });
+    }
+
     const vector = await embed(message.trim());
     const matches = await queryPinecone(vector);
     const context = buildContext(matches);
