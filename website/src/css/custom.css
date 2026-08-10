@@ -457,8 +457,19 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
   border-radius: 1.25rem;
   overflow: hidden;
   background: var(--xdc-surface);
-  display: block;
-  overflow-x: auto;
+  display: table;
+  width: 100%;
+}
+
+/* narrow screens: allow horizontal scroll instead of squeezing columns */
+@media (max-width: 640px) {
+  .markdown table,
+  .theme-doc-markdown table {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    overflow-x: auto;
+  }
 }
 
 .markdown table thead,

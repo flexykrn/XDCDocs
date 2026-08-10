@@ -24,8 +24,6 @@ Before you dive into setting up XDC Subnet, ensure that you don’t have any con
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/H8jvK-J9mS3Wc-nv4Tp8Xe_Qw-57izhfPUH2oLYj6Ns/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2k0aWNidDBobGty/OWtkZ2xzb3BrLnBu/Zw)](https://www.xdc.dev/images/H8jvK-J9mS3Wc-nv4Tp8Xe_Qw-57izhfPUH2oLYj6Ns/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2k0aWNidDBobGty/OWtkZ2xzb3BrLnBu/Zw)
-
 **Step 2: Set Up the [Docker Repository](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)**
 
 To install Docker Engine, you need to set up the Docker repository. Follow these steps:
@@ -38,10 +36,6 @@ To install Docker Engine, you need to set up the Docker repository. Follow these
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/fpLc5VCUomHHhnJAsSYZuEp5ePWvrSl5zb07ElQ7n90/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2lhNmd4YnY5Z2Vp/OTg2bzM5bmVjLnBu/Zw)](https://www.xdc.dev/images/fpLc5VCUomHHhnJAsSYZuEp5ePWvrSl5zb07ElQ7n90/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2lhNmd4YnY5Z2Vp/OTg2bzM5bmVjLnBu/Zw)
-
-[![Image description](https://www.xdc.dev/images/8TaLx5rpT3xt0D8h6yLGX1n60pK1jGAvSTSx1H16h68/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2J2NW9nemFiZzdl/OWxxeTV4anFoLnBu/Zw)](https://www.xdc.dev/images/8TaLx5rpT3xt0D8h6yLGX1n60pK1jGAvSTSx1H16h68/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2J2NW9nemFiZzdl/OWxxeTV4anFoLnBu/Zw)
-
 1.  Add Docker’s official GPG key:
 
     $ sudo install -m 0755 -d /etc/apt/keyrings
@@ -50,8 +44,6 @@ Enter fullscreen mode Exit fullscreen mode
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/4sH-qnrAM_XukxTa8ADsdiN30807wcI-iTUBV9n3QDI/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3ByeGNqNnFxaXY2/cXNodHN2YnZzLnBu/Zw)](https://www.xdc.dev/images/4sH-qnrAM_XukxTa8ADsdiN30807wcI-iTUBV9n3QDI/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3ByeGNqNnFxaXY2/cXNodHN2YnZzLnBu/Zw)
 
 1.  Use the following command to set up the repository:
 
@@ -63,16 +55,12 @@ Enter fullscreen mode Exit fullscreen mode
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/_wux1WdFNGn3je4-Da-S_gYCk6jMD41gE0zmraUr1P0/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2lucXMzdnlnc3Vz/bTdocGdla3BvLnBu/Zw)](https://www.xdc.dev/images/_wux1WdFNGn3je4-Da-S_gYCk6jMD41gE0zmraUr1P0/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2lucXMzdnlnc3Vz/bTdocGdla3BvLnBu/Zw)
-
 1.  Update the apt package index again:
 
     $ sudo apt-get update
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/TqvEhelrqKAR8tb0EISe5w0PLld3ueCLyzfTFbxYejI/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3oxbDZzNnB3dHRv/NnJmb2kycDYzLnBu/Zw)](https://www.xdc.dev/images/TqvEhelrqKAR8tb0EISe5w0PLld3ueCLyzfTFbxYejI/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3oxbDZzNnB3dHRv/NnJmb2kycDYzLnBu/Zw)
 
 **Step 3: [Install Docker Engine](https://docs.docker.com/engine/install/ubuntu/#install-docker-engine)**
 
@@ -84,16 +72,12 @@ Enter fullscreen mode Exit fullscreen mode
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/j1B8gAvEia9e1X43tbnLvgxUpnWRBGkrOBYo1ZGFfos/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2o2MGpzb3RpZzht/cjhueWo4cHVsLnBu/Zw)](https://www.xdc.dev/images/j1B8gAvEia9e1X43tbnLvgxUpnWRBGkrOBYo1ZGFfos/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2o2MGpzb3RpZzht/cjhueWo4cHVsLnBu/Zw)
-
 1.  Verify the installation by running:
 
     $ sudo docker run hello-world
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/xQKjZPiTb42VNWH4gJdXT5pZj-ek_k5Wuvkfjx416vg/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L216OWRteGlic3lu/Z2FlbGdhYnMzLnBu/Zw)](https://www.xdc.dev/images/xQKjZPiTb42VNWH4gJdXT5pZj-ek_k5Wuvkfjx416vg/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L216OWRteGlic3lu/Z2FlbGdhYnMzLnBu/Zw)
 
 1.  Update the apt package index & Test the installation.
 
@@ -102,10 +86,6 @@ Enter fullscreen mode Exit fullscreen mode
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/DtwNZAdP_wtEz46Wmei9pelgnMb1Ciqi1UupgMwmvHs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3BvdjRvOTY5eGl1/am9zZ3B3b2FxLnBu/Zw)](https://www.xdc.dev/images/DtwNZAdP_wtEz46Wmei9pelgnMb1Ciqi1UupgMwmvHs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3BvdjRvOTY5eGl1/am9zZ3B3b2FxLnBu/Zw)
-
-[![Image description](https://www.xdc.dev/images/ISC7QEPDfiYCkQh7-8EZkhgZUpBOzaVymuXHbfk1Rbs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2ZlbWUzNmhraGUw/OXpvYmU5ZmppLnBu/Zw)](https://www.xdc.dev/images/ISC7QEPDfiYCkQh7-8EZkhgZUpBOzaVymuXHbfk1Rbs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2ZlbWUzNmhraGUw/OXpvYmU5ZmppLnBu/Zw)
 
 Your Docker installation will be successfully completed using these steps!
 
@@ -122,8 +102,6 @@ Clone the Subnet repository and change the directory:
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/ryY1FXqWM1XCnTVBdYTVYljynYRmMjaBaWUrzAzo5nk/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2k4MHg0M3Nrc2p2/ZHp1MGFndzIyLnBu/Zw)](https://www.xdc.dev/images/ryY1FXqWM1XCnTVBdYTVYljynYRmMjaBaWUrzAzo5nk/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2k4MHg0M3Nrc2p2/ZHp1MGFndzIyLnBu/Zw)
-
 **Step 5: Create a Docker Environment File**
 
 Create a docker.env file with parameters similar to docker.env.example, & make necessary configurations by entering below command.  
@@ -132,8 +110,6 @@ Create a docker.env file with parameters similar to docker.env.example, & make n
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/PnkKfk-2H9wWhNMJfT_4_2PptjdMIciq7NIO7g93kaM/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2dvaDFoOGVtZXgw/OGxraWkxbXB4LnBu/Zw)](https://www.xdc.dev/images/PnkKfk-2H9wWhNMJfT_4_2PptjdMIciq7NIO7g93kaM/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2dvaDFoOGVtZXgw/OGxraWkxbXB4LnBu/Zw)
 
 Below is an example of the minimum file required for configs generation, **Update the below parameters with your data in the docker.env file.** Refer to check out in detail **[Config Explanation](https://xinfinorg.github.io/xdc-subnet-docs/deployment/configs_explanation/)**.
 
@@ -175,8 +151,6 @@ Pull the latest Subnet Generator image with this command:
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/6MfACdY5is861v8Kzx84botu56qaNfFm9T4I5gJVbk8/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzZlenB5bTF6bmpk/azBlOWh2Z2wwLnBu/Zw)](https://www.xdc.dev/images/6MfACdY5is861v8Kzx84botu56qaNfFm9T4I5gJVbk8/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzZlenB5bTF6bmpk/azBlOWh2Z2wwLnBu/Zw)
-
 **Step 7: Generate Configurations**
 
 Generate configurations, this will create a new generated directory.  
@@ -187,8 +161,6 @@ Generate configurations, this will create a new generated directory.
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/wfVpMMS7nFNmhpJF4GUYiczTXdCbNGzJsH-TKOOuCOU/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L25xOG8yMmIyazQ4/OXNwMHc5ZmdkLnBu/Zw)](https://www.xdc.dev/images/wfVpMMS7nFNmhpJF4GUYiczTXdCbNGzJsH-TKOOuCOU/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L25xOG8yMmIyazQ4/OXNwMHc5ZmdkLnBu/Zw)
-
 Follow the generated instructions in **commands.txt** to start Subnet Nodes and make sure they are mining.
 
 **Deploy subnet on machine1:**  
@@ -198,10 +170,6 @@ Follow the generated instructions in **commands.txt** to start Subnet Nodes and 
     
 
 Enter fullscreen mode Exit fullscreen mode
-
-[![Image description](https://www.xdc.dev/images/0wjuIrv-4uFG9aiYUoRhM-4LsAoz7QNrNvJDLdz5LLQ/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2t5M2FtZHo3d3Jr/OWYwYnVsb2V4LnBu/Zw)](https://www.xdc.dev/images/0wjuIrv-4uFG9aiYUoRhM-4LsAoz7QNrNvJDLdz5LLQ/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2t5M2FtZHo3d3Jr/OWYwYnVsb2V4LnBu/Zw)
-
-[![Image description](https://www.xdc.dev/images/6xVYBT-Vlw0zkeRgdK8Z69PLH4fiSiRa8wv8zFiYVNk/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzNlb2IwM2RsejA0/MmVuNnIwdmMxLnBu/Zw)](https://www.xdc.dev/images/6xVYBT-Vlw0zkeRgdK8Z69PLH4fiSiRa8wv8zFiYVNk/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzNlb2IwM2RsejA0/MmVuNnIwdmMxLnBu/Zw)
 
 **Step 8: Deploy the Checkpoint Smart Contract**
 
@@ -221,8 +189,6 @@ Execute the following command to deploy the **Checkpoint Smart Contract**:
 
 This will provide you with the Checkpoint Smart Contract address (**checkpoint deployed to:**)
 
-[![Image description](https://www.xdc.dev/images/Ft2GA7zspLBSaUeY5n7rHYPwCRoPHP9yLBm5TpT37uY/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzUzZ3RrMm0wZm8z/ejg2aGMyZDB0LnBu/Zw)](https://www.xdc.dev/images/Ft2GA7zspLBSaUeY5n7rHYPwCRoPHP9yLBm5TpT37uY/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzUzZ3RrMm0wZm8z/ejg2aGMyZDB0LnBu/Zw)
-
 **Step 9: Deploy Subnet Services**
 
 Follow the instructions in commands.txt to **deploy Subnet Services** (relayer, stats-server, frontend) to the “deployment-generator/generated” folder:  
@@ -234,10 +200,6 @@ Follow the instructions in commands.txt to **deploy Subnet Services** (relayer, 
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/UO8wZWjhkR84uIqmgcjGSC5m4Mw83Dy7uPPIGSuM5wU/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2VkMHFyczZ1Nnkw/dmlpN2h1cXFsLnBu/Zw)](https://www.xdc.dev/images/UO8wZWjhkR84uIqmgcjGSC5m4Mw83Dy7uPPIGSuM5wU/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L2VkMHFyczZ1Nnkw/dmlpN2h1cXFsLnBu/Zw)
-
-[![Image description](https://www.xdc.dev/images/0qWK0bhXNxgGbo7XCsF8ZdT-fFL42FbOrrUbmRTsVSg/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3A4aTUyZ3dzdjZl/bmkxMTJzdjNxLnBu/Zw)](https://www.xdc.dev/images/0qWK0bhXNxgGbo7XCsF8ZdT-fFL42FbOrrUbmRTsVSg/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/L3A4aTUyZ3dzdjZl/bmkxMTJzdjNxLnBu/Zw)
-
 **Step 10: Check the Status**  
 
     docker ps -a
@@ -245,13 +207,9 @@ Enter fullscreen mode Exit fullscreen mode
 
 Enter fullscreen mode Exit fullscreen mode
 
-[![Image description](https://www.xdc.dev/images/DEdUFJbxHFV6l-UhNaO9YExCdK0v0aSmI-46NftJccs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzhqbTc5cXNscGl6/cDF5OWVkb3Q4LnBu/Zw)](https://www.xdc.dev/images/DEdUFJbxHFV6l-UhNaO9YExCdK0v0aSmI-46NftJccs/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzhqbTc5cXNscGl6/cDF5OWVkb3Q4LnBu/Zw)
-
 **Step 11: Explore the Subnet UI**
 
 Finally, explore the Subnet UI by accessing it at :5000.
-
-[![Image description](https://www.xdc.dev/images/TkBF3bvcWinGY7WG_Ipa--M-XY14KFoof5Vbr59Bhmw/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzhiYnY3enRhZDFo/bnl1a2FhcDJuLnBu/Zw)](https://www.xdc.dev/images/TkBF3bvcWinGY7WG_Ipa--M-XY14KFoof5Vbr59Bhmw/w:880/mb:500000/ar:1/aHR0cHM6Ly93d3cu/eGRjLmRldi91cGxv/YWRzL2FydGljbGVz/LzhiYnY3enRhZDFo/bnl1a2FhcDJuLnBu/Zw)
 
 Congratulations! You’ve successfully set up your XDC Subnet, enabling you to harness the full potential of XDC Network’s blockchain technology.
 
