@@ -211,6 +211,15 @@ async function main() {
   const index = pinecone.index(PINECONE_INDEX);
   const namespace = PINECONE_NAMESPACE ? index.namespace(PINECONE_NAMESPACE) : index;
 
+  // clear stale vectors first so removed/renamed docs don't linger in the index
+  // (skip with --no-clean). Brief empty-index window; FAQ layer still serves common answers.
+  if (process.argv.includes('--no-clean')) {
+    console.log('Skipping namespace clean (--no-clean).');
+  } else {
+    console.log('Clearing namespace before upsert...');
+    await namespace.deleteAll();
+  }
+
   let upserted = 0;
   let pending = [];
 
