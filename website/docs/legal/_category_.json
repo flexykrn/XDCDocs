@@ -1,0 +1,9 @@
+{
+  "label": "Legal",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "title": "Legal",
+    "description": "Legal notices for the XDC Network documentation."
+  }
+}

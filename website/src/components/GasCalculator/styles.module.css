@@ -1,0 +1,124 @@
+.card {
+  background: var(--xdc-surface);
+  border: 1px solid var(--xdc-line);
+  border-radius: var(--xdc-radius);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--xdc-ink);
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  color: var(--xdc-accent);
+  background: color-mix(in srgb, var(--xdc-accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--xdc-accent) 45%, transparent);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+  min-width: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0 0.85rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--xdc-muted);
+}
+
+.input {
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  background: var(--xdc-surface-2);
+  border: 1px solid var(--xdc-line);
+  border-radius: calc(var(--xdc-radius) / 2);
+  color: var(--xdc-ink);
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--xdc-accent);
+}
+
+.range {
+  width: 100%;
+  accent-color: var(--xdc-accent);
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid var(--xdc-line);
+  border-radius: calc(var(--xdc-radius) / 2);
+  background: var(--xdc-surface-2);
+  margin-top: 0.25rem;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.resultLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--xdc-muted);
+}
+
+.resultValue {
+  font-weight: 700;
+  color: var(--xdc-ink);
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+}
+
+.resultSub {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--xdc-muted);
+}
+
+.resultAccent {
+  font-weight: 700;
+  color: var(--xdc-accent);
+}
+
+.note {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--xdc-muted);
+}

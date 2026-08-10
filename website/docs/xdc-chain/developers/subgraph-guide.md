@@ -8,6 +8,13 @@ description: Index XDC on-chain data with a self-hosted graph-node pointed at an
 
 Querying historical events and aggregated state over raw JSON-RPC does not scale: scanning `eth_getLogs` across millions of blocks is slow, and RPC cannot express queries like "all token holders sorted by balance." An indexer replays blocks once, decodes events into a database, and serves them through a query API. This page covers running a subgraph on XDC with [The Graph](https://thegraph.com/), plus a lightweight custom-indexer alternative.
 
+## Deep-Dive Guides
+
+- [Subgraph Concepts](/docs/xdc-chain/developers/subgraph-concepts) — manifest/schema/mappings anatomy, AssemblyScript, hosted vs self-hosted
+- [Building a Subgraph](/docs/xdc-chain/developers/subgraph-development) — end-to-end XRC20 indexer
+- [Deploying a Subgraph](/docs/xdc-chain/developers/subgraph-deployment) — local graph-node on XDC
+- [Querying Subgraphs](/docs/xdc-chain/developers/subgraph-querying) — GraphQL patterns and frontend integration
+
 ## When Do You Need an Indexer?
 
 | Use case | Tool |

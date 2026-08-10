@@ -3,9 +3,13 @@ title: Rewards Mechanism
 sidebar_position: 5
 ---
 
+import StakingCalculator from '@site/src/components/StakingCalculator';
+
 # Rewards Mechanism
 
 The XDC Network operates on a Delegated Proof of Stake (XDPoS) consensus mechanism, which allows for high transaction throughput, energy efficiency, and security. The network’s rewards mechanism is designed to incentivize Masternode operators and participants who contribute to the stability, security, and growth of the network. This document outlines how the XDC rewards mechanism works, who is eligible for rewards, and how rewards are distributed.
+
+<StakingCalculator />
 
 ## Overview of XDC Rewards System
 

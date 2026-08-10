@@ -4,10 +4,13 @@ sidebar_position: 4
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GasCalculator from "@site/src/components/GasCalculator";
 
 # Gas & Fees on XDC Network
 
 Understanding how transaction fees work on XDC Network.
+
+<GasCalculator />
 
 ## Overview
 

@@ -7,6 +7,13 @@ sidebar_position: 4
 
 The XDC Network is a powerful blockchain platform designed to support various digital assets and decentralized applications. One of its key features is the ability to create and manage tokens, which can represent anything from currency to assets, data, or even unique digital items. On the XDC Network, tokens are classified into different standards based on their functionality and use cases. Here’s an overview of the major token standards:
 
+## Per-standard guides
+
+- [XRC20 Tokens](/docs/smart-contracts/xrc20-tokens) — fungible tokens, allowances, mintable/burnable extensions
+- [XRC721 Tokens](/docs/smart-contracts/xrc721-tokens) — non-fungible tokens, metadata, enumerable extension
+- [XRC1155 Tokens](/docs/smart-contracts/xrc1155-tokens) — multi-token standard, batch operations, URI substitution
+- [XRC404 Tokens](/docs/smart-contracts/xrc404-tokens) — semi-fungible hybrid tokens (experimental)
+
 ## XRC20
 ### Overview:
 [XRC20](https://xdcscan.io/tokens) is the most widely used token standard on the XDC Network, similar to the ERC20 standard on Ethereum. XRC20 tokens are fungible, meaning each token is identical in type and value to another token within the same contract. These tokens are primarily used for cryptocurrencies, utility tokens, and other financial instruments.

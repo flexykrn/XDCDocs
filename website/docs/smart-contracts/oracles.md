@@ -8,6 +8,13 @@ description: Integrating oracles on the XDC Network — price feeds, verifiable 
 
 Smart contracts on the XDC Network execute deterministically — they cannot make HTTP requests or read data from the outside world. Oracles bridge that gap by bringing off-chain data (prices, randomness, API results) on-chain in a way contracts can consume. This guide covers the oracle landscape on XDC, the standard price-feed and randomness patterns, a lightweight custom oracle design, and the security rules that apply to all of them.
 
+## Deep-Dive Guides
+
+- [Oracle Price Feeds](/docs/smart-contracts/oracle-price-feeds) — AggregatorV3Interface consumers with full safety checks, Band/API3/Pyth patterns, and median aggregation
+- [Verifiable Randomness (VRF)](/docs/smart-contracts/oracle-vrf) — request/fulfill randomness, commit-reveal, and why on-chain pseudo-randomness fails
+- [Custom Oracles](/docs/smart-contracts/custom-oracles) — ECDSA signed-data feeds with replay protection and off-chain signers
+- [Oracle Best Practices](/docs/smart-contracts/oracle-best-practices) — staleness thresholds, circuit breakers, TWAP, and monitoring
+
 ## Why Contracts Need Oracles
 
 The EVM is intentionally isolated: every node must be able to replay every transaction and reach the identical state. If contracts could call external APIs directly, different nodes would see different responses and consensus would break. Oracles solve this by having an off-chain party observe the world and publish the result on-chain as ordinary transaction data.

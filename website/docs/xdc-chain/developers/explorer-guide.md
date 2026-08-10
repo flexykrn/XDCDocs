@@ -8,6 +8,11 @@ description: "How to use XDCScan and the Apothem testnet explorer to read transa
 
 Block explorers let you inspect everything happening on the XDC Network without running a node: transactions, addresses, blocks, tokens, and smart contracts. This page covers XDCScan and the other explorers referenced across these docs, and how to read the most common pages.
 
+## Deep-Dive Guides
+
+- [Explorer API Access](/docs/xdc-chain/developers/explorer-api-access) — programmatic access via the Etherscan-compatible REST API
+- [Advanced Explorer Usage](/docs/xdc-chain/developers/explorer-advanced) — internal transactions, event logs, approvals, CSV exports
+
 ## Explorers Overview
 
 | Explorer | Network | URL | When to use |
