@@ -1,0 +1,7 @@
+# XDC Network Documentation
+
+> Developer documentation for the XDC Network (XDC Chain) — EVM-compatible Layer 1 with XDPoS 2.0 consensus, 2s finality, 2000+ TPS. Covers smart contracts, node operation, API reference, security, and subnet deployment. An AI assistant is available on every docs page; raw markdown available via the Copy Markdown button.
+
+This is a static fallback. The full, section-grouped page index is generated at build time and served at https://docs.xdc.network/llms.txt on the deployed site.
+
+For a complete list of pages, see the sitemap: https://docs.xdc.network/sitemap.xml
