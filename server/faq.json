@@ -229,5 +229,145 @@
     "keywords": ["help", "support", "discord", "forum", "community", "question"],
     "answer": "Best resources: Developer Discord ([discord.gg/xdc](https://discord.gg/xdc)) for quick questions, the Developer Forum ([xdc.dev](https://www.xdc.dev)) for detailed discussions, GitHub ([github.com/XinFinOrg](https://github.com/XinFinOrg)) for bug reports, and StackOverflow with the `xdc` tag.\n\nSee the [FAQ](/docs/xdc-chain/faq).",
     "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "xdc-token-utility",
+    "question": "What is the XDC token used for?",
+    "keywords": ["utility", "purpose", "used", "pay", "fees", "staking", "delegating"],
+    "answer": "XDC is the network's native currency: it pays for gas on every transaction (standard gas price is 0.25 Gwei), it is staked (10,000,000 XDC) to run masternodes, and holders can delegate XDC to masternodes to earn a share of rewards.\n\nSee [Gas Fees](/docs/learn/gas-fees) and the [Rewards Mechanism](/docs/xdc-chain/rewards).",
+    "sources": [{ "title": "Gas Fees", "url": "/docs/learn/gas-fees" }, { "title": "Rewards Mechanism", "url": "/docs/xdc-chain/rewards" }]
+  },
+  {
+    "id": "masternode-requirements",
+    "question": "What are the hardware and staking requirements to run a masternode?",
+    "keywords": ["masternode", "requirements", "hardware", "minimum", "stake", "specs", "server", "kyc"],
+    "answer": "You need **10,000,000 XDC** staked, KYC completion, and a dedicated server: 6-core CPU, minimum 16 GB RAM, at least 1 TB SSD/NVMe, a stable 1 Gbps connection, and Ubuntu 22.04 LTS (recommended), plus Docker, Go, and Git.\n\nFull prerequisites: [Masternode guide](/docs/xdc-chain/developers/node-operators/masternode).",
+    "sources": [{ "title": "Masternode", "url": "/docs/xdc-chain/developers/node-operators/masternode" }]
+  },
+  {
+    "id": "staking-rewards-apr",
+    "question": "What APY do masternodes earn?",
+    "keywords": ["apy", "apr", "rewards", "yield", "roi", "annual", "earn"],
+    "answer": "The rewards system uses a fixed APR model: masternodes earn **10% APR** (~1,000,000 XDC/year, ~83,333 XDC/month) and standby nodes earn **8% APR** (~800,000 XDC/year). Per epoch, each masternode receives roughly 41.67 XDC, though actual rewards vary with participation rate and validator set size.\n\nDetails and calculator: [Rewards Mechanism](/docs/xdc-chain/rewards).",
+    "sources": [{ "title": "Rewards Mechanism", "url": "/docs/xdc-chain/rewards" }]
+  },
+  {
+    "id": "epoch-rewards",
+    "question": "How are epoch rewards distributed?",
+    "keywords": ["epoch", "epochs", "900", "distribution", "foundation", "distributed"],
+    "answer": "One epoch equals 900 blocks (~30 minutes), with 48 epochs per day. Each epoch distributes 5,000 XDC total: 10% (500 XDC) goes to the foundation, and the remaining 4,500 XDC is split among eligible nodes based on block validation and signature participation.\n\nSee the [Rewards Mechanism](/docs/xdc-chain/rewards).",
+    "sources": [{ "title": "Rewards Mechanism", "url": "/docs/xdc-chain/rewards" }]
+  },
+  {
+    "id": "what-is-apothem",
+    "question": "What is Apothem?",
+    "keywords": ["apothem", "testnet", "testing", "txdc", "sandbox"],
+    "answer": "Apothem is the XDC Network's public testnet — a safe environment for developing and testing with free, valueless test XDC. It uses chain ID **51**, RPC `https://rpc.apothem.network`, explorer [testnet.xdcscan.com](https://testnet.xdcscan.com), and a faucet that dispenses 1000 test XDC per request.\n\nSee [Network Information](/docs/xdc-chain/network-information) and the [Faucet guide](/docs/xdc-chain/developers/faucet).",
+    "sources": [{ "title": "Network Information", "url": "/docs/xdc-chain/network-information" }, { "title": "Faucet", "url": "/docs/xdc-chain/developers/faucet" }]
+  },
+  {
+    "id": "mainnet-vs-testnet",
+    "question": "What is the difference between mainnet and testnet?",
+    "keywords": ["difference", "mainnet", "testnet", "vs", "versus", "production", "real"],
+    "answer": "Mainnet (chain ID 50) uses real XDC with real value and hosts production dApps. Apothem Testnet (chain ID 51) uses free, valueless test XDC for safe experimentation. Your wallet address is identical on both networks, but balances are completely separate — always test on Apothem before deploying to mainnet.\n\nSee [Network Information](/docs/xdc-chain/network-information) and the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "Network Information", "url": "/docs/xdc-chain/network-information" }, { "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "what-is-devnet",
+    "question": "What is Devnet?",
+    "keywords": ["devnet", "551", "unstable", "experimental", "core"],
+    "answer": "Devnet (chain ID **551**) is an unstable environment for core developers testing new XDC features before they reach testnet or mainnet. Note: Devnet endpoints were unreachable at last verification — use Apothem Testnet until Devnet is restored.\n\nSee [Network Information](/docs/xdc-chain/network-information).",
+    "sources": [{ "title": "Network Information", "url": "/docs/xdc-chain/network-information" }]
+  },
+  {
+    "id": "wrapped-tokens",
+    "question": "What are wrapped tokens on XDC?",
+    "keywords": ["wrapped", "wxdc", "weth", "peg", "bridged"],
+    "answer": "Wrapped tokens represent assets from other blockchains on XDC: **WXDC** (wrapped XDC for DeFi compatibility), **WETH** (wrapped Ethereum), and bridged **USDC**. Each maintains a 1:1 peg with the original asset.\n\nMore: [FAQ](/docs/xdc-chain/faq) and [Tokens](/docs/smart-contracts/tokens).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }, { "title": "Tokens", "url": "/docs/smart-contracts/tokens" }]
+  },
+  {
+    "id": "xdc-subnet",
+    "question": "What is XDC Subnet?",
+    "keywords": ["subnet", "subnets", "private", "checkpoint", "relayer", "enterprise"],
+    "answer": "XDC Subnet is technology for creating a secure, scalable, decentralized private network within the XDC Ecosystem. A subnet is a private chain anchored to the XDC mainnet via checkpoint contracts and relayers, suited to enterprise and institutional use cases.\n\nSee the [XDC Subnet overview](/docs/subnet/overview) and [Private Subnets](/docs/enterprise/private-subnets).",
+    "sources": [{ "title": "XDC Subnet", "url": "/docs/subnet/overview" }, { "title": "Private Subnets", "url": "/docs/enterprise/private-subnets" }]
+  },
+  {
+    "id": "xdpos-consensus",
+    "question": "What consensus mechanism does XDC use?",
+    "keywords": ["consensus", "xdpos", "hotstuff", "bft", "delegated", "xdc"],
+    "answer": "XDC uses **XDPoS 2.0** (XinFin Delegated Proof of Stake), which rests on three pillars: masternode election via delegation and proof-of-stake, the HotStuff state-machine-replication BFT consensus engine, and a reward mechanism that incentivizes node participation.\n\nSee [XDPoS 2.0](/docs/xdc-chain/xdpos2).",
+    "sources": [{ "title": "XDPoS 2.0", "url": "/docs/xdc-chain/xdpos2" }]
+  },
+  {
+    "id": "transaction-finality",
+    "question": "How fast is transaction finality on XDC?",
+    "keywords": ["finality", "finalized", "confirmed", "fast", "irreversible", "seconds"],
+    "answer": "XDC produces blocks roughly every **2 seconds** and achieves deterministic finality through XDPoS 2.0's HotStuff-based consensus, so confirmed transactions are final rather than merely probabilistic.\n\nSee [Network Information](/docs/xdc-chain/network-information) and [XDPoS 2.0](/docs/xdc-chain/xdpos2).",
+    "sources": [{ "title": "Network Information", "url": "/docs/xdc-chain/network-information" }, { "title": "XDPoS 2.0", "url": "/docs/xdc-chain/xdpos2" }]
+  },
+  {
+    "id": "slashing-penalties",
+    "question": "What happens if a masternode goes offline?",
+    "keywords": ["slashing", "slash", "penalty", "offline", "downtime", "masternode", "excluded"],
+    "answer": "Slashing applies to underperforming masternodes: if a masternode fails to sign any block during an entire epoch, it is excluded from block production for the next four epochs. The mechanism is designed to keep the network stable and high-performing rather than to punish operators.\n\nSee the [Slashing Mechanism](/docs/xdc-chain/developers/node-operators/slashing) guide.",
+    "sources": [{ "title": "Slashing Mechanism", "url": "/docs/xdc-chain/developers/node-operators/slashing" }]
+  },
+  {
+    "id": "standby-node",
+    "question": "What is a standby node?",
+    "keywords": ["standby", "backup", "failover", "candidate", "passive"],
+    "answer": "Standby masternodes are identical in form and function to validators but do not actively validate transactions or create blocks — they remain on standby to replace validators that drop from network participation. They require the same 10,000,000 XDC stake and earn a lower 8% APR based on uptime and signature participation.\n\nSee the [Masternode guide](/docs/xdc-chain/developers/node-operators/masternode) and [Rewards Mechanism](/docs/xdc-chain/rewards).",
+    "sources": [{ "title": "Masternode", "url": "/docs/xdc-chain/developers/node-operators/masternode" }, { "title": "Rewards Mechanism", "url": "/docs/xdc-chain/rewards" }]
+  },
+  {
+    "id": "full-vs-archive-node",
+    "question": "What is the difference between a full node and an archive node?",
+    "keywords": ["archive", "full node", "archive node", "pruned", "history", "genesis", "128"],
+    "answer": "A full node (masternode, validator or standby) stores only the most recent 128 blocks — a \"pruned\" node. An archive node stores all blockchain data since the genesis block, which is needed for deep historical queries.\n\nSee the [Masternode guide](/docs/xdc-chain/developers/node-operators/masternode).",
+    "sources": [{ "title": "Masternode", "url": "/docs/xdc-chain/developers/node-operators/masternode" }]
+  },
+  {
+    "id": "where-to-buy-xdc",
+    "question": "Where can I buy XDC?",
+    "keywords": ["buy", "purchase", "exchange", "exchanges", "kucoin", "gate", "bitfinex"],
+    "answer": "Mainnet XDC can be purchased on exchanges such as KuCoin, Gate.io, and Bitfinex. For development, don't buy XDC — get free test XDC from the [Apothem faucet](https://faucet.apothem.network).\n\nSee the [FAQ](/docs/xdc-chain/faq).",
+    "sources": [{ "title": "FAQ", "url": "/docs/xdc-chain/faq" }]
+  },
+  {
+    "id": "node-sync-snapshot",
+    "question": "How do I sync a node faster with a snapshot?",
+    "keywords": ["snapshot", "syncing", "download", "faster", "days", "expedite"],
+    "answer": "Syncing from genesis takes 3–4 days, but downloading a network snapshot brings a node up in minutes. Stop the node, download the mainnet or Apothem snapshot, unpack it, remove the old `nodekey` file, and restart. Snapshots are updated approximately every 20 days at [rpc.xdc.network/snapshots](https://rpc.xdc.network/snapshots/).\n\nFull steps: [Masternode guide](/docs/xdc-chain/developers/node-operators/masternode).",
+    "sources": [{ "title": "Masternode", "url": "/docs/xdc-chain/developers/node-operators/masternode" }]
+  },
+  {
+    "id": "masternode-kyc",
+    "question": "Is KYC required to run a masternode?",
+    "keywords": ["kyc", "know your customer", "identity", "documents", "candidate"],
+    "answer": "Yes — to enhance network integrity and security, masternodes must complete a KYC process in addition to staking 10,000,000 XDC. Upload your documents via the [XinFin Masternode platform](https://master.xinfin.network/); once approved, the dashboard shows \"KYC True\" and you can apply as a candidate.\n\nSee the [Masternode guide](/docs/xdc-chain/developers/node-operators/masternode).",
+    "sources": [{ "title": "Masternode", "url": "/docs/xdc-chain/developers/node-operators/masternode" }]
+  },
+  {
+    "id": "what-is-xrc20",
+    "question": "What is XRC20?",
+    "keywords": ["xrc20", "erc20", "fungible", "mintable", "allowance"],
+    "answer": "XRC20 is the most widely used token standard on XDC, equivalent to Ethereum's ERC20. XRC20 tokens are fungible (each token identical and interchangeable) and used for cryptocurrencies and utility tokens. Because XDC is EVM-compatible, a standard OpenZeppelin ERC20 contract works without modification.\n\nSee the [XRC20 Tokens guide](/docs/smart-contracts/xrc20-tokens) and [Tokens overview](/docs/smart-contracts/tokens).",
+    "sources": [{ "title": "XRC20 Tokens", "url": "/docs/smart-contracts/xrc20-tokens" }, { "title": "Tokens", "url": "/docs/smart-contracts/tokens" }]
+  },
+  {
+    "id": "what-is-xrc721",
+    "question": "What is XRC721?",
+    "keywords": ["xrc721", "erc721", "nft", "nfts", "collectibles", "non-fungible"],
+    "answer": "XRC721 is the NFT standard on XDC, equivalent to Ethereum's ERC721. Each XRC721 token is unique and cannot be exchanged one-to-one, making it ideal for digital collectibles and tokenizing real-world assets like real estate or intellectual property.\n\nSee the [XRC721 Tokens guide](/docs/smart-contracts/xrc721-tokens) and [Tokens overview](/docs/smart-contracts/tokens).",
+    "sources": [{ "title": "XRC721 Tokens", "url": "/docs/smart-contracts/xrc721-tokens" }, { "title": "Tokens", "url": "/docs/smart-contracts/tokens" }]
+  },
+  {
+    "id": "xdc-2-upgrade",
+    "question": "What is the XDC 2.0 upgrade?",
+    "keywords": ["upgrade", "forensics", "accountability", "xdpos2", "2.0"],
+    "answer": "XDC 2.0 refers to the network's upgraded consensus, **XDPoS 2.0**, which regulates nodes with three pillars: masternode election, the state-of-the-art HotStuff Byzantine-fault-tolerant consensus engine, and the reward mechanism — delivering strong security guarantees and deterministic finality.\n\nSee [XDPoS 2.0](/docs/xdc-chain/xdpos2) and the [Rewards Mechanism](/docs/xdc-chain/rewards).",
+    "sources": [{ "title": "XDPoS 2.0", "url": "/docs/xdc-chain/xdpos2" }, { "title": "Rewards Mechanism", "url": "/docs/xdc-chain/rewards" }]
   }
 ]

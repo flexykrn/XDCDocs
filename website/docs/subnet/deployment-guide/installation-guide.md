@@ -211,6 +211,8 @@ Enter fullscreen mode Exit fullscreen mode
 
 Finally, explore the Subnet UI by accessing it at :5000.
 
+![Subnet UI homepage](../img/homepage_1.png)
+
 Congratulations! You’ve successfully set up your XDC Subnet, enabling you to harness the full potential of XDC Network’s blockchain technology.
 
 Checkout the guide for **[XDC Subnet user interface.](https://xinfinorg.github.io/xdc-subnet-docs/category/ui-usage-guide)**

@@ -62,9 +62,6 @@ Use manual setup if you need the Apothem testnet or the network doesn't appear i
 | Symbol | TXDC |
 | Block Explorer | `https://testnet.xdcscan.com` |
 
-{/* TODO(screenshot): MetaMask "Add a network manually" form filled with XDC Mainnet values */}
-{/* TODO(screenshot): MetaMask network dropdown showing XDC Mainnet selected */}
-
 For more RPC endpoints and latency tips, see [Wallet Configuration](/docs/xdc-chain/developers/wallet-configuration).
 
 ## XDC Wallet (XDCPay) Setup
@@ -77,8 +74,6 @@ XDCPay is the XDC-native browser extension wallet:
 4. Back up your seed phrase offline before funding the wallet
 
 The legacy XDC Web Wallet is also available at https://betawallet.xinfin.network/
-
-{/* TODO(screenshot): XDCPay network dropdown with Apothem selected */}
 
 ## Ledger (Hardware Wallet)
 
