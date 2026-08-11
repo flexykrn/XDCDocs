@@ -1,4 +1,16 @@
 services:
+  # Static docs site
+  - type: web
+    name: xdc-docs-site
+    env: static
+    buildCommand: cd website && npm ci && npm run build
+    staticPublishPath: website/build
+    envVars:
+      # set this to the xdc-docs-rag service URL after first deploy, then redeploy
+      - key: RAG_API_URL
+        sync: false
+
+  # RAG chatbot backend
   - type: web
     name: xdc-docs-rag
     env: docker
@@ -19,6 +31,8 @@ services:
       - key: EMBEDDING_MODEL
         sync: false
       - key: RAG_CORS_ORIGIN
+        sync: false
+      - key: FEEDBACK_FILE
         sync: false
       - key: RATE_LIMIT_PER_HOUR
         sync: false
