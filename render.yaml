@@ -1,7 +1,7 @@
 services:
   # Static docs site
   - type: web
-    name: xdc-docs-site
+    name: xdc-docs-site1
     env: static
     buildCommand: cd website && npm ci && npm run build
     staticPublishPath: website/build
