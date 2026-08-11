@@ -3,7 +3,6 @@ services:
   - type: web
     name: xdc-docs-site1
     env: static
-    plan: free
     buildCommand: cd website && npm ci && npm run build
     staticPublishPath: website/build
     envVars:
