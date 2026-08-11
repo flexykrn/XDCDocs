@@ -3,6 +3,7 @@ services:
   - type: web
     name: xdc-docs-site1
     env: static
+    plan: free
     buildCommand: cd website && npm ci && npm run build
     staticPublishPath: website/build
     envVars:
@@ -14,6 +15,7 @@ services:
   - type: web
     name: xdc-docs-rag
     env: docker
+    plan: free
     dockerfilePath: ./server/Dockerfile
     dockerContext: ./server
     healthCheckPath: /api/health
