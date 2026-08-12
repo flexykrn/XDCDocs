@@ -28,26 +28,27 @@ const QUICKSTART_CARDS = [
     icon: Wallet,
     title: 'Connect a wallet',
     desc: 'Add XDC Mainnet and Apothem Testnet details to your wallet.',
-    to: '/docs/xdc-chain/faq#wallets--accounts',
+    to: '/docs/xdc-chain/developers/wallet-configuration',
   },
   {
     icon: FileCode2,
     title: 'Deploy contracts',
     desc: 'Use familiar EVM tooling including Hardhat, Foundry, and Remix.',
-    to: '/docs/xdc-chain/faq#smart-contracts',
+    to: '/docs/smart-contracts/deployment-verification',
   },
   {
     icon: HardDrive,
     title: 'Run infrastructure',
     desc: 'Operate nodes, monitor health, and participate in consensus.',
-    to: '/docs/xdc-chain/faq#nodes--validation',
+    to: '/docs/xdc-chain/developers/node-operators/',
   },
 ];
 
 export default function Home() {
   return (
     <Layout
-      description="Get started with XDC Chain Docs. Explore the documentation for XDC Chain">
+      title="XDC Network Documentation"
+      description="Developer documentation for XDC Network — deploy smart contracts, configure wallets, run validators, and explore the EVM-compatible XDC blockchain.">
       <main>
         <section className="hero-section">
           <div className="hero-lines" aria-hidden />

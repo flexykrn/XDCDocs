@@ -1,67 +1,91 @@
 ---
 title: "Quick Guide: XDC Chain"
 sidebar_position: 1
+description: "A comprehensive starting point for XDC Network — mainnet, testnet, wallets, developer tools, and community resources."
 ---
 
-Welcome to the Quick Guide for XDC Chain! This document is designed to provide you with a comprehensive overview of the XDC Network, its technology, and the tools you need to start your journey. Whether you're new to blockchain or an experienced developer, this guide will help you navigate the key resources and get up to speed with the XDC Network.
+Welcome to the Quick Guide for XDC Chain! This document provides a comprehensive overview of the XDC Network, its technology, and the tools you need to start your journey. Whether you're new to blockchain or an experienced developer, this guide will help you navigate key resources and get up to speed quickly.
 
 ## Getting Started
 
-The XDC Network is a powerful, enterprise-grade blockchain platform designed to facilitate secure, efficient, and scalable decentralized applications (DApps) and global trade solutions. If you're just starting your journey with the XDC Network, this section will help you understand the fundamental concepts, terminology, and processes.
+The XDC Network is a powerful, enterprise-grade blockchain platform designed for secure, efficient, and scalable decentralized applications (DApps) and global trade solutions.
+
+:::tip New to XDC?
+Start with the [Learn section](/docs/learn/) for blockchain basics and XDC architecture, then come back here for the practical tools.
+:::
 
 ## Mainnet
 
-The XDC Network's Mainnet is the live, operational blockchain where actual transactions take place. Understanding the Mainnet is crucial for interacting with the XDC Network in a real-world environment.
+The XDC Network Mainnet is the live, operational blockchain where real transactions take place.
 
-- **Mainnet Details:** Learn more about the XDC Mainnet, its architecture, and operational specifics. [Network Information and RPC Providers](./rpc.md)
-- **Explorer:** Track transactions, smart contracts, and more on the XDC Mainnet using the official blockchain explorer. https://xdcscan.com | https://xdcscan.io
-- **Stats:** Access real-time statistics about the XDC Mainnet, including transaction volumes, network health, and more. [Mainnet Stats](https://stats.xdc.org/) | [XinFin Network Stats](https://xinfin.network/#stats)
+| Resource | Link |
+|----------|------|
+| Network Details & RPC | [Network Information and RPC Providers](./rpc.md) |
+| Explorer (primary) | [xdcscan.com](https://xdcscan.com) |
+| Explorer (alternate) | [xdcscan.io](https://xdcscan.io) |
+| Mainnet Stats | [stats.xdc.org](https://stats.xdc.org/) |
+| Chain ID | 50 |
 
 ## Apothem Testnet
 
-The Apothem Testnet is the testing environment for the XDC Network. It's an ideal place to experiment with your DApps, smart contracts, and other blockchain-based solutions before deploying them on the Mainnet.
+The Apothem Testnet is the testing environment for XDC Network — experiment with DApps and smart contracts here before deploying to Mainnet.
 
-- **Testnet Details:** Get an in-depth understanding of the Apothem Testnet and how to use it effectively. [Testnet Details](./rpc.md)
-- **Explorer:** View and track transactions on the Apothem Testnet using the official Testnet explorer. https://testnet.xdcscan.com/ | https://apothem.xdcscan.io/
-- **Stats:** Monitor the performance and activity on the Apothem Testnet. [Testnet Stats](https://apothem.network/#stats)
-- **Faucet:** Need test XDC tokens? Use the Apothem Testnet faucet to get free tokens for testing. [Get Test XDC](https://faucet.blocksscan.io/)
+| Resource | Link |
+|----------|------|
+| Testnet RPC | [Testnet Details](./rpc.md) |
+| Explorer (primary) | [testnet.xdcscan.com](https://testnet.xdcscan.com/) |
+| Explorer (alternate) | [apothem.xdcscan.io](https://apothem.xdcscan.io/) |
+| Testnet Stats | [apothem.network](https://apothem.network/#stats) |
+| Faucet — get free test XDC | [faucet.blocksscan.io](https://faucet.blocksscan.io/) |
+| Chain ID | 51 |
 
 ## XDC Devnet
-The XDC Devnet is a development-focused environment that allows developers to test and deploy their projects in a controlled setting. It’s perfect for experimenting with new features, running simulations, and fine-tuning DApps before launching them on the Mainnet or Testnet.
 
-- **Devnet Explorer:** Track and analyze transactions, smart contracts, and other activities on the XDC Devnet. [Devnet Explorer](https://devnet.xdcscan.io/)
+The XDC Devnet is a development-focused environment for testing new features and simulations in a controlled setting.
 
+| Resource | Link |
+|----------|------|
+| Devnet Explorer | [devnet.xdcscan.io](https://devnet.xdcscan.io/) |
 
 ## Developer Resources
 
-- **Quick Tools Guide:** https://xinfin.org/quick-tools-guide
-- **API Documentation:** https://docs.etherscan.io/etherscan-v2 | https://docs.blocksscan.io/
-- **Developer Documentation:** https://docs.xdc.network
-- **Full Node Setup Instructions:** https://github.com/XinFinOrg/XinFin-Node
+| Resource | Link |
+|----------|------|
+| API Documentation | [XDC Network API Docs](/docs/api-reference/) |
+| Block Explorer API | [blocksscan.io API docs](https://docs.blocksscan.io/) |
+| Full Node Setup | [XinFin-Node on GitHub](https://github.com/XinFinOrg/XinFin-Node) |
+| Quick Tools Guide | [xinfin.org/quick-tools-guide](https://xinfin.org/quick-tools-guide) |
 
+## XDC Wallets
 
-## XDC Wallets:
+To start using XDC, you'll need a secure wallet. See the full [Wallet Configuration guide](/docs/xdc-chain/developers/wallet-configuration) for setup instructions.
 
-To start using XDC, you’ll need a secure wallet—a dedicated app for storing your XDC and interacting with other apps on the XDC Network. Ensuring the safety of your XDC is crucial, so choose from a variety of trusted wallets that offer high security and unique features. [Here](https://xinfin.org/wallets) are some of the top options.
+Popular options:
+- **[MetaMask](https://metamask.io)** — recommended, most popular
+- **[Rabby](https://rabby.io)** — power users with enhanced security
+- **[Trust Wallet](https://trustwallet.com)** — mobile-first
+- **[Ledger](https://ledger.com)** / **[Trezor](https://trezor.io)** — hardware wallets
 
-## Additional Tools:
+## Developer Tools
 
-- [Remix](https://remix.xdc.network/): An online IDE for writing and deploying smart contracts on the XDC Network.
-- Hardhat: A development environment for Ethereum-compatible blockchains, including XDC.
-- Truffle: A development framework for Ethereum and XDC-compatible blockchains.
-- Brownie: A Python-based development and testing framework for Ethereum and XDC smart contracts.
+| Tool | Description | Guide |
+|------|-------------|-------|
+| [Remix XDC IDE](https://remix.xdc.network/) | Browser-based smart contract IDE | [Remix Guide](/docs/smart-contracts/remix-guide) |
+| [Hardhat](https://hardhat.org) | Compile, test, deploy Solidity | [Hardhat Guide](/docs/smart-contracts/hardhat-guide) |
+| [Foundry](https://getfoundry.sh) | Fast Rust-based EVM testing | [Foundry Guide](/docs/smart-contracts/foundry-guide) |
+| [Truffle](https://trufflesuite.com) | Development framework for EVM chains | External docs |
+| [Brownie](https://eth-brownie.readthedocs.io) | Python-based EVM framework | External docs |
 
 ## Community and Support
-Join the vibrant community of developers, validators, and users who are actively contributing to the XDC Network's growth and innovation. Engage with the community, ask questions, and share your knowledge.
 
-- **Dev Forum:** 
-Participate in discussions, ask questions, and collaborate with other developers. [XDC Dev Forum](https://www.xdc.dev/)
+Join the vibrant community of developers, validators, and users building on XDC Network.
 
-- **Discord**: 
-Join the official XDC Network Discord channel for real-time support and community interaction. [Join Discord](https://discord.gg/Yc4R2meFda)
+| Channel | Link |
+|---------|------|
+| Dev Forum | [xdc.dev](https://www.xdc.dev/) |
+| Discord | [Join Discord](https://discord.gg/Yc4R2meFda) |
+| Community Resources | [Community docs](/docs/community/) |
 
-## Final Note
-It's unnecessary to review every document to have a working knowledge of the XDC Network. Explore the resources as needed, dive deeper into specific sections that interest you, and don't hesitate to seek support from the community whenever necessary.
+Happy building on XDC Network!
 
-Happy building on the XDC Network!
 

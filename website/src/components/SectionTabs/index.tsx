@@ -3,11 +3,13 @@ import {useLocation} from '@docusaurus/router';
 
 const SECTIONS = [
   {label: 'Learn', to: '/docs/learn/', match: '/docs/learn'},
+  {label: 'Developers', to: '/docs/xdc-chain/developers/', match: '/docs/xdc-chain/developers'},
   {label: 'XDC Chain', to: '/docs/xdc-chain/', match: '/docs/xdc-chain'},
   {label: 'XDC Subnet', to: '/docs/subnet/overview', match: '/docs/subnet'},
   {label: 'Enterprise', to: '/docs/enterprise/', match: '/docs/enterprise'},
   {label: 'API Reference', to: '/docs/api-reference/', match: '/docs/api-reference'},
   {label: 'Smart Contracts', to: '/docs/smart-contracts/', match: '/docs/smart-contracts'},
+  {label: 'Security', to: '/docs/security/overview', match: '/docs/security'},
   {label: 'Ecosystem', to: '/docs/ecosystem/', match: '/docs/ecosystem'},
   {label: 'Announcements', to: '/docs/announcements/', match: '/docs/announcements'},
 ];

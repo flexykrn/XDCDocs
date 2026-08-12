@@ -36,7 +36,7 @@
     'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --ifm-heading-font-family: var(--ifm-font-family-base);
   --ifm-heading-font-weight: 800;
-  --ifm-font-weight-semibold: 650;
+  --ifm-font-weight-semibold: 600;
 
   --ifm-navbar-background-color: color-mix(in srgb, var(--xdc-bg) 86%, transparent);
   --ifm-navbar-height: 4rem;
@@ -315,7 +315,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 .markdown h2 {
   font-size: clamp(1.7rem, 3vw, 2.25rem);
   line-height: 1.12;
-  font-weight: 850;
+  font-weight: 800;
   letter-spacing: -0.04em;
   margin-top: 3.25rem;
   --ifm-h2-font-size: clamp(1.7rem, 3vw, 2.25rem);
@@ -332,7 +332,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 }
 
 .markdown a {
-  font-weight: 650;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--xdc-accent) 45%, transparent);
   text-underline-offset: 4px;
@@ -917,7 +917,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 
 .section-heading {
   font-size: clamp(1.7rem, 3vw, 2.25rem);
-  font-weight: 850;
+  font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--xdc-ink);
   margin: 0 0 1rem;
@@ -1161,7 +1161,7 @@ html {
 
 [class*='announcementBar'] {
   background: var(--xdc-ink);
-  color: var(--xdc-bg);
+  color: #f0f4ff; /* fixed light color — var(--xdc-bg) is near-black in dark mode */
   font-size: 0.85rem;
   font-weight: 600;
 }
