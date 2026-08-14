@@ -40,7 +40,7 @@ const QUICKSTART_CARDS = [
     icon: HardDrive,
     title: 'Run infrastructure',
     desc: 'Operate nodes, monitor health, and participate in consensus.',
-    to: '/docs/xdc-chain/developers/node-operators/',
+    to: '/docs/xdc-chain/developers/node-operators/masternode',
   },
 ];
 

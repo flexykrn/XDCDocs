@@ -151,5 +151,5 @@ XDC holders who delegate to Master Nodes share in the rewards:
 
 - [XinFin XDPoS 2.0 Technical Paper](https://github.com/XinFinOrg/XDPoSChain/blob/master/consensus/XDPoS_v2.md)
 - [HotStuff Protocol — original paper](https://arxiv.org/abs/1803.05069)
-- [Node Operators Guide](/docs/xdc-chain/developers/node-operators/)
+- [Node Operators Guide](/docs/xdc-chain/developers/node-operators/masternode)
 - [XDC Architecture](/docs/learn/xdc-architecture)

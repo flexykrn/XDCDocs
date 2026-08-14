@@ -3,7 +3,7 @@ import {useLocation} from '@docusaurus/router';
 
 const SECTIONS = [
   {label: 'Learn', to: '/docs/learn/', match: '/docs/learn'},
-  {label: 'Developers', to: '/docs/xdc-chain/developers/', match: '/docs/xdc-chain/developers'},
+  {label: 'Developers', to: '/docs/xdc-chain/developers/quick-guide', match: '/docs/xdc-chain/developers'},
   {label: 'XDC Chain', to: '/docs/xdc-chain/', match: '/docs/xdc-chain'},
   {label: 'XDC Subnet', to: '/docs/subnet/overview', match: '/docs/subnet'},
   {label: 'Enterprise', to: '/docs/enterprise/', match: '/docs/enterprise'},
