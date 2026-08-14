@@ -76,36 +76,102 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="status-panel">
-              <div className="status-panel__head">
-                <div>
-                  <p className="status-panel__title">Network status</p>
-                  <p className="status-panel__subtitle">
-                    Developer essentials at a glance
-                  </p>
-                </div>
-                <span className="status-badge">Operational</span>
-              </div>
-              <div className="stat-grid">
-                {STATS.map((stat) => (
-                  <div key={stat.label} className="stat-card">
-                    <p className="stat-card__label">{stat.label}</p>
-                    <p className="stat-card__value">{stat.value}</p>
+            <div className="hero-visual" aria-hidden>
+              {/* Animated validator ring */}
+              <div className="validator-ring-wrap">
+                <svg
+                  className="validator-ring"
+                  viewBox="0 0 320 320"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  {/* Outer orbit ring */}
+                  <circle cx="160" cy="160" r="140" className="ring-orbit" />
+                  <circle cx="160" cy="160" r="100" className="ring-orbit ring-orbit--mid" />
+
+                  {/* 108 validator nodes arranged in outer ring */}
+                  {Array.from({length: 36}, (_, i) => {
+                    const angle = (i * 360) / 36;
+                    const rad = (angle * Math.PI) / 180;
+                    const x = 160 + 140 * Math.cos(rad);
+                    const y = 160 + 140 * Math.sin(rad);
+                    return (
+                      <circle
+                        key={i}
+                        cx={x}
+                        cy={y}
+                        r="4"
+                        className="validator-node"
+                        style={{animationDelay: `${(i * 0.09).toFixed(2)}s`}}
+                      />
+                    );
+                  })}
+
+                  {/* Inner ring nodes */}
+                  {Array.from({length: 18}, (_, i) => {
+                    const angle = (i * 360) / 18;
+                    const rad = (angle * Math.PI) / 180;
+                    const x = 160 + 100 * Math.cos(rad);
+                    const y = 160 + 100 * Math.sin(rad);
+                    return (
+                      <circle
+                        key={`inner-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="3"
+                        className="validator-node validator-node--inner"
+                        style={{animationDelay: `${(i * 0.15 + 0.5).toFixed(2)}s`}}
+                      />
+                    );
+                  })}
+
+                  {/* Animated consensus sweep line */}
+                  <line
+                    x1="160" y1="160"
+                    x2="300" y2="160"
+                    className="consensus-sweep"
+                  />
+
+                  {/* Center XDC glow */}
+                  <circle cx="160" cy="160" r="38" className="center-glow" />
+                  <circle cx="160" cy="160" r="26" className="center-core" />
+
+                  {/* XDC text */}
+                  <text
+                    x="160" y="155"
+                    textAnchor="middle"
+                    className="center-label-top">
+                    XDC
+                  </text>
+                  <text
+                    x="160" y="170"
+                    textAnchor="middle"
+                    className="center-label-sub">
+                    Network
+                  </text>
+                </svg>
+
+                {/* Stat chips floating below the ring */}
+                <div className="ring-stats">
+                  <div className="ring-stat">
+                    <span className="ring-stat__value">2s</span>
+                    <span className="ring-stat__label">Finality</span>
                   </div>
-                ))}
-              </div>
-              <div className="code-window">
-                <div className="code-window__bar">
-                  <span className="code-window__dot code-window__dot--red" />
-                  <span className="code-window__dot code-window__dot--yellow" />
-                  <span className="code-window__dot code-window__dot--green" />
-                  <span className="code-window__filename">xdc.config.js</span>
+                  <div className="ring-stat ring-stat--accent">
+                    <span className="ring-stat__value">2,000+</span>
+                    <span className="ring-stat__label">TPS</span>
+                  </div>
+                  <div className="ring-stat">
+                    <span className="ring-stat__value">&lt;$0.001</span>
+                    <span className="ring-stat__label">Avg fee</span>
+                  </div>
+                  <div className="ring-stat">
+                    <span className="ring-stat__value">108</span>
+                    <span className="ring-stat__label">Validators</span>
+                  </div>
                 </div>
-                <pre>
-                  <code>{CONFIG_SNIPPET}</code>
-                </pre>
               </div>
             </div>
+
           </div>
         </section>
 

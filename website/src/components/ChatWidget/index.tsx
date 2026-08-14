@@ -124,6 +124,13 @@ export default function ChatWidget() {
     return () => document.removeEventListener('keydown', handler);
   }, []);
 
+  // Listen for navbar 'Ask AI' button event
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    document.addEventListener('xdc:open-chat', handler);
+    return () => document.removeEventListener('xdc:open-chat', handler);
+  }, []);
+
   useEffect(() => {
     try {
       window.localStorage.setItem(HISTORY_KEY, JSON.stringify(messages.slice(-HISTORY_CAP)));

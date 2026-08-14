@@ -5,10 +5,29 @@ services:
     env: static
     buildCommand: cd website && npm ci && npm run build
     staticPublishPath: website/build
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    routes:
+      # Catch-all: serve index.html for client-side routing (Docusaurus SPA)
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
-      # set this to the xdc-docs-rag service URL after first deploy, then redeploy
+      # STEP 1: Deploy RAG service first, get its URL, then set this and redeploy
       - key: RAG_API_URL
         sync: false
+
 
   # RAG chatbot backend
   - type: web

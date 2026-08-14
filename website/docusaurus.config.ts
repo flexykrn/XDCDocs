@@ -45,6 +45,15 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
       },
     ],
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
+      },
+    ],
   ],
 
   stylesheets: [
@@ -73,7 +82,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/OpenScanAI/XDCDocs/edit/main/website/',
+          editUrl: 'https://github.com/XinFinOrg/Docs/edit/main/website/',
           showLastUpdateTime: true,
         },
         blog: false,
@@ -105,6 +114,10 @@ const config: Config = {
         {
           type: 'custom-searchButton',
           position: 'left',
+        },
+        {
+          type: 'custom-navbarCtaButton',
+          position: 'right',
         },
       ],
     },
