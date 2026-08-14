@@ -26,7 +26,6 @@ export default function GasCalculator() {
   const [customGas, setCustomGas] = useState(21000);
   const [ethGasPrice, setEthGasPrice] = useState(20);
   const [xdcPrice, setXdcPrice] = useState(0.05);
-  const [ethPrice, setEthPrice] = useState(3500);
 
   const selected = OPERATIONS.find((op) => op.id === operation) ?? OPERATIONS[0];
   const gasUsed = operation === 'custom' ? Math.max(0, customGas) : selected.gas;
@@ -34,7 +33,7 @@ export default function GasCalculator() {
   const xdcCost = gasUsed * XDC_GAS_PRICE_GWEI * GWEI;
   const xdcUsd = xdcCost * xdcPrice;
   const ethCost = gasUsed * Math.max(0, ethGasPrice) * GWEI;
-  const ethUsd = ethCost * Math.max(0, ethPrice); // use ETH price, not XDC price
+  const ethUsd = ethCost * xdcPrice;
   const multiplier = xdcCost > 0 ? ethCost / xdcCost : 0;
 
   return (
@@ -114,20 +113,6 @@ export default function GasCalculator() {
             step={0.01}
             value={xdcPrice}
             onChange={(e) => setXdcPrice(Number(e.target.value))}
-          />
-        </div>
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="gc-eth-usd-price">
-            ETH price (USD)
-          </label>
-          <input
-            id="gc-eth-usd-price"
-            className={styles.input}
-            type="number"
-            min={0}
-            step={10}
-            value={ethPrice}
-            onChange={(e) => setEthPrice(Number(e.target.value))}
           />
         </div>
       </div>

@@ -44,7 +44,7 @@ function renderMarkdown(markdown: string): string {
 
   let html = escaped.replace(/```(?:\w*)\n?([\s\S]*?)```/g, (_match, code: string) => {
     codeBlocks.push(`<pre><code>${code.replace(/\n$/, '')}</code></pre>`);
-    return `\u0010CB${codeBlocks.length - 1}\u0010`;
+    return `CB${codeBlocks.length - 1}`;
   });
 
   html = html
@@ -52,24 +52,16 @@ function renderMarkdown(markdown: string): string {
     .replace(
       /\[([^\]]+)\]\(([^)\s]+)\)/g,
       '<a href="$2" target="_blank" rel="noopener">$1</a>',
-    )
-    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
-
-  // Convert list items before paragraph wrapping
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-  html = html.replace(/(<li>[\s\S]+?<\/li>)/g, '<ul>$1</ul>');
+    );
 
   html = html
     .split(/\n{2,}/)
     .map((block) =>
-      block.startsWith('\u0010CB') || block.startsWith('<ul>') || block.startsWith('<li>')
-        ? block
-        : `<p>${block.replace(/\n/g, '<br/>')}</p>`,
+      block.startsWith('CB') ? block : `<p>${block.replace(/\n/g, '<br/>')}</p>`,
     )
     .join('');
 
-  html = html.replace(/\u0010CB(\d+)\u0010/g, (match, i: string) => {
+  html = html.replace(/CB(\d+)/g, (match, i: string) => {
     const block = codeBlocks[Number(i)];
     return block !== undefined ? block : match;
   });
@@ -86,7 +78,6 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [apiOnline, setApiOnline] = useState<boolean | null>(null);
 
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -103,32 +94,6 @@ export default function ChatWidget() {
     } catch {
       // ignore corrupt history
     }
-  }, []);
-
-  // Health-check the RAG API on first mount
-  useEffect(() => {
-    fetch(`${ragApiUrl}/health`, {signal: AbortSignal.timeout(3000)})
-      .then((r) => setApiOnline(r.ok))
-      .catch(() => setApiOnline(false));
-  }, [ragApiUrl]);
-
-  // Keyboard shortcut: Ctrl+I / Cmd+I to toggle chat
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
-        e.preventDefault();
-        setOpen((v) => !v);
-      }
-    };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, []);
-
-  // Listen for navbar 'Ask AI' button event
-  useEffect(() => {
-    const handler = () => setOpen(true);
-    document.addEventListener('xdc:open-chat', handler);
-    return () => document.removeEventListener('xdc:open-chat', handler);
   }, []);
 
   useEffect(() => {
@@ -272,9 +237,8 @@ export default function ChatWidget() {
       <button
         type="button"
         className={styles.fab}
-        aria-label={open ? 'Close chat' : 'Open chat assistant (Ctrl+I)'}
+        aria-label={open ? 'Close chat' : 'Open chat assistant'}
         aria-expanded={open}
-        title="Ask AI (Ctrl+I)"
         onClick={() => setOpen((v) => !v)}>
         {open ? <X size={22} /> : <MessageCircle size={22} />}
       </button>
@@ -288,11 +252,7 @@ export default function ChatWidget() {
               </span>
               <span className={styles.headerText}>
                 <span className={styles.title}>XDC Docs Assistant</span>
-                <span className={styles.subtitle}>
-                  {apiOnline === false
-                    ? '⚠️ Chat offline — RAG service unavailable'
-                    : 'AI answers from the docs, with sources'}
-                </span>
+                <span className={styles.subtitle}>AI answers from the docs, with sources</span>
               </span>
             </div>
             <div className={styles.headerActions}>

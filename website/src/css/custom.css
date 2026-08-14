@@ -36,7 +36,7 @@
     'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --ifm-heading-font-family: var(--ifm-font-family-base);
   --ifm-heading-font-weight: 800;
-  --ifm-font-weight-semibold: 600;
+  --ifm-font-weight-semibold: 650;
 
   --ifm-navbar-background-color: color-mix(in srgb, var(--xdc-bg) 86%, transparent);
   --ifm-navbar-height: 4rem;
@@ -202,39 +202,6 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
   transition: box-shadow 0.2s ease;
 }
 
-/* ---------- Ask AI Navbar Button ---------- */
-
-.xdc-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  border: 1.5px solid var(--xdc-accent);
-  background: color-mix(in srgb, var(--xdc-accent) 14%, transparent);
-  color: var(--xdc-accent);
-  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.xdc-cta-btn:hover {
-  background: color-mix(in srgb, var(--xdc-accent) 22%, transparent);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--xdc-accent) 35%, transparent);
-  transform: translateY(-1px);
-  color: var(--xdc-accent);
-  text-decoration: none;
-}
-
-.xdc-cta-btn:active {
-  transform: translateY(0);
-}
-
-
 /* ---------- Sidebar ---------- */
 
 .theme-doc-sidebar-container {
@@ -348,7 +315,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 .markdown h2 {
   font-size: clamp(1.7rem, 3vw, 2.25rem);
   line-height: 1.12;
-  font-weight: 800;
+  font-weight: 850;
   letter-spacing: -0.04em;
   margin-top: 3.25rem;
   --ifm-h2-font-size: clamp(1.7rem, 3vw, 2.25rem);
@@ -365,7 +332,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 }
 
 .markdown a {
-  font-weight: 600;
+  font-weight: 650;
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--xdc-accent) 45%, transparent);
   text-underline-offset: 4px;
@@ -797,183 +764,6 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
   color: var(--xdc-ink);
 }
 
-/* ---------- Animated Validator Ring Hero ---------- */
-
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.validator-ring-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.validator-ring {
-  width: min(320px, 90vw);
-  height: min(320px, 90vw);
-  overflow: visible;
-}
-
-/* Orbit rings */
-.ring-orbit {
-  stroke: color-mix(in srgb, var(--xdc-accent) 20%, transparent);
-  stroke-width: 1;
-  stroke-dasharray: 4 6;
-  animation: ring-rotate 40s linear infinite;
-  transform-origin: 160px 160px;
-}
-
-.ring-orbit--mid {
-  stroke: color-mix(in srgb, var(--xdc-accent) 12%, transparent);
-  animation-duration: 28s;
-  animation-direction: reverse;
-  stroke-dasharray: 3 8;
-}
-
-@keyframes ring-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Validator node dots */
-.validator-node {
-  fill: color-mix(in srgb, var(--xdc-accent) 70%, transparent);
-  animation: node-beat 3s ease-in-out infinite alternate;
-}
-
-.validator-node--inner {
-  fill: color-mix(in srgb, var(--xdc-accent-2) 65%, transparent);
-  animation: node-beat-inner 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes node-beat {
-  0% { opacity: 0.3; r: 3; }
-  60% { opacity: 1; r: 5; }
-  100% { opacity: 0.5; r: 4; }
-}
-
-@keyframes node-beat-inner {
-  0% { opacity: 0.2; }
-  70% { opacity: 0.9; }
-  100% { opacity: 0.4; }
-}
-
-/* Consensus sweep line */
-.consensus-sweep {
-  stroke: var(--xdc-accent);
-  stroke-width: 1.5;
-  opacity: 0.6;
-  transform-origin: 160px 160px;
-  animation: sweep-rotate 2s linear infinite;
-}
-
-@keyframes sweep-rotate {
-  from { transform: rotate(0deg); opacity: 0.6; }
-  80% { opacity: 0.8; }
-  to { transform: rotate(360deg); opacity: 0.6; }
-}
-
-/* Center glow & core */
-.center-glow {
-  fill: color-mix(in srgb, var(--xdc-accent) 15%, transparent);
-  animation: center-pulse 2s ease-in-out infinite;
-}
-
-.center-core {
-  fill: var(--xdc-surface);
-  stroke: var(--xdc-accent);
-  stroke-width: 1.5;
-}
-
-@keyframes center-pulse {
-  0%, 100% { r: 36; opacity: 0.5; }
-  50% { r: 42; opacity: 0.9; }
-}
-
-/* Center labels */
-.center-label-top {
-  font-family: var(--ifm-font-family-base);
-  font-size: 10px;
-  font-weight: 900;
-  fill: var(--xdc-accent);
-  letter-spacing: 0.06em;
-}
-
-.center-label-sub {
-  font-family: var(--ifm-font-family-base);
-  font-size: 7px;
-  font-weight: 600;
-  fill: var(--xdc-muted);
-  letter-spacing: 0.04em;
-}
-
-/* Stat chips below ring */
-.ring-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  width: 100%;
-  max-width: 320px;
-}
-
-.ring-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--xdc-surface);
-  border: 1px solid var(--xdc-line);
-  border-radius: 0.75rem;
-  padding: 0.6rem 0.25rem;
-  gap: 0.2rem;
-  transition: border-color 0.2s ease;
-}
-
-.ring-stat:hover {
-  border-color: var(--xdc-accent);
-}
-
-.ring-stat--accent {
-  border-color: color-mix(in srgb, var(--xdc-accent) 40%, transparent);
-  background: color-mix(in srgb, var(--xdc-accent) 6%, var(--xdc-surface));
-}
-
-.ring-stat__value {
-  font-size: 0.95rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--xdc-ink);
-}
-
-.ring-stat--accent .ring-stat__value {
-  color: var(--xdc-accent);
-}
-
-.ring-stat__label {
-  font-size: 0.62rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--xdc-muted);
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .validator-node,
-  .validator-node--inner,
-  .ring-orbit,
-  .ring-orbit--mid,
-  .consensus-sweep,
-  .center-glow {
-    animation: none !important;
-  }
-}
-
-
-
 /* Code window (shared with CodeTabs) */
 .code-window {
   background: var(--xdc-code);
@@ -1127,7 +917,7 @@ html[data-theme='dark'] .xdc-search-btn__kbd {
 
 .section-heading {
   font-size: clamp(1.7rem, 3vw, 2.25rem);
-  font-weight: 800;
+  font-weight: 850;
   letter-spacing: -0.04em;
   color: var(--xdc-ink);
   margin: 0 0 1rem;
@@ -1371,7 +1161,7 @@ html {
 
 [class*='announcementBar'] {
   background: var(--xdc-ink);
-  color: #f0f4ff; /* fixed light color — var(--xdc-bg) is near-black in dark mode */
+  color: var(--xdc-bg);
   font-size: 0.85rem;
   font-weight: 600;
 }

@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import Link from '@docusaurus/Link';
 import {
   Hammer,
@@ -13,19 +12,16 @@ const TOOLING_CARDS = [
     icon: Hammer,
     title: 'Hardhat',
     desc: 'Compile, test, and deploy Solidity projects.',
-    to: '/docs/smart-contracts/hardhat-guide',
   },
   {
     icon: Flame,
     title: 'Foundry',
     desc: 'Fast Solidity testing and scripting workflows.',
-    to: '/docs/smart-contracts/foundry-guide',
   },
   {
     icon: Plug,
     title: 'Web3 libraries',
     desc: 'Use ethers, web3.js, viem, and wallet connectors.',
-    to: '/docs/xdc-chain/developers/xdc3js-sdk',
   },
 ];
 
@@ -36,32 +32,7 @@ const OPERATOR_CHECKLIST = [
   'Back up validator keys',
 ];
 
-const CHECKLIST_KEY = 'xdc-operator-checklist';
-
 export default function HomeSections() {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(CHECKLIST_KEY);
-      if (stored) setChecked(JSON.parse(stored) as Record<string, boolean>);
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  const toggleItem = (item: string) => {
-    setChecked((prev) => {
-      const next = {...prev, [item]: !prev[item]};
-      try {
-        window.localStorage.setItem(CHECKLIST_KEY, JSON.stringify(next));
-      } catch {
-        // storage may be unavailable
-      }
-      return next;
-    });
-  };
-
   return (
     <>
       <section className="quickstart-section">
@@ -69,13 +40,13 @@ export default function HomeSections() {
         <h2 className="section-heading">SDKs &amp; tooling</h2>
         <div className="quickstart-grid">
           {TOOLING_CARDS.map((card) => (
-            <Link key={card.title} className="quickstart-card" to={card.to}>
+            <div key={card.title} className="quickstart-card">
               <span className="quickstart-card__icon">
                 <card.icon size={20} strokeWidth={2} aria-hidden />
               </span>
               <h3 className="quickstart-card__title">{card.title}</h3>
               <p className="quickstart-card__desc">{card.desc}</p>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -95,8 +66,6 @@ export default function HomeSections() {
                 <input
                   type="checkbox"
                   className={styles.checklistCheckbox}
-                  checked={!!checked[item]}
-                  onChange={() => toggleItem(item)}
                 />
                 <span>{item}</span>
               </label>
@@ -117,7 +86,7 @@ export default function HomeSections() {
           </p>
           <Link
             className="gold-btn"
-            to="/docs/community/">
+            href="https://xinfin.org/join-community">
             Explore community <ArrowUpRight size={15} strokeWidth={2.5} />
           </Link>
         </div>

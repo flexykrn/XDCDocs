@@ -1,18 +1,17 @@
 import {useState} from 'react';
-import CodeBlock from '@theme/CodeBlock';
+import {Copy, Check} from 'lucide-react';
 
 type SnippetKey = 'hardhat' | 'foundry' | 'curl';
 
-const SNIPPETS: Record<SnippetKey, {tab: string; title: string; language: string; code: string}> = {
+const SNIPPETS: Record<SnippetKey, {tab: string; title: string; code: string}> = {
   hardhat: {
     tab: 'Hardhat',
     title: 'hardhat.config.ts',
-    language: 'typescript',
     code: `import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.28",
+  solidity: "0.8.24",
   networks: {
     xdc: {
       url: "https://rpc.xinfin.network",
@@ -32,12 +31,11 @@ export default config;`,
   foundry: {
     tab: 'Foundry',
     title: 'foundry.toml',
-    language: 'toml',
     code: `[profile.default]
 src = "src"
 out = "out"
 libs = ["lib"]
-solc_version = "0.8.28"
+solc_version = "0.8.24"
 
 [rpc_endpoints]
 xdc = "https://rpc.xinfin.network"
@@ -49,10 +47,9 @@ xdc = { key = "\${XDCSCAN_API_KEY}" }`,
   curl: {
     tab: 'RPC',
     title: 'rpc-request.sh',
-    language: 'bash',
-    code: `curl https://rpc.xinfin.network \
-  -X POST \
-  -H "Content-Type: application/json" \
+    code: `curl https://rpc.xinfin.network \\
+  -X POST \\
+  -H "Content-Type: application/json" \\
   --data '{
     "jsonrpc":"2.0",
     "method":"eth_blockNumber",
@@ -66,7 +63,18 @@ const ORDER: SnippetKey[] = ['hardhat', 'foundry', 'curl'];
 
 export default function CodeTabs() {
   const [active, setActive] = useState<SnippetKey>('hardhat');
+  const [copied, setCopied] = useState(false);
   const snippet = SNIPPETS[active];
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(snippet.code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      /* clipboard unavailable */
+    }
+  };
 
   return (
     <div>
@@ -84,12 +92,20 @@ export default function CodeTabs() {
           </button>
         ))}
       </div>
-      <CodeBlock
-        language={snippet.language}
-        title={snippet.title}
-        showLineNumbers>
-        {snippet.code}
-      </CodeBlock>
+      <div className="code-window">
+        <div className="code-window__bar">
+          <span className="code-window__filename" data-testid="code-title">
+            {snippet.title}
+          </span>
+          <button type="button" className="code-window__copy" onClick={copy}>
+            {copied ? <Check size={13} /> : <Copy size={13} />}
+            {copied ? 'Copied' : 'Copy'}
+          </button>
+        </div>
+        <pre>
+          <code data-testid="code-block">{snippet.code}</code>
+        </pre>
+      </div>
     </div>
   );
 }
