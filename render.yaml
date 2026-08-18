@@ -24,10 +24,12 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      # STEP 1: Deploy RAG service first, get its URL, then set this and redeploy
+      # Predictable Render URL for the xdc-docs-rag service below — baked in so
+      # both services deploy correctly on the FIRST blueprint run, no manual
+      # dashboard edit + rebuild required. If you attach a custom domain to
+      # xdc-docs-rag, update this value and redeploy the static site.
       - key: RAG_API_URL
-        sync: false
-
+        value: https://xdc-docs-rag.onrender.com
 
   # RAG chatbot backend
   - type: web
@@ -38,23 +40,30 @@ services:
     dockerContext: ./server
     healthCheckPath: /api/health
     envVars:
+      # Secrets — must be set manually in the Render dashboard.
       - key: PINECONE_API_KEY
-        sync: false
-      - key: PINECONE_INDEX
-        sync: false
-      - key: PINECONE_NAMESPACE
         sync: false
       - key: GROQ_API_KEY
         sync: false
+      # Project config — safe defaults, edit here if your setup differs.
+      - key: PINECONE_INDEX
+        value: xdcdocs
+      - key: PINECONE_NAMESPACE
+        value: xdc-docs-v1
+      # groq deprecates chat models periodically — if chat starts failing with
+      # a 404 model_not_found error, check https://console.groq.com/docs/models
+      # for a current model id and update this value.
       - key: GROQ_MODEL
-        sync: false
+        value: openai/gpt-oss-120b
       - key: EMBEDDING_MODEL
-        sync: false
+        value: Xenova/all-MiniLM-L6-v2
+      # Predictable Render URL for xdc-docs-site1 above. Update if you attach
+      # a custom domain (e.g. docs.xdc.network) — comma-separate multiple origins.
       - key: RAG_CORS_ORIGIN
-        sync: false
+        value: https://xdc-docs-site1.onrender.com
       - key: FEEDBACK_FILE
-        sync: false
+        value: ./data/feedback.jsonl
       - key: RATE_LIMIT_PER_HOUR
-        sync: false
+        value: "100"
       - key: ENABLE_STREAMING
-        sync: false
+        value: "true"

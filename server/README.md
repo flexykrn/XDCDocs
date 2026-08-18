@@ -91,7 +91,7 @@ The image is `node:20-slim` (glibc required by onnxruntime-node used by `@xenova
 
 ### After deploy
 
-Set `RAG_API_URL` on the website (Docusaurus) build environment to the deployed server URL (e.g. `https://xdc-docs-rag.onrender.com`) so the chatbot widget calls the right backend.
+`render.yaml` bakes `RAG_API_URL` (on the static site) and `RAG_CORS_ORIGIN` (on this server) as the predictable `https://<service-name>.onrender.com` URLs for both services, so a fresh blueprint deploy wires them correctly with no manual step. If you attach a custom domain to either service, update the corresponding value in `render.yaml` and redeploy.
 
 ### Reindexing
 
