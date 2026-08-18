@@ -155,16 +155,19 @@ async function embed(text) {
   return Array.from(out.data);
 }
 
+const MIN_MATCH_SCORE = 0.35;
+
 async function queryPinecone(vector) {
   const res = await namespace.query({
     vector,
-    topK: 5,
+    topK: 8,
     includeMetadata: true,
   });
-  return res.matches || [];
+  const matches = res.matches || [];
+  return matches.filter((m) => typeof m.score !== 'number' || m.score >= MIN_MATCH_SCORE);
 }
 
-function buildContext(matches, cap = 4000) {
+function buildContext(matches, cap = 6000) {
   let out = '';
   for (const m of matches) {
     const text = (m.metadata && m.metadata.text) || '';
@@ -202,6 +205,41 @@ function trimHistory(history) {
     .map((h) => ({ role: h.role, content: h.content }));
 }
 
+// Folds the last exchange into the retrieval query so follow-ups like
+// "what about for XRC721?" still retrieve chunks relevant to the topic
+// established earlier in the conversation, not just the bare follow-up text.
+function buildRetrievalQuery(message, trimmedHistory) {
+  const lastAssistant = [...trimmedHistory].reverse().find((h) => h.role === 'assistant');
+  const lastUser = [...trimmedHistory].reverse().find((h) => h.role === 'user');
+  const parts = [];
+  if (lastAssistant) parts.push(lastAssistant.content.slice(0, 300));
+  if (lastUser && lastUser.content.trim() !== message.trim()) parts.push(lastUser.content);
+  parts.push(message);
+  return parts.join('\n');
+}
+
+const CHAT_CACHE_TTL_MS = 10 * 60 * 1000;
+const CHAT_CACHE_MAX = 200;
+const chatCache = new Map();
+
+function getCached(key) {
+  const entry = chatCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > CHAT_CACHE_TTL_MS) {
+    chatCache.delete(key);
+    return null;
+  }
+  return entry;
+}
+
+function setCached(key, value) {
+  chatCache.set(key, { ...value, ts: Date.now() });
+  if (chatCache.size > CHAT_CACHE_MAX) {
+    const oldestKey = chatCache.keys().next().value;
+    chatCache.delete(oldestKey);
+  }
+}
+
 app.get('/api/health', (req, res) => {
   res.json({ ok: true, index: PINECONE_INDEX, model: GROQ_MODEL });
 });
@@ -234,7 +272,26 @@ app.post('/api/chat', async (req, res) => {
       return res.json({ answer: faq.answer, sources, faq: true, id: faq.id });
     }
 
-    const vector = await embed(message.trim());
+    const trimmedHistory = trimHistory(history);
+    const cacheKey = JSON.stringify({ message: message.trim().toLowerCase(), trimmedHistory });
+    const cached = getCached(cacheKey);
+
+    if (cached) {
+      if (ENABLE_STREAMING === 'true') {
+        res.setHeader('Content-Type', 'text/event-stream');
+        res.setHeader('Cache-Control', 'no-cache');
+        res.setHeader('Connection', 'keep-alive');
+        res.flushHeaders && res.flushHeaders();
+        res.write(`data: ${JSON.stringify({ type: 'sources', sources: cached.sources })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'chunk', content: cached.answer })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'done' })}\n\n`);
+        return res.end();
+      }
+      return res.json({ answer: cached.answer, sources: cached.sources });
+    }
+
+    const retrievalQuery = buildRetrievalQuery(message.trim(), trimmedHistory);
+    const vector = await embed(retrievalQuery);
     const matches = await queryPinecone(vector);
     const context = buildContext(matches);
     const sources = buildSources(matches);
@@ -247,7 +304,7 @@ app.post('/api/chat', async (req, res) => {
 
     const messages = [
       { role: 'system', content: SYSTEM_PROMPT },
-      ...trimHistory(history),
+      ...trimmedHistory,
       { role: 'user', content: userContent },
     ];
 
@@ -265,6 +322,7 @@ app.post('/api/chat', async (req, res) => {
         stream: true,
       });
 
+      let answer = '';
       for await (const chunk of stream) {
         const delta =
           chunk.choices &&
@@ -272,10 +330,12 @@ app.post('/api/chat', async (req, res) => {
           chunk.choices[0].delta &&
           chunk.choices[0].delta.content;
         if (delta) {
+          answer += delta;
           res.write(`data: ${JSON.stringify({ type: 'chunk', content: delta })}\n\n`);
         }
       }
       res.write(`data: ${JSON.stringify({ type: 'done' })}\n\n`);
+      if (answer) setCached(cacheKey, { answer, sources });
       return res.end();
     }
 
@@ -288,6 +348,7 @@ app.post('/api/chat', async (req, res) => {
       completion.choices[0] &&
       completion.choices[0].message &&
       completion.choices[0].message.content;
+    if (answer) setCached(cacheKey, { answer, sources });
     return res.json({ answer: answer || '', sources });
   } catch (err) {
     console.error('Chat error:', err && err.message ? err.message : err);
